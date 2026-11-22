@@ -115,6 +115,7 @@ nav .btn{padding:10px 16px;font-size:14px;color:#04210f}
 @media(max-width:860px){.grid2,.grid3{grid-template-columns:1fr}}
 .card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:20px}
 .video{aspect-ratio:4/3;border-radius:12px;overflow:hidden;background:#000;margin-bottom:14px}
+.video video{display:block;width:100%;height:100%;object-fit:contain;background:#000;border:0}
 .video iframe{width:100%;height:100%;border:0}
 .card h3{font-size:19px;margin-bottom:6px}
 .card p{color:var(--muted);margin:0 0 12px;font-size:15px}
@@ -579,8 +580,13 @@ fbq('init','TU_PIXEL_ID');fbq('track','PageView');fbq('track','ViewContent',{con
   <div class="wrap">
     <span class="eyebrow">Antes de comprar</span>
     <h2>Mira lo que <em>recibes</em></h2>
-    <p class="lead">Una clase completa del curso y un recorrido por la comunidad, tal como se ven por dentro.</p>
-    <div class="grid3 grid2">
+    <p class="lead">Un recorrido por la biblioteca, una clase completa y la comunidad, tal como se ven por dentro.</p>
+    <div class="grid3">
+      <div class="card">
+        <div class="video"><video src="assets/drive-por-dentro.mp4" poster="assets/drive-poster.jpg" controls playsinline preload="none" title="Recorrido por la carpeta de Drive de Aprende Caldera"></video></div>
+        <h3>El Drive por dentro</h3>
+        <p>Un recorrido real por la biblioteca: los cursos, los módulos y cómo se ven los videos.</p>
+      </div>
       <div class="card">
         <div class="video"><iframe src="https://drive.google.com/file/d/1_RZRhh4cHvqn5bWh13bgh4bxyUYhvR1W/preview" title="Clase de muestra: lógica de funcionamiento de una caldera mural" loading="lazy" allow="autoplay"></iframe></div>
         <h3>Clase gratis: lógica de funcionamiento</h3>
