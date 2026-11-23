@@ -553,7 +553,8 @@ h2{text-transform:none;letter-spacing:-.025em;line-height:1.08}
 /* medios de pago */
 .paybadges{display:flex;flex-wrap:wrap;gap:6px;margin:10px 0 2px}.paybadges span{border:1px solid #e3dade;border-radius:8px;padding:4px 9px;font-size:12.5px;font-weight:700;color:#4a3a42;background:#faf7f8}
 /* más opciones */
-.extras{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:26px}
+.extras{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:26px}
+.xbtns{margin-top:auto;display:flex;flex-direction:column;gap:10px;align-items:flex-start}.xbtns .btn{margin-top:0}.xlink{color:var(--orange2);font-weight:800;font-size:14px;text-decoration:none}
 .xcard{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:24px;display:flex;flex-direction:column;gap:8px}
 .xcard.best{border-color:var(--orange2);box-shadow:0 0 0 1px var(--orange2) inset}
 .xcard .tag{align-self:flex-start;font-size:12px;font-weight:900;letter-spacing:1px;padding:4px 10px;border-radius:99px;background:var(--orange2);color:#281500}
@@ -561,8 +562,15 @@ h2{text-transform:none;letter-spacing:-.025em;line-height:1.08}
 .xcard ul{margin:4px 0 0;padding-left:18px;color:var(--text);font-size:15px}
 .xprice{font:800 32px/1 var(--head);letter-spacing:-.02em;margin-top:6px}.xprice s{font:500 16px var(--body);color:var(--muted);margin-left:8px}.xprice small{display:block;font:600 13px var(--body);color:var(--green);margin-top:4px}
 .xcard .btn{margin-top:auto;align-self:flex-start}
-@media(max-width:800px){.extras{grid-template-columns:1fr}}
+@media(max-width:1000px){.extras{grid-template-columns:1fr}}
 .launch-only{} html.cd-ended .launch-only{display:none!important} .after-launch{display:none!important} html.cd-ended .after-launch{display:revert!important}
+
+.flags{display:inline-flex;align-items:center;gap:10px;background:var(--card);border:1px solid var(--line);border-radius:999px;padding:6px 14px 6px 8px;margin:0 0 14px;font-size:14px;color:var(--muted)}.flags b{color:var(--text)}.flg{display:inline-flex;gap:4px}.flg svg{border-radius:3px;box-shadow:0 0 0 1px #0004}
+.price-line{display:flex;flex-wrap:wrap;align-items:baseline;gap:4px 10px;margin:4px 0 16px}
+.price-line b{font:800 38px/1 var(--head);letter-spacing:-.02em;color:var(--text)}.price-line span{color:var(--muted);font-size:14px}
+.price-line s{color:var(--muted);font-size:17px}.price-line em{flex-basis:100%;font-style:normal;color:var(--orange2);font-weight:700;font-size:14px}
+.creator-sm{margin:4px 0 18px;color:var(--muted);font-size:14.5px}.creator-sm b{color:var(--text)}
+.cat-note{margin:18px 0 0;color:var(--muted);font-size:15px}.cat-note b{color:var(--text)}
 </style>
 <!-- Meta Pixel: reemplaza TU_PIXEL_ID por el ID de tu píxel y quita los comentarios para activarlo
 <script>
@@ -606,10 +614,11 @@ fbq('init','TU_PIXEL_ID');fbq('track','PageView');fbq('track','ViewContent',{con
 <section class="hero">
   <div class="wrap">
     <div>
+      <div class="flags"><span class="flg"><svg viewBox="0 0 30 20" width="27" height="18" aria-hidden="true"><rect width="30" height="20" fill="#fff"/><rect y="10" width="30" height="10" fill="#d52b1e"/><rect width="10" height="10" fill="#0039a6"/><polygon points="5,2.2 5.9,4.9 8.7,4.9 6.4,6.6 7.3,9.3 5,7.6 2.7,9.3 3.6,6.6 1.3,4.9 4.1,4.9" fill="#fff"/></svg><svg viewBox="0 0 30 20" width="27" height="18" aria-hidden="true"><rect width="30" height="20" fill="#74acdf"/><rect y="6.67" width="30" height="6.67" fill="#fff"/><circle cx="15" cy="10" r="2.2" fill="#f6b40e" stroke="#85340a" stroke-width=".4"/></svg></span><span>Para técnicos de <b>Chile</b> y <b>Argentina</b></span></div>
       <span class="eyebrow">Formación técnica en calderas</span>
       <h1>Aprende a reparar<br><span>calderas murales</span></h1>
       <p class="lead">Dos cursos completos en video, caldera mural tradicional y caldera de condensación, más manuales de las marcas que más se ven y una comunidad privada de WhatsApp donde técnicos resuelven casos reales.</p>
-      <p class="creator"><i>🛡️</i>Seleccionado y organizado por un instalador de gas autorizado SEC Clase 3, con +15 años en terreno.</p>
+      <p class="creator-sm">🛡️ Seleccionado y organizado por un instalador de gas autorizado <b>SEC Clase 3</b>, con +15 años en terreno.</p>
       <div class="stats">
         <div class="stat"><b class="count-up" data-count="86">86</b><span>videos en 2 cursos</span></div>
         <div class="stat"><b class="count-up" data-count="50" data-prefix="+">+50</b><span>manuales y PDF</span></div>
@@ -617,7 +626,7 @@ fbq('init','TU_PIXEL_ID');fbq('track','PageView');fbq('track','ViewContent',{con
         <div class="stat"><b class="count-up" data-count="200" data-prefix="+">+200</b><span>técnicos en la comunidad</span></div>
       </div>
       <div class="price-row">
-        <div class="price"><small>PRECIO DE LANZAMIENTO</small><span class="discount">58% DCTO</span><br><b>$49.990</b> CLP <s>luego $119.990</s><span class="price-deadline">Oferta válida hasta el 30 de noviembre · luego sube a $119.990</span></div>
+        <div class="price-line"><b>$49.990</b> <span>CLP · pago único</span> <s class="launch-only">$119.990</s><em class="launch-only">Precio de lanzamiento hasta el 30 de noviembre</em></div>
         <div class="btns"><a class="btn btn-buy" href="#precio">Quiero acceder →</a><a class="btn btn-ghost" href="#temario" data-free-go>▶ Ver clase gratis</a></div>
       </div>
       <div class="reassure"><span>Pago único</span><span>Acceso permanente</span><span>Nuevos materiales sin costo</span></div>
@@ -629,17 +638,6 @@ fbq('init','TU_PIXEL_ID');fbq('track','PageView');fbq('track','ViewContent',{con
   </div>
 </section>
 
-<!-- Franja de confianza -->
-<div class="trust">
-  <div class="wrap">
-    <div><i>▶</i><p style="margin:0"><b>Video + PDF</b><span>Estudia a tu ritmo, en celular o PC</span></p></div>
-    <div><i>💬</i><p style="margin:0"><b>Comunidad privada</b><span>Casos reales entre técnicos</span></p></div>
-    <div><i>♾</i><p style="margin:0"><b>Acceso permanente</b><span>Un solo pago, sin mensualidades</span></p></div>
-    <div><i>✉️</i><p style="margin:0"><b>Acceso por correo</b><span>Lo activamos apenas confirmamos tu pago</span></p></div>
-  </div>
-</div>
-
-<!-- Marcas alineadas con el temario: solo las que tienen contenido -->
 <div class="brands">
   <div class="wrap">
     <p>Videos y manuales de equipos de estas marcas, y más</p>
@@ -685,6 +683,7 @@ fbq('init','TU_PIXEL_ID');fbq('track','PageView');fbq('track','ViewContent',{con
         <div class="cbody"><h3>Manuales y programación</h3><p>Manuales técnicos y de programación de Baxi, Ariston, Caldaia, Peisa, Immergas, Roca, BGH/Ferroli y más.</p>
         <div class="cmeta"><span>📄 59 documentos</span><span>+10 marcas</span></div><button type="button" class="btn btn-ghost" data-cat="MANUALES">Ver documentos →</button></div></article>
     </div>
+    <p class="cat-note">🎁 Incluye además la clase <b>Cómo cobrar tus servicios</b>, un listado de precios sugeridos y el PDF <b>Kit de herramientas</b>.</p>
   </div>
 </section>
 
@@ -695,7 +694,7 @@ fbq('init','TU_PIXEL_ID');fbq('track','PageView');fbq('track','ViewContent',{con
     <h2>Explora el aula <em>por dentro</em></h2>
     <p class="lead">Todas las lecciones a la vista. La clase marcada como <b style="color:var(--orange2)">GRATIS</b> la puedes ver ahora; el resto se desbloquea al comprar.</p>
     <div class="av-acc" id="avAcc"><span id="avAccTxt">¿Ya eres alumno?</span><span class="av-acc-b" id="avAccB"><a class="av-mini" href="cuenta/?next=/%23temario">Ingresar</a><a class="av-mini pri" href="cuenta/?modo=registro&next=/%23temario">Crear cuenta</a></span></div>
-    <div class="av-pv" id="avPv"><button type="button" data-pv="free" class="on">▶ Clase gratis</button><button type="button" data-pv="drive">📁 El Drive por dentro</button><button type="button" data-pv="comm">💬 La comunidad por dentro</button></div>
+    <div class="av-pv" id="avPv"><button type="button" data-pv="free" class="on">▶ Clase gratis</button><button type="button" data-pv="comm">💬 La comunidad por dentro</button></div>
     <div class="av-tabs" id="avTabs"></div>
     <input id="q" class="av-q" type="search" placeholder="Buscar lección: NTC, flujostato, Baxi, programación…" aria-label="Buscar en el aula">
     <div class="av">
@@ -788,19 +787,7 @@ fbq('init','TU_PIXEL_ID');fbq('track','PageView');fbq('track','ViewContent',{con
   </div>
 </section>
 
-<!-- Ruta de aprendizaje -->
-<section id="ruta">
-  <div class="wrap">
-    <span class="eyebrow">Tu ruta de aprendizaje</span>
-    <h2>¿Desde dónde <em>partes?</em></h2>
-    <p class="lead">Elige tu punto de partida y te mostramos en qué orden recorrer la biblioteca.</p>
-    <div class="route-toggle" role="tablist">
-      <button type="button" class="on" data-r="cero" role="tab" aria-selected="true">🔰 Parto desde cero</button>
-      <button type="button" data-r="exp" role="tab" aria-selected="false">🔧 Ya tengo experiencia</button>
-    </div>
-    <ol class="route" id="route"></ol>
-  </div>
-</section>
+
 
 
 
@@ -808,17 +795,7 @@ fbq('init','TU_PIXEL_ID');fbq('track','PageView');fbq('track','ViewContent',{con
 
 
 <!-- Bonos -->
-<section id="bonos">
-  <div class="wrap">
-    <span class="eyebrow">Regalos al inscribirte</span>
-    <h2>Además, te llevas <em>2 bonos</em></h2>
-    <p class="lead">Material práctico para usar desde el primer trabajo.</p>
-    <div class="bonus-grid">
-      <article class="bonus-card"><span class="tag">BONO 1</span><h3>Cómo cobrar tus servicios</h3><p>Clase en video sobre cómo poner precio a tu trabajo, más un listado de precios sugeridos como referencia.</p></article>
-      <article class="bonus-card"><span class="tag">BONO 2</span><h3>Herramientas y retorno de inversión</h3><p>Qué herramientas necesitas para partir, cuánto cuestan y en cuánto tiempo las recuperas. Incluye el PDF “Kit de herramientas”.</p></article>
-    </div>
-  </div>
-</section>
+
 
 <!-- Comparación de valor -->
 <section id="comparar">
@@ -895,7 +872,13 @@ fbq('init','TU_PIXEL_ID');fbq('track','PageView');fbq('track','ViewContent',{con
         <ul><li>Aprende Caldera: 86 videos + 59 manuales</li><li>Aprende Calefón: +100 videos y PDF</li><li>Comunidad de +200 técnicos</li></ul>
         <div class="xprice launch-only">$64.990<s>$79.980</s><small>Ahorras $14.990 · solo hasta el 30 de noviembre</small></div>
         <div class="xprice after-launch" style="font-size:22px">Precio especial por WhatsApp</div>
-        <a class="btn btn-buy" href="https://wa.me/56993992990?text=Hola%2C%20quiero%20el%20Pack%20Aprende%20Caldera%20%2B%20Aprende%20Calef%C3%B3n" target="_blank" rel="noopener">Quiero el pack →</a></article>
+        <div class="xbtns"><a class="btn btn-buy" href="https://wa.me/56993992990?text=Hola%2C%20quiero%20el%20Pack%20Aprende%20Caldera%20%2B%20Aprende%20Calef%C3%B3n" target="_blank" rel="noopener">Quiero el pack →</a><a class="xlink" href="https://aprendecalefon.github.io/" target="_blank" rel="noopener">Ver Aprende Calefón ↗</a></div></article>
+      <article class="xcard"><span class="tag" style="background:#ff7a1a;color:#1a0b00">OTRO CURSO</span><h3>Solo Aprende Calefón</h3>
+        <p>¿Te interesa solo calefones? Puedes llevar ese curso por separado: tiro natural, tiro forzado, instalación y conversión.</p>
+        <ul><li>+100 videos y PDF ordenados por tema</li><li>Junkers, Bosch, Splendid, Orbis, Rheem y más</li><li>Su propio certificado de finalización</li></ul>
+        <div class="xprice launch-only">$29.990<s>$59.990</s><small>Precio especial hasta el 30 de noviembre</small></div>
+        <div class="xprice after-launch">$59.990</div>
+        <div class="xbtns"><a class="btn btn-ghost" href="https://aprendecalefon.github.io/" target="_blank" rel="noopener">Ver el curso ↗</a><a class="xlink" href="https://mpago.la/25EDXe5" target="_blank" rel="noopener">Comprar con Mercado Pago →</a></div></article>
       <article class="xcard"><span class="tag" style="background:var(--card);color:var(--orange2);border:1px solid var(--line)">1 A 1</span><h3>Asesoría por videollamada</h3>
         <p>Revisamos tu caso, tu equipo o cómo partir en el rubro, directo conmigo. Ideal si quieres ir más rápido.</p>
         <ul><li>Videollamada por WhatsApp o Meet</li><li>Casos de fallas, herramientas o cómo cobrar</li><li>Puedes sumarla a tu compra</li></ul>
@@ -929,13 +912,9 @@ fbq('init','TU_PIXEL_ID');fbq('track','PageView');fbq('track','ViewContent',{con
       <details><summary>¿Cómo recibo el acceso?</summary><p>Creas tu cuenta en la web con tu Gmail, pagas y nos envías el comprobante por WhatsApp. Activamos tu cuenta y desde ese momento ves todas las lecciones en el aula, aquí mismo en la web. También te enviamos el link de la comunidad.</p></details>
       <details><summary>¿Entrega certificado?</summary><p>Sí. Al completar todas las lecciones de un curso, descargas al instante tu certificado de finalización con tu nombre y un código de verificación. Es un certificado de Aprende Caldera: acredita que completaste el curso, pero no reemplaza una licencia SEC ni un título técnico.</p></details>
       <details><summary>¿Incluye calderas de condensación?</summary><p>Sí. Hay un curso aparte de 13 videos: lógica de funcionamiento, diferencias de componentes, tratamiento de agua, mantención, ventilación, primer encendido e instalación.</p></details>
-      <details><summary>¿Puedo verlo en el celular?</summary><p>Sí. Los videos y PDF se pueden ver en celular, tablet o computador.</p></details>
-      <details><summary>¿El acceso caduca?</summary><p>No. Es un pago único con acceso permanente, y los nuevos materiales se incorporan sin costo adicional.</p></details>
+      <details><summary>¿Puedo verlo en el celular? ¿El acceso caduca?</summary><p>Sí, funciona en celular, tablet o computador. Y no caduca: es un pago único con acceso permanente, y los nuevos materiales se suman sin costo.</p></details>
       <details><summary>¿Qué marcas cubre?</summary><p>Hay videos de equipos Peisa, Baxi, Immergas, Caldaia, BGH, Demir-Döküm e Innovita, y manuales de Baxi, Ariston, Caldaia, Peisa, Immergas, Roca, BGH/Ferroli y Euterma. Usa el filtro del temario para ver qué hay de cada una.</p></details>
       <details><summary>¿Cómo puedo pagar?</summary><p>Puedes pagar con Mercado Pago o coordinar una transferencia por WhatsApp.</p></details>
-      <details><summary>¿Puedo compartir el acceso?</summary><p>No. El acceso es personal y se activa con tu correo de Google. Así protegemos el material y la comunidad.</p></details>
-      <details><summary>¿Qué pasa si pierdo el acceso?</summary><p>Nos escribes por WhatsApp con el correo con que compraste y te lo volvemos a activar, sin costo.</p></details>
-      <details><summary>¿Qué pasa en la comunidad de WhatsApp?</summary><p>Técnicos comparten casos reales, fallas, soluciones y recomendaciones del trabajo en terreno.</p></details>
     </div>
   </div>
 </section>
@@ -1037,7 +1016,7 @@ function render(){ if(window.aulaGoCat) window.aulaGoCat(st.cat); }
          ["Condensación","Tratamiento de agua, ventilación y puesta en marcha.","CONDENSACION",""],
          ["Casos en la comunidad","Resuelve tus casos con +200 técnicos.","",""]]
   };
-  const el=document.getElementById('route');
+  const el=document.getElementById('route'); if(!el) return;
   const count=(c,s)=>c?items.filter(i=>i.cat===c&&(!s||i.sub===s)).length:0;
   let mode='cero';
   const draw=()=>{
@@ -1089,7 +1068,7 @@ const flat=s=>SECS[s].mods.flatMap((m,mi)=>m.l.map((l,li)=>({m:mi,l:li,id:l.id})
 const courseIds=ci=>D.courses[ci].mods.flatMap(m=>m.l.map(l=>l.id));
 const fd=x=>x?Math.floor(x/60)+':'+String(x%60).padStart(2,'0'):''; const fh=x=>{const h=Math.floor(x/3600),m=Math.round(x%3600/60);return h?h+' h '+m+' min':m+' min'}; const sumD=L=>L.reduce((a,l)=>a+(l.d||0),0);
 const pct=ids=>ids.length?Math.round(100*ids.filter(i=>seen.has(i)).length/ids.length):0;
-const FREES=["1ruc1d7WAtW_5Tv1Pp3IIgBc_UMaOyzTw", "1_RZRhh4cHvqn5bWh13bgh4bxyUYhvR1W", "11N_MAU4ax1mUszUmbuHnYf12MNKPgQ8R"]; const can=id=>active||FREES.includes(id);
+const FREES=["1ruc1d7WAtW_5Tv1Pp3IIgBc_UMaOyzTw", "1eeh3u_G_z-MyMCtmEGH4MDyrzzPovmA7", "1Xrr6hND3JoctFPUQXtAX4linVEKxgkv5", "1_RZRhh4cHvqn5bWh13bgh4bxyUYhvR1W", "12zOWyRGKPM2TzI3jod-CRik9tJYEzrAa", "1VjSv-sOqnxcahPraiCBTgKwGqyHT6hna", "11N_MAU4ax1mUszUmbuHnYf12MNKPgQ8R"]; const can=id=>active||FREES.includes(id);
 const GOALS={"Módulo 1 · Bases y mediciones":"Reconocer las partes de una caldera mural y medir componentes con el tester.","Módulo 2 · Componentes y cómo cambiarlos":"Saber qué hace cada pieza, probarla y cambiarla: bomba, flujostato, NTC, válvula de gas, plaqueta y más.","Módulo 3 · Lógica, mantención y fallas":"Entender el ciclo de encendido, hacer una mantención preventiva completa y ubicar fallas comunes.","Módulo 4 · Circuito, regulación y diagnóstico":"Llenar y limpiar el circuito, regular la válvula de gas, programar el display y diagnosticar sin banco.","Módulo 5 · Equipos por marca":"Trabajar con equipos reales de Peisa, Baxi, Immergas, Caldaia, BGH y otras marcas.","Módulo 6 · Mantención en terreno":"Ver una mantención completa en terreno, de principio a fin.","Módulo 1 · Fundamentos":"Entender qué cambia en una caldera de condensación y cómo funciona.","Módulo 2 · Agua, mantención y medición":"Tratar el agua, hacer la mantención y medir los componentes de un equipo de condensación.","Módulo 3 · Seguridad, instalación y oficio":"Trabajar seguro, hacer el primer encendido, instalar y cobrar tus servicios."};
 const leadOk=()=>{try{return !!localStorage.getItem('ac_lead')}catch(e){return false}};
 function save(){ if(!progRef) return; clearTimeout(saveT); saveT=setTimeout(()=>setDoc(progRef,{seen:[...seen],updatedAt:serverTimestamp()},{merge:true}).catch(e=>console.warn(e)),800); }
@@ -1187,6 +1166,7 @@ if(onAuthStateChanged) onAuthStateChanged(auth, async u=>{
   document.querySelectorAll('.discount,.price-deadline,.offer-deadline,.next-price,.cd,.offer-old,.price s,.mbar-cd').forEach(e=>e.style.display='none');
   const w=document.createTreeWalker(document.body,NodeFilter.SHOW_TEXT); let n; while(n=w.nextNode()){ if(n.nodeValue.includes('$49.990')) n.nodeValue=n.nodeValue.replaceAll('$49.990','$119.990').replace(' hasta el 30 de noviembre',''); if(n.nodeValue.includes('PRECIO DE LANZAMIENTO')) n.nodeValue=n.nodeValue.replace('PRECIO DE LANZAMIENTO','ACCESO COMPLETO'); }
   document.querySelectorAll('a[href*="mpago.la/2XSQPaR"]').forEach(a=>{a.href=WA_BUY;});
+  document.querySelectorAll('a[href*="mpago.la/25EDXe5"]').forEach(a=>{a.href='https://wa.me/56993992990?text='+encodeURIComponent('Hola, quiero comprar Aprende Calefón');a.textContent='Comprar por WhatsApp →';});
   document.querySelectorAll('a[href*="%2449.990"]').forEach(a=>{a.href=a.href.replace('%2449.990','%24119.990');});
 })();
 </script>
