@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1120" height="940" viewBox="0 0 560 470" role="img" aria-label="Ilustración de una caldera mural conectada a un radiador">
+        <defs>
+          <linearGradient id="hbBody" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#ffffff"/><stop offset="1" stop-color="#d9cfd3"/></linearGradient>
+          <linearGradient id="hbRad" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ff7a5c"/><stop offset="1" stop-color="#c8263a"/></linearGradient>
+          <linearGradient id="hbFl" x1="0" y1="1" x2="0" y2="0"><stop offset="0" stop-color="#5aa9ff"/><stop offset=".45" stop-color="#ffb347"/><stop offset="1" stop-color="#ff4d3d" stop-opacity=".2"/></linearGradient>
+          <radialGradient id="hbGlow"><stop offset="0" stop-color="#ff4d3d" stop-opacity=".35"/><stop offset="1" stop-color="#ff4d3d" stop-opacity="0"/></radialGradient>
+        </defs>
+        <style>
+          .hb-fl{transform-box:fill-box;transform-origin:center bottom;animation:hbFl 1.1s ease-in-out infinite alternate}
+          .hb-fl:nth-child(2){animation-delay:.3s}.hb-fl:nth-child(3){animation-delay:.6s}.hb-fl:nth-child(4){animation-delay:.15s}
+          @keyframes hbFl{from{transform:scaleY(.82)}to{transform:scaleY(1.12)}}
+          .hb-wave{fill:none;stroke:#ff8a6b;stroke-width:4;stroke-linecap:round;opacity:0;animation:hbWave 3s ease-in infinite}
+          .hb-wave:nth-of-type(2){animation-delay:1s}.hb-wave:nth-of-type(3){animation-delay:2s}
+          @keyframes hbWave{0%{opacity:0;transform:translateY(0)}25%{opacity:.9}100%{opacity:0;transform:translateY(-46px)}}
+          .hb-flow{stroke-dasharray:6 10;animation:flow 1.2s linear infinite}
+          .hb-dig{animation:hbDig 2.4s ease-in-out infinite alternate}
+          @keyframes hbDig{from{opacity:.75}to{opacity:1}}
+          @media (prefers-reduced-motion:reduce){.hb-fl,.hb-wave,.hb-flow,.hb-dig{animation:none}.hb-wave{opacity:.6}}
+        </style>
+        <circle cx="290" cy="210" r="210" fill="url(#hbGlow)"/>
+        <!-- ducto -->
+        <rect x="262" y="6" width="40" height="40" rx="6" fill="#8d8288"/><rect x="256" y="2" width="52" height="10" rx="4" fill="#a99ea4"/>
+        <!-- cuerpo -->
+        <rect x="170" y="40" width="224" height="296" rx="24" fill="url(#hbBody)"/>
+        <rect x="170" y="40" width="224" height="26" rx="12" fill="#efe8ea"/>
+        <!-- visor con llama -->
+        <rect x="232" y="86" width="100" height="70" rx="12" fill="#1a0e14"/>
+        <g fill="url(#hbFl)"><path class="hb-fl" d="M250 148q6-34 0-48q14 18 8 48z"/><path class="hb-fl" d="M272 148q6-38 0-54q14 22 8 54z"/><path class="hb-fl" d="M294 148q6-38 0-54q14 22 8 54z"/><path class="hb-fl" d="M316 148q4-30 0-42q12 16 6 42z"/></g>
+        <rect x="244" y="148" width="78" height="6" rx="3" fill="#5b5f6a"/>
+        <!-- display -->
+        <rect x="204" y="180" width="156" height="66" rx="12" fill="#1a0e14"/>
+        <text class="hb-dig" x="300" y="228" text-anchor="middle" font-family="Impact,'Arial Narrow',Arial,sans-serif" font-size="40" fill="#ff4d3d" style="filter:drop-shadow(0 0 6px #ff4d3d)">60°</text>
+        <path d="M226 226q5-22 0-30q10 12 6 30z" fill="#ffb347"/>
+        <g fill="#7ec3ff"><rect x="334" y="200" width="5" height="26" rx="2"/><rect x="342" y="200" width="5" height="26" rx="2"/><rect x="350" y="200" width="5" height="26" rx="2"/></g>
+        <!-- perillas -->
+        <circle cx="236" cy="286" r="17" fill="#cfc4c9"/><circle cx="236" cy="286" r="10" fill="#f6f1f3"/><path d="M236 276v8" stroke="#6e5c64" stroke-width="3" stroke-linecap="round"/>
+        <circle cx="328" cy="286" r="17" fill="#cfc4c9"/><circle cx="328" cy="286" r="10" fill="#f6f1f3"/><path d="M335 280l-5 5" stroke="#6e5c64" stroke-width="3" stroke-linecap="round"/>
+        <rect x="262" y="279" width="40" height="14" rx="7" fill="#e8dfe3"/><circle cx="294" cy="286" r="4" fill="#25d366"/>
+        <!-- conexiones -->
+        <g stroke-width="10" stroke-linecap="round">
+          <path d="M204 336v58" stroke="#ff4d3d"/><path d="M238 336v58" stroke="#ff9466"/><path d="M282 336v58" stroke="#ffcc3d"/><path d="M326 336v58" stroke="#5aa9ff"/><path d="M360 336v74H486V350" stroke="#ff4d3d" fill="none"/>
+        </g>
+        <path class="hb-flow" d="M360 336v74H486V350" stroke="#ffd2c4" stroke-width="3" fill="none"/>
+        <g fill="#b9adb3"><rect x="196" y="388" width="16" height="10" rx="3"/><rect x="230" y="388" width="16" height="10" rx="3"/><rect x="274" y="388" width="16" height="10" rx="3"/><rect x="318" y="388" width="16" height="10" rx="3"/></g>
+        <!-- radiador -->
+        <g fill="url(#hbRad)"><rect x="424" y="200" width="18" height="150" rx="9"/><rect x="446" y="200" width="18" height="150" rx="9"/><rect x="468" y="200" width="18" height="150" rx="9"/><rect x="490" y="200" width="18" height="150" rx="9"/><rect x="512" y="200" width="18" height="150" rx="9"/></g>
+        <rect x="420" y="222" width="114" height="8" rx="4" fill="#a81d30"/><rect x="420" y="320" width="114" height="8" rx="4" fill="#a81d30"/>
+        <path class="hb-wave" d="M448 186q-8-10 0-20t0-20"/><path class="hb-wave" d="M478 186q-8-10 0-20t0-20"/><path class="hb-wave" d="M508 186q-8-10 0-20t0-20"/>
+        <!-- etiquetas -->
+        <g font-family="Inter,'Segoe UI',Arial,sans-serif" font-weight="800">
+          <rect x="6" y="96" width="140" height="44" rx="22" fill="#2c1822" stroke="#ff4d3d" stroke-width="2"/><text x="76" y="124" text-anchor="middle" font-size="16" fill="#fff">▶ 86 videos</text>
+          <rect x="0" y="232" width="156" height="44" rx="22" fill="#2c1822" stroke="#ffb347" stroke-width="2"/><text x="78" y="260" text-anchor="middle" font-size="16" fill="#fff">📘 +50 manuales</text>
+          <rect x="398" y="400" width="150" height="44" rx="22" fill="#2c1822" stroke="#25d366" stroke-width="2"/><text x="473" y="428" text-anchor="middle" font-size="16" fill="#fff">💬 +200 técnicos</text>
+        </g>
+      </svg>
