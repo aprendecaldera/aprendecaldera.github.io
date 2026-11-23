@@ -17,12 +17,13 @@
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@700;800&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
 :root{
   --navy:#160d12;--navy2:#21121a;--card:#2c1822;--line:#4a2a39;
   --orange:#ff4d3d;--orange2:#ffb347;--green:#22c55e;--red:#e11d2e;
   --text:#eaf1fb;--muted:#c8aab6;--paper:#ffffff;--ink:#1f0d15;
-  --head:Impact,"Arial Narrow",Arial,sans-serif;--body:Inter,"Segoe UI",Arial,sans-serif;
+  --head:"Plus Jakarta Sans",Inter,"Segoe UI",Arial,sans-serif;--body:Inter,"Segoe UI",Arial,sans-serif;
 }
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
@@ -31,7 +32,7 @@ img{max-width:100%;display:block}
 a{color:inherit}
 .wrap{max-width:1140px;margin:0 auto;padding:0 16px}
 h1,h2,h3{margin:0;line-height:1.05}
-h2{font:400 clamp(30px,5vw,48px)/1 var(--head);letter-spacing:.5px;text-transform:uppercase}
+h2{font:800 clamp(30px,5vw,48px)/1 var(--head);letter-spacing:.5px;text-transform:uppercase}
 h2 em{font-style:normal;color:var(--orange)}
 .eyebrow{display:inline-block;font-size:12px;font-weight:800;letter-spacing:2px;color:var(--orange);text-transform:uppercase;margin-bottom:10px}
 .lead{color:var(--muted);max-width:640px;margin:12px 0 0}
@@ -54,7 +55,7 @@ header{position:sticky;top:0;z-index:20;background:rgba(22,13,18,.94);backdrop-f
 header .wrap{display:flex;align-items:center;justify-content:space-between;height:64px;gap:12px}
 .logo{display:flex;align-items:center;gap:10px;text-decoration:none}
 .logo img{width:30px}
-.logo b{font:400 20px/1 var(--head);letter-spacing:1px}
+.logo b{font:800 20px/1 var(--head);letter-spacing:1px}
 nav{display:flex;align-items:center;gap:20px;font-size:14px;font-weight:600}
 nav a{text-decoration:none;color:var(--muted)}
 nav a:hover{color:var(--text)}
@@ -64,17 +65,17 @@ nav .btn{padding:10px 16px;font-size:14px;color:#04210f}
 /* Hero */
 .hero{padding:48px 0 56px;background:radial-gradient(1000px 500px at 85% 10%,#4b1d2b 0,transparent 60%)}
 .hero .wrap{display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:center}
-.hero h1{font:400 clamp(40px,7vw,72px)/.95 var(--head);text-transform:uppercase}
+.hero h1{font:800 clamp(40px,7vw,72px)/.95 var(--head);text-transform:uppercase}
 .hero h1 span{color:var(--orange)}
 .hero p.lead{font-size:18px}
 .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:24px 0}
 .stat{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:12px;text-align:center}
-.stat b{display:block;font:400 28px/1 var(--head);color:var(--orange2)}
+.stat b{display:block;font:800 28px/1 var(--head);color:var(--orange2)}
 .stat span{font-size:12px;color:var(--muted)}
 .price-row{display:flex;flex-wrap:wrap;align-items:center;gap:16px}
 .price{background:var(--red);border-radius:12px;padding:10px 16px}
 .price small{display:block;font-size:11px;font-weight:800;letter-spacing:1px}
-.price b{font:400 34px/1 var(--head)}
+.price b{font:800 34px/1 var(--head)}
 .price s{font-size:14px;opacity:.75;margin-left:6px}
 .reassure{display:flex;flex-wrap:wrap;gap:6px 16px;margin-top:14px;font-size:13px;color:var(--muted)}
 .reassure span::before{content:"✓ ";color:var(--green);font-weight:800}
@@ -97,7 +98,7 @@ nav .btn{padding:10px 16px;font-size:14px;color:#04210f}
 .brand-row{display:flex;flex-wrap:wrap;justify-content:center;gap:12px}
 .brand{background:#fff;border-radius:10px;min-width:96px;height:52px;display:grid;place-items:center;padding:8px 14px}
 .brand img{max-height:34px;width:auto;object-fit:contain}
-.brand.txt{color:var(--ink);font:400 24px/1 var(--head);letter-spacing:1px}
+.brand.txt{color:var(--ink);font:800 24px/1 var(--head);letter-spacing:1px}
 
 /* Modelo 3D interactivo */
 .model-section{background:linear-gradient(135deg,#21121a,#160d12 62%,#132a45);border-block:1px solid var(--line)}
@@ -137,10 +138,10 @@ nav .btn{padding:10px 16px;font-size:14px;color:#04210f}
 .av-player.doc{aspect-ratio:auto;height:62vh;min-height:380px}
 .av-player iframe{width:100%;height:100%;border:0;display:block}
 .av-lock{position:absolute;inset:0;display:grid;place-items:center;text-align:center;padding:18px;background:radial-gradient(circle at 50% 40%,#3a1f2b,#120a0f 75%)}
-.av-lock .ic{font-size:40px}.av-lock h4{margin:6px 0 4px;font:400 26px/1.1 var(--head);letter-spacing:.5px;color:#fff}.av-lock p{margin:0 0 12px;color:var(--muted);font-size:15px}
+.av-lock .ic{font-size:40px}.av-lock h4{margin:6px 0 4px;font:800 26px/1.1 var(--head);letter-spacing:.5px;color:#fff}.av-lock p{margin:0 0 12px;color:var(--muted);font-size:15px}
 .av-lock .row{display:flex;gap:8px;justify-content:center;flex-wrap:wrap}
 .av-meta{margin:12px 0 4px;color:var(--orange2);font-weight:800;font-size:12px;letter-spacing:1.4px;text-transform:uppercase}
-.av-title{margin:0 0 10px;font:400 clamp(22px,3vw,30px)/1.15 var(--head);letter-spacing:.3px;color:var(--text)}
+.av-title{margin:0 0 10px;font:800 clamp(22px,3vw,30px)/1.15 var(--head);letter-spacing:.3px;color:var(--text)}
 .av-ctrls{display:flex;flex-wrap:wrap;gap:8px}
 .av-btn{border:1px solid var(--line);background:var(--card);color:var(--text);padding:10px 14px;border-radius:12px;font:700 15px var(--body);text-decoration:none;cursor:pointer}
 .av-btn.pri{background:var(--orange);border-color:var(--orange);color:#1a0b00}.av-btn.done{background:#123a22;border-color:#2b7a48;color:#c9f7d8}.av-btn:disabled{opacity:.4;cursor:default}
@@ -160,9 +161,10 @@ nav .btn{padding:10px 16px;font-size:14px;color:#04210f}
 .av-ck{flex:none;width:19px;height:19px;border-radius:50%;border:2px solid #6a4555;display:grid;place-items:center;font-size:10px;margin-top:1px}
 .av-le.seen .av-ck{background:#25d366;border-color:#25d366;color:#04210f}.av-le.seen .av-ck::after{content:'✓';font-weight:900}
 .av-le .lk{flex:none;font-size:12px;margin-top:2px;opacity:.7}
-.av-free{flex:none;font-size:10.5px;font-weight:900;color:#1a0b00;background:var(--orange2);border-radius:6px;padding:2px 6px;margin-left:auto}
+.av-free{flex:none;font-size:10.5px;font-weight:900;color:#1a0b00;background:var(--orange2);border-radius:6px;padding:2px 6px;margin-left:6px}
+.av-le>span:nth-child(2){flex:1}.dur{flex:none;margin-left:auto;font-size:12px;color:var(--muted);font-variant-numeric:tabular-nums;padding-top:1px}
 @media(max-width:900px){.av{grid-template-columns:1fr}.av-side{max-height:520px}}
-@media(max-width:520px){.av-player{min-height:250px}}
+@media(max-width:520px){.av-player{aspect-ratio:4/3}}
 @media(max-width:520px){.av-ctrls{display:grid;grid-template-columns:1fr 1fr}.av-btn{text-align:center;padding:11px 8px;font-size:14px}#avPrev{order:1}#avNext{order:2}#avMark{order:3}#avOpen{order:4}}
 [hidden]{display:none!important}
 
@@ -198,7 +200,7 @@ nav .btn{padding:10px 16px;font-size:14px;color:#04210f}
 .offer ul{list-style:none;padding:0;margin:16px 0}
 .offer li{padding:8px 0;border-bottom:1px solid #e4e9f0}
 .offer li::before{content:"✓ ";color:#16a34a;font-weight:800}
-.offer .big{font:400 56px/1 var(--head)}
+.offer .big{font:800 56px/1 var(--head)}
 .offer .big small{font-size:22px}
 .offer .muted{color:#55657a;font-size:14px}
 .pay{display:flex;flex-direction:column;gap:10px;margin-top:18px}
@@ -226,7 +228,7 @@ footer.site .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:
 
 /* Barra fija de compra en móvil */
 .mbar{position:fixed;left:0;right:0;bottom:0;z-index:30;background:var(--navy2);border-top:1px solid var(--line);padding:10px 16px;display:none;align-items:center;justify-content:space-between;gap:12px}
-.mbar b{font:400 24px/1 var(--head)}
+.mbar b{font:800 24px/1 var(--head)}
 .mbar small{display:block;color:var(--muted);font-size:11px}
 .mbar .btn{padding:12px 16px}
 @media(max-width:760px){.mbar{display:flex}}
@@ -301,7 +303,7 @@ footer.site{font-size:14px}.mbar small{font-size:13px}
 .topbar b{font-variant-numeric:tabular-nums;background:rgba(0,0,0,.22);border-radius:6px;padding:2px 7px;margin-left:4px;white-space:nowrap}
 .cd{display:flex;gap:8px;margin:12px 0 4px}
 .cd div{background:var(--navy);color:#fff;border-radius:10px;min-width:62px;padding:8px 6px;text-align:center}
-.cd b{display:block;font:400 30px/1 var(--head);font-variant-numeric:tabular-nums}
+.cd b{display:block;font:800 30px/1 var(--head);font-variant-numeric:tabular-nums}
 .cd span{font-size:11px;font-weight:700;letter-spacing:1px;text-transform:uppercase;opacity:.75}
 .cd-ended .cd,.cd-ended .topbar,.cd-ended .mbar-cd{display:none}
 .mbar-cd{color:var(--orange2)!important;font-weight:700}
@@ -314,7 +316,7 @@ footer.site{font-size:14px}.mbar small{font-size:13px}
 .route::after{content:"";position:absolute;top:27px;left:8%;height:4px;border-radius:4px;width:var(--fill,0%);max-width:84%;background:linear-gradient(90deg,var(--orange2),var(--orange));transition:width 1.6s cubic-bezier(.2,.8,.2,1)}
 .route li{position:relative;z-index:1;text-align:center;opacity:0;transform:translateY(18px);transition:opacity .5s,transform .5s}
 .route.show li{opacity:1;transform:none}
-.route li .n{width:58px;height:58px;margin:0 auto 12px;border-radius:50%;display:grid;place-items:center;background:var(--navy);border:3px solid var(--orange);font:400 26px/1 var(--head);color:var(--orange2);box-shadow:0 0 0 6px rgba(255,77,61,.12)}
+.route li .n{width:58px;height:58px;margin:0 auto 12px;border-radius:50%;display:grid;place-items:center;background:var(--navy);border:3px solid var(--orange);font:800 26px/1 var(--head);color:var(--orange2);box-shadow:0 0 0 6px rgba(255,77,61,.12)}
 .route li h3{font-size:17px;margin-bottom:6px}
 .route li p{color:var(--muted);font-size:14px;margin:0 0 10px}
 .route li button{background:transparent;border:1px solid var(--line);color:var(--orange2);border-radius:999px;padding:6px 12px;font:700 13px var(--body);cursor:pointer}
@@ -345,7 +347,7 @@ footer.site{font-size:14px}.mbar small{font-size:13px}
 .compare{width:100%;border-collapse:separate;border-spacing:0;margin-top:30px;font-size:15px}
 .compare th,.compare td{padding:14px 12px;border-bottom:1px solid var(--line);text-align:center}
 .compare th:first-child,.compare td:first-child{text-align:left;color:var(--muted);font-weight:600}
-.compare thead th{font:400 20px/1.1 var(--head);letter-spacing:.5px;text-transform:uppercase;color:var(--text)}
+.compare thead th{font:800 20px/1.1 var(--head);letter-spacing:.5px;text-transform:uppercase;color:var(--text)}
 .compare .us{background:rgba(255,77,61,.10);border-left:2px solid var(--orange);border-right:2px solid var(--orange)}
 .compare thead .us{background:var(--orange);color:#1a0b00;border-radius:14px 14px 0 0;border-top:2px solid var(--orange)}
 .compare tbody tr:last-child .us{border-bottom:2px solid var(--orange);border-radius:0 0 14px 14px}
@@ -471,6 +473,96 @@ main,footer.site{position:relative;z-index:1}
 @keyframes warm-drift{0%{transform:translate3d(0,0,0) scale(.94)}50%{transform:translate3d(24vw,13vh,0) scale(1.05)}100%{transform:translate3d(44vw,4vh,0) scale(.98)}}
 @keyframes button-shine{0%,65%{left:-80%}100%{left:130%}}
 @keyframes button-pulse{0%,100%{box-shadow:0 0 0 0 rgba(34,197,94,.18)}50%{box-shadow:0 0 0 6px rgba(34,197,94,0)}}
+
+/* ===== Rediseño plataforma ===== */
+h2{text-transform:none;letter-spacing:-.025em;line-height:1.08}
+.hero h1{text-transform:none;letter-spacing:-.03em;font-size:clamp(38px,5.4vw,64px);line-height:1.02}
+.logo b{letter-spacing:-.3px;font-size:19px}
+.stat b,.price b,.offer .big,.cd b,.mbar b{letter-spacing:-.02em}
+.av-title,.av-lock h4{letter-spacing:-.02em}
+.btn-ghost{background:transparent;color:var(--text);border:1.5px solid var(--line)}.btn-ghost:hover{border-color:var(--orange2)}
+.price-row .btns{display:flex;gap:10px;flex-wrap:wrap}
+/* portada con mockup del aula */
+.mock{position:relative;padding:10px 54px 64px 0}
+.laptop .scr{background:#0c0709;border:10px solid #2a1c22;border-bottom-width:14px;border-radius:16px 16px 6px 6px;box-shadow:0 30px 60px #0008,0 0 0 1px #4a2a39;overflow:hidden}
+.laptop .scr img{display:block;width:100%;height:auto}
+.laptop .base{height:14px;margin:0 -6%;background:linear-gradient(#3b2a31,#1d1317);border-radius:0 0 18px 18px;box-shadow:0 10px 24px #0007}
+.phone{position:absolute;right:-2%;bottom:0;width:21%;border:7px solid #2a1c22;border-radius:26px;overflow:hidden;box-shadow:0 24px 50px #000a,0 0 0 1px #4a2a39;background:#0c0709;animation:mockup-float 6s ease-in-out infinite}
+.phone img{display:block;width:100%;height:auto}
+.mock .seal{top:-6px;left:-14px;right:auto}
+@media(min-width:861px){.mock{width:122%;margin-right:-22%}}
+@media(max-width:860px){.mock{padding:0 26px 34px 0}}
+/* marcas como logos */
+.brand{background:transparent;min-width:0;height:auto;padding:4px 10px}
+.brand.txt{color:#9c8590;font-size:22px;letter-spacing:.5px;opacity:.9}
+/* catálogo */
+.cat-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:26px}
+.ccard{background:var(--card);border:1px solid var(--line);border-radius:18px;overflow:hidden;display:flex;flex-direction:column;transition:transform .2s,box-shadow .2s}
+.ccard:hover{transform:translateY(-4px);box-shadow:0 18px 40px #0007}
+.ccover{aspect-ratio:16/9;position:relative;display:grid;place-items:center;overflow:hidden}
+.ccover img{width:100%;height:100%;object-fit:cover}
+.ccover .lvl{position:absolute;left:12px;top:12px;background:#0009;color:#fff;font-size:12px;font-weight:800;padding:4px 9px;border-radius:99px;backdrop-filter:blur(4px)}
+.cbody{padding:16px 18px 18px;display:flex;flex-direction:column;gap:6px;flex:1}
+.cbody h3{font:800 19px/1.2 var(--head);letter-spacing:-.02em;margin:0}
+.cbody p{margin:0;color:var(--muted);font-size:14.5px;flex:1}
+.cmeta{display:flex;gap:12px;flex-wrap:wrap;font-size:13px;color:var(--orange2);font-weight:700;margin-top:4px}
+.cbody .btn{margin-top:10px;padding:11px 16px;font-size:15px}
+@media(max-width:900px){.cat-grid{grid-template-columns:1fr}}
+/* recorridos dentro del aula */
+.av-pv{display:flex;gap:8px;flex-wrap:wrap;margin:0 0 12px}
+.av-pv button{border:1px solid var(--line);background:var(--card);color:var(--text);border-radius:999px;padding:8px 14px;font:700 14px var(--body);cursor:pointer}
+.av-pv button.on{border-color:var(--orange2);background:#3a1f2b}
+.av-player video{width:100%;height:100%;display:block;background:#000;object-fit:contain}
+/* precio con un solo color de compra */
+.offer{border:1px solid #ece4e7;animation:none;box-shadow:0 24px 60px #0006}
+.btn-pay{background:var(--green);color:#04210f}
+.btn-pay:hover{filter:brightness(1.06) drop-shadow(0 5px 9px rgba(34,197,94,.4))}
+.pay .btn-buy{background:#fff;color:var(--ink);border:2px solid #e3dade;animation:none}
+.guarantee{background:#f3faf5;border:1px solid #cfe9d8;color:#1d3b2a;box-shadow:none}
+/* tu guía */
+.guide{display:grid;grid-template-columns:auto 1fr;gap:26px;align-items:center;background:var(--card);border:1px solid var(--line);border-radius:22px;padding:28px;margin-top:24px}
+.guide .ph{width:150px;height:150px;border-radius:50%;background:linear-gradient(135deg,var(--orange),var(--orange2));display:grid;place-items:center;font:800 60px var(--head);color:#fff;overflow:hidden;box-shadow:0 0 0 6px #3a1f2b}
+.guide .ph img{width:100%;height:100%;object-fit:cover}
+.guide h3{font:800 24px/1.2 var(--head);letter-spacing:-.02em;margin:0}
+.guide .role{color:var(--orange2);font-weight:800;margin:4px 0 10px}
+.guide p{margin:0 0 8px;color:var(--muted)}
+.guide .chips2{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}.guide .chips2 span{border:1px solid var(--line);border-radius:999px;padding:6px 12px;font-size:13.5px;font-weight:700}
+@media(max-width:700px){.guide{grid-template-columns:1fr;text-align:center}.guide .ph{margin:auto;width:120px;height:120px}.guide .chips2{justify-content:center}}
+@media(max-width:900px){.av{grid-template-columns:minmax(0,1fr)!important}}
+@media(max-width:600px){.hero h1{font-size:38px}h2{font-size:30px}.av-pv{flex-wrap:nowrap;overflow-x:auto;padding-bottom:4px}.av-pv button{white-space:nowrap}}
+
+/* portada del reproductor */
+.av-cover{position:absolute;inset:0;width:100%;border:0;cursor:pointer;display:grid;place-content:center;justify-items:center;gap:8px;padding:20px;text-align:center;color:#fff;background:radial-gradient(circle at 50% 40%,#4b1d2b,#120a0f 75%) center/cover no-repeat;font-family:var(--body)}
+.av-cover .pl{width:78px;height:78px;border-radius:50%;background:var(--orange);color:#1f0d15;display:grid;place-items:center;font-size:30px;padding-left:5px;box-shadow:0 10px 30px rgba(255,77,61,.5);transition:transform .2s}
+.av-cover:hover .pl{transform:scale(1.08)}.av-cover b{font:800 22px/1.2 var(--head);letter-spacing:-.02em;max-width:520px}.av-cover small{color:#e8d6dd;font-size:14px}
+.hv-cover{position:absolute;inset:0;border:0;padding:0;cursor:pointer;background:#000 center/cover no-repeat;display:grid;place-items:center}
+.hv-cover .pl{width:64px;height:64px;border-radius:50%;background:var(--orange);color:#1f0d15;display:grid;place-items:center;font-size:24px;padding-left:4px;box-shadow:0 10px 30px rgba(255,77,61,.5)}
+.hv-cover small{position:absolute;left:12px;bottom:10px;background:#000b;color:#fff;font:700 12px var(--body);padding:4px 8px;border-radius:6px}
+/* video de portada */
+.hv{position:relative;aspect-ratio:16/9;background:#000}.hv iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.hv-label{display:inline-block;margin:0 0 12px;font-size:14px;color:var(--muted);background:var(--card);border:1px solid var(--line);border-radius:999px;padding:7px 14px}.hv-label b{color:var(--text)}
+.phone{width:19%}
+/* formulario clase gratis */
+.av-lead{position:absolute;inset:0;display:grid;place-items:center;padding:16px;background:radial-gradient(circle at 50% 40%,#3a1f2b,#120a0f 75%);text-align:center}
+.av-lead form{width:100%;max-width:340px}.av-lead h4{margin:0 0 4px;font:800 22px/1.15 var(--head);letter-spacing:-.02em;color:#fff}.av-lead p{margin:0 0 12px;color:var(--muted);font-size:14px}
+.av-lead input{width:100%;margin:0 0 8px;padding:11px 13px;border-radius:10px;border:1px solid var(--line);background:#160d12;color:#fff;font:15px var(--body)}
+.av-lead button{width:100%;border:0;border-radius:10px;padding:12px;font:800 15px var(--body);background:var(--green);color:#04210f;cursor:pointer}
+.av-lead small{display:block;margin-top:8px;color:var(--muted);font-size:12px}
+/* para qué sirve cada módulo */
+.av-goal{margin:2px 8px 6px;padding:8px 10px;border-radius:9px;background:#2a1720;color:var(--muted);font-size:12.5px;line-height:1.4}.av-goal b{color:var(--orange2)}
+/* medios de pago */
+.paybadges{display:flex;flex-wrap:wrap;gap:6px;margin:10px 0 2px}.paybadges span{border:1px solid #e3dade;border-radius:8px;padding:4px 9px;font-size:12.5px;font-weight:700;color:#4a3a42;background:#faf7f8}
+/* más opciones */
+.extras{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:26px}
+.xcard{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:24px;display:flex;flex-direction:column;gap:8px}
+.xcard.best{border-color:var(--orange2);box-shadow:0 0 0 1px var(--orange2) inset}
+.xcard .tag{align-self:flex-start;font-size:12px;font-weight:900;letter-spacing:1px;padding:4px 10px;border-radius:99px;background:var(--orange2);color:#281500}
+.xcard h3{margin:0;font:800 22px/1.2 var(--head);letter-spacing:-.02em}.xcard p{margin:0;color:var(--muted)}
+.xcard ul{margin:4px 0 0;padding-left:18px;color:var(--text);font-size:15px}
+.xprice{font:800 32px/1 var(--head);letter-spacing:-.02em;margin-top:6px}.xprice s{font:500 16px var(--body);color:var(--muted);margin-left:8px}.xprice small{display:block;font:600 13px var(--body);color:var(--green);margin-top:4px}
+.xcard .btn{margin-top:auto;align-self:flex-start}
+@media(max-width:800px){.extras{grid-template-columns:1fr}}
+.launch-only{} html.cd-ended .launch-only{display:none!important} .after-launch{display:none!important} html.cd-ended .after-launch{display:revert!important}
 </style>
 <!-- Meta Pixel: reemplaza TU_PIXEL_ID por el ID de tu píxel y quita los comentarios para activarlo
 <script>
@@ -496,10 +588,9 @@ fbq('init','TU_PIXEL_ID');fbq('track','PageView');fbq('track','ViewContent',{con
 <header>
   <div class="topbar">🔥 <span class="tb-long">Precio de lanzamiento </span><span style="white-space:nowrap">$49.990 termina en</span> <b data-cd="short">—</b></div>
   <div class="wrap">
-    <a class="logo" href="#inicio"><img src="assets/aprende-caldera-mark.svg" alt="Logo de Aprende Caldera"><b>APRENDE CALDERA</b></a>
+    <a class="logo" href="#inicio"><img src="assets/aprende-caldera-mark.svg" alt="Logo de Aprende Caldera"><b>Aprende Caldera</b></a>
     <nav>
-      <a href="#muestras">Muestras</a>
-      <a href="#ruta">Ruta</a>
+      <a href="#cursos">Cursos</a>
       <a href="#logica">Lógica</a>
       <a href="#temario">Aula</a>
       <a href="cuenta/?next=/%23temario" id="navLogin">Ingresar</a>
@@ -516,7 +607,7 @@ fbq('init','TU_PIXEL_ID');fbq('track','PageView');fbq('track','ViewContent',{con
   <div class="wrap">
     <div>
       <span class="eyebrow">Formación técnica en calderas</span>
-      <h1>Aprende desde cero.<br><span>Refuerza tu experiencia.</span></h1>
+      <h1>Aprende a reparar<br><span>calderas murales</span></h1>
       <p class="lead">Dos cursos completos en video, caldera mural tradicional y caldera de condensación, más manuales de las marcas que más se ven y una comunidad privada de WhatsApp donde técnicos resuelven casos reales.</p>
       <p class="creator"><i>🛡️</i>Seleccionado y organizado por un instalador de gas autorizado SEC Clase 3, con +15 años en terreno.</p>
       <div class="stats">
@@ -527,67 +618,12 @@ fbq('init','TU_PIXEL_ID');fbq('track','PageView');fbq('track','ViewContent',{con
       </div>
       <div class="price-row">
         <div class="price"><small>PRECIO DE LANZAMIENTO</small><span class="discount">58% DCTO</span><br><b>$49.990</b> CLP <s>luego $119.990</s><span class="price-deadline">Oferta válida hasta el 30 de noviembre · luego sube a $119.990</span></div>
-        <a class="btn btn-buy" href="#precio">Quiero acceder →</a>
+        <div class="btns"><a class="btn btn-buy" href="#precio">Quiero acceder →</a><a class="btn btn-ghost" href="#temario" data-free-go>▶ Ver clase gratis</a></div>
       </div>
       <div class="reassure"><span>Pago único</span><span>Acceso permanente</span><span>Nuevos materiales sin costo</span></div>
     </div>
-    <div class="hero-img">
-      <div class="seal" aria-label="Pago único, acceso permanente"><span>Pago único<br>Acceso permanente</span></div>
-      <svg class="hero-svg" viewBox="0 0 560 470" role="img" aria-label="Ilustración de una caldera mural conectada a un radiador">
-        <defs>
-          <linearGradient id="hbBody" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#ffffff"/><stop offset="1" stop-color="#d9cfd3"/></linearGradient>
-          <linearGradient id="hbRad" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ff7a5c"/><stop offset="1" stop-color="#c8263a"/></linearGradient>
-          <linearGradient id="hbFl" x1="0" y1="1" x2="0" y2="0"><stop offset="0" stop-color="#5aa9ff"/><stop offset=".45" stop-color="#ffb347"/><stop offset="1" stop-color="#ff4d3d" stop-opacity=".2"/></linearGradient>
-          <radialGradient id="hbGlow"><stop offset="0" stop-color="#ff4d3d" stop-opacity=".35"/><stop offset="1" stop-color="#ff4d3d" stop-opacity="0"/></radialGradient>
-        </defs>
-        <style>
-          .hb-fl{transform-box:fill-box;transform-origin:center bottom;animation:hbFl 1.1s ease-in-out infinite alternate}
-          .hb-fl:nth-child(2){animation-delay:.3s}.hb-fl:nth-child(3){animation-delay:.6s}.hb-fl:nth-child(4){animation-delay:.15s}
-          @keyframes hbFl{from{transform:scaleY(.82)}to{transform:scaleY(1.12)}}
-          .hb-wave{fill:none;stroke:#ff8a6b;stroke-width:4;stroke-linecap:round;opacity:0;animation:hbWave 3s ease-in infinite}
-          .hb-wave:nth-of-type(2){animation-delay:1s}.hb-wave:nth-of-type(3){animation-delay:2s}
-          @keyframes hbWave{0%{opacity:0;transform:translateY(0)}25%{opacity:.9}100%{opacity:0;transform:translateY(-46px)}}
-          .hb-flow{stroke-dasharray:6 10;animation:flow 1.2s linear infinite}
-          .hb-dig{animation:hbDig 2.4s ease-in-out infinite alternate}
-          @keyframes hbDig{from{opacity:.75}to{opacity:1}}
-          @media (prefers-reduced-motion:reduce){.hb-fl,.hb-wave,.hb-flow,.hb-dig{animation:none}.hb-wave{opacity:.6}}
-        </style>
-        <circle cx="290" cy="210" r="210" fill="url(#hbGlow)"/>
-        <!-- ducto -->
-        <rect x="262" y="6" width="40" height="40" rx="6" fill="#8d8288"/><rect x="256" y="2" width="52" height="10" rx="4" fill="#a99ea4"/>
-        <!-- cuerpo -->
-        <rect x="170" y="40" width="224" height="296" rx="24" fill="url(#hbBody)"/>
-        <rect x="170" y="40" width="224" height="26" rx="12" fill="#efe8ea"/>
-        <!-- visor con llama -->
-        <rect x="232" y="86" width="100" height="70" rx="12" fill="#1a0e14"/>
-        <g fill="url(#hbFl)"><path class="hb-fl" d="M250 148q6-34 0-48q14 18 8 48z"/><path class="hb-fl" d="M272 148q6-38 0-54q14 22 8 54z"/><path class="hb-fl" d="M294 148q6-38 0-54q14 22 8 54z"/><path class="hb-fl" d="M316 148q4-30 0-42q12 16 6 42z"/></g>
-        <rect x="244" y="148" width="78" height="6" rx="3" fill="#5b5f6a"/>
-        <!-- display -->
-        <rect x="204" y="180" width="156" height="66" rx="12" fill="#1a0e14"/>
-        <text class="hb-dig" x="300" y="228" text-anchor="middle" font-family="Impact,'Arial Narrow',Arial,sans-serif" font-size="40" fill="#ff4d3d" style="filter:drop-shadow(0 0 6px #ff4d3d)">60°</text>
-        <path d="M226 226q5-22 0-30q10 12 6 30z" fill="#ffb347"/>
-        <g fill="#7ec3ff"><rect x="334" y="200" width="5" height="26" rx="2"/><rect x="342" y="200" width="5" height="26" rx="2"/><rect x="350" y="200" width="5" height="26" rx="2"/></g>
-        <!-- perillas -->
-        <circle cx="236" cy="286" r="17" fill="#cfc4c9"/><circle cx="236" cy="286" r="10" fill="#f6f1f3"/><path d="M236 276v8" stroke="#6e5c64" stroke-width="3" stroke-linecap="round"/>
-        <circle cx="328" cy="286" r="17" fill="#cfc4c9"/><circle cx="328" cy="286" r="10" fill="#f6f1f3"/><path d="M335 280l-5 5" stroke="#6e5c64" stroke-width="3" stroke-linecap="round"/>
-        <rect x="262" y="279" width="40" height="14" rx="7" fill="#e8dfe3"/><circle cx="294" cy="286" r="4" fill="#25d366"/>
-        <!-- conexiones -->
-        <g stroke-width="10" stroke-linecap="round">
-          <path d="M204 336v58" stroke="#ff4d3d"/><path d="M238 336v58" stroke="#ff9466"/><path d="M282 336v58" stroke="#ffcc3d"/><path d="M326 336v58" stroke="#5aa9ff"/><path d="M360 336v74H486V350" stroke="#ff4d3d" fill="none"/>
-        </g>
-        <path class="hb-flow" d="M360 336v74H486V350" stroke="#ffd2c4" stroke-width="3" fill="none"/>
-        <g fill="#b9adb3"><rect x="196" y="388" width="16" height="10" rx="3"/><rect x="230" y="388" width="16" height="10" rx="3"/><rect x="274" y="388" width="16" height="10" rx="3"/><rect x="318" y="388" width="16" height="10" rx="3"/></g>
-        <!-- radiador -->
-        <g fill="url(#hbRad)"><rect x="424" y="200" width="18" height="150" rx="9"/><rect x="446" y="200" width="18" height="150" rx="9"/><rect x="468" y="200" width="18" height="150" rx="9"/><rect x="490" y="200" width="18" height="150" rx="9"/><rect x="512" y="200" width="18" height="150" rx="9"/></g>
-        <rect x="420" y="222" width="114" height="8" rx="4" fill="#a81d30"/><rect x="420" y="320" width="114" height="8" rx="4" fill="#a81d30"/>
-        <path class="hb-wave" d="M448 186q-8-10 0-20t0-20"/><path class="hb-wave" d="M478 186q-8-10 0-20t0-20"/><path class="hb-wave" d="M508 186q-8-10 0-20t0-20"/>
-        <!-- etiquetas -->
-        <g font-family="Inter,'Segoe UI',Arial,sans-serif" font-weight="800">
-          <rect x="6" y="96" width="140" height="44" rx="22" fill="#2c1822" stroke="#ff4d3d" stroke-width="2"/><text x="76" y="124" text-anchor="middle" font-size="16" fill="#fff">▶ 86 videos</text>
-          <rect x="0" y="232" width="156" height="44" rx="22" fill="#2c1822" stroke="#ffb347" stroke-width="2"/><text x="78" y="260" text-anchor="middle" font-size="16" fill="#fff">📘 +50 manuales</text>
-          <rect x="398" y="400" width="150" height="44" rx="22" fill="#2c1822" stroke="#25d366" stroke-width="2"/><text x="473" y="428" text-anchor="middle" font-size="16" fill="#fff">💬 +200 técnicos</text>
-        </g>
-      </svg>
+    <div class="hero-img"><div class="hv-label">▶ Clase gratis del módulo 1 · <b>Retorno de inversión y herramientas</b></div>
+      <div class="mock"><div class="laptop"><div class="scr"><div class="hv" id="hv"><button type="button" class="hv-cover" style="background-image:linear-gradient(#0005,#0008),url(assets/aula-desk.jpg)" onclick="this.parentElement.innerHTML='<iframe src=&quot;https://drive.google.com/file/d/1ruc1d7WAtW_5Tv1Pp3IIgBc_UMaOyzTw/preview&quot; allow=&quot;autoplay; fullscreen&quot; allowfullscreen title=&quot;Clase gratis&quot;></iframe>'"><span class="pl">▶</span><small>2:23 · Clase gratis</small></button></div></div><div class="base"></div></div><div class="phone"><img src="assets/aula-mob.jpg" alt="Aula virtual en el celular" width="780" height="1600"></div></div>
 
     </div>
   </div>
@@ -621,64 +657,68 @@ fbq('init','TU_PIXEL_ID');fbq('track','PageView');fbq('track','ViewContent',{con
 </div>
 
 <!-- Muestras: recorridos + clase gratis -->
-<section id="muestras">
-  <div class="wrap">
-    <span class="eyebrow">Antes de comprar</span>
-    <h2>Mira lo que <em>recibes</em></h2>
-    <p class="lead">Un recorrido por la biblioteca, una clase completa y la comunidad, tal como se ven por dentro.</p>
-    <div class="grid3">
-      <div class="card">
-        <div class="video"><video src="assets/drive-por-dentro.mp4" poster="assets/drive-poster.jpg" controls playsinline preload="none" title="Recorrido por la carpeta de Drive de Aprende Caldera"></video></div>
-        <h3>El Drive por dentro</h3>
-        <p>Un recorrido real por la biblioteca: los cursos, los módulos y cómo se ven los videos.</p>
-      </div>
-      <div class="card">
-        <div class="video"><iframe src="https://drive.google.com/file/d/1_RZRhh4cHvqn5bWh13bgh4bxyUYhvR1W/preview" title="Clase de muestra: lógica de funcionamiento de una caldera mural" loading="lazy" allow="autoplay"></iframe></div>
-        <h3>Clase gratis: lógica de funcionamiento</h3>
-        <p>La clase del módulo 3 de caldera tradicional, completa. Mira cómo se explica y la calidad del material.</p>
-        <a class="link" href="https://drive.google.com/file/d/1_RZRhh4cHvqn5bWh13bgh4bxyUYhvR1W/view" target="_blank" rel="noopener">¿No carga? Ábrelo en Drive ↗</a>
-      </div>
-      <div class="card">
-        <div class="video"><iframe src="https://drive.google.com/file/d/15Y5SWOG8sZWOOp-M9GoqlcRhjk7KLct8/preview" title="Recorrido por la comunidad" loading="lazy" allow="autoplay"></iframe></div>
-        <h3>La comunidad por dentro</h3>
-        <p>El tipo de casos, fallas y soluciones que comparten los técnicos.</p>
-        <a class="link" href="https://drive.google.com/file/d/15Y5SWOG8sZWOOp-M9GoqlcRhjk7KLct8/view" target="_blank" rel="noopener">¿No carga? Ábrelo en Drive ↗</a>
-      </div>
-    </div>
-  </div>
-</section>
+
 
 
 
 <!-- Biblioteca vista en el celular -->
-<section id="biblioteca">
-  <div class="wrap lib" id="lib">
-    <div>
-      <span class="eyebrow">Así la recibes</span>
-      <h2>Tu biblioteca, <em>en el bolsillo</em></h2>
-      <p class="lead">Apenas confirmamos tu pago, te damos acceso a una carpeta de Google Drive ordenada por curso y módulo. La abres desde el celular o el computador, cuando quieras.</p>
-      <ul class="lib-points">
-        <li>Caldera tradicional (6 módulos) y caldera de condensación (3 módulos)</li>
-        <li>Manuales y programación por marca: Baxi, Ariston, Caldaia, Peisa, Immergas y más</li>
-        <li>Videos y PDF listos para ver o descargar</li>
-        <li>La encuentras siempre en “Compartidos conmigo”</li>
-      </ul>
-    </div>
-    <div class="phone" aria-label="Vista de la biblioteca en Google Drive desde un celular">
-      <div class="screen">
-        <div class="dv-top"><b>🔥 Aprende Caldera</b><div class="dv-search">Buscar en la carpeta</div></div>
-        <div class="dv-body" id="dvBody">
-          <div class="dv-h">Carpetas</div>
-          <div class="dv-grid"><div class="dv-f">CALDERA TRADICIONAL</div><div class="dv-f">CALDERA CONDENSACIÓN</div><div class="dv-f">Material complementario</div></div>
-          <div class="dv-h">Archivos</div>
-          <div id="dvFiles"></div>
-        </div>
-      </div>
+
+
+<!-- Lógica de funcionamiento animada -->
+<!-- Catálogo de cursos -->
+<section id="cursos" style="background:var(--navy2)">
+  <div class="wrap">
+    <span class="eyebrow">Lo que incluye tu acceso</span>
+    <h2>Dos cursos completos <em>y una biblioteca</em></h2>
+    <p class="lead">Todo en un solo pago. Entras con tu cuenta y avanzas a tu ritmo, desde el celular o el computador.</p>
+    <div class="cat-grid">
+      <article class="ccard"><div class="ccover" style="background:radial-gradient(circle at 50% 45%,#4b1d2b,#160d12 75%)"><img src="assets/caldera.svg" alt="" style="object-fit:contain;padding:14px"><span class="lvl">Desde cero</span></div>
+        <div class="cbody"><h3>Caldera mural tradicional</h3><p>Componentes, mediciones con tester, mantención, programación y diagnóstico de fallas, con equipos reales de varias marcas.</p>
+        <div class="cmeta"><span>▶ 73 lecciones</span><span>⏱ 5 h 54 min</span><span>6 módulos</span></div><button type="button" class="btn btn-ghost" data-cat="TRADICIONAL">Ver temario →</button></div></article>
+      <article class="ccard"><div class="ccover" style="background:#21121a"><img src="assets/aula-desk.jpg" alt="" style="object-position:20% 30%;transform:scale(1.6);transform-origin:30% 35%"><span class="lvl">Intermedio</span></div>
+        <div class="cbody"><h3>Caldera de condensación</h3><p>Lógica de funcionamiento, tratamiento de agua, ventilación, mantención, primer encendido e instalación.</p>
+        <div class="cmeta"><span>▶ 13 lecciones</span><span>⏱ 1 h 13 min</span><span>3 módulos</span></div><button type="button" class="btn btn-ghost" data-cat="CONDENSACION">Ver temario →</button></div></article>
+      <article class="ccard"><div class="ccover" style="background:linear-gradient(135deg,#2c1822,#3a1f2b)"><div style="display:flex;gap:10px">
+          <span style="width:64px;height:84px;background:#fff;border-radius:8px;display:grid;place-items:center;color:#e11d2e;font:800 15px var(--head);transform:rotate(-8deg);box-shadow:0 10px 20px #0006">PDF</span>
+          <span style="width:64px;height:84px;background:#fff;border-radius:8px;display:grid;place-items:center;color:#e11d2e;font:800 15px var(--head);box-shadow:0 10px 20px #0006">PDF</span>
+          <span style="width:64px;height:84px;background:#fff;border-radius:8px;display:grid;place-items:center;color:#e11d2e;font:800 15px var(--head);transform:rotate(8deg);box-shadow:0 10px 20px #0006">PDF</span></div><span class="lvl">Consulta</span></div>
+        <div class="cbody"><h3>Manuales y programación</h3><p>Manuales técnicos y de programación de Baxi, Ariston, Caldaia, Peisa, Immergas, Roca, BGH/Ferroli y más.</p>
+        <div class="cmeta"><span>📄 59 documentos</span><span>+10 marcas</span></div><button type="button" class="btn btn-ghost" data-cat="MANUALES">Ver documentos →</button></div></article>
     </div>
   </div>
 </section>
 
-<!-- Lógica de funcionamiento animada -->
+<!-- Aula virtual dentro de la web -->
+<section id="temario">
+  <div class="wrap">
+    <span class="eyebrow">Aula virtual</span>
+    <h2>Explora el aula <em>por dentro</em></h2>
+    <p class="lead">Todas las lecciones a la vista. La clase marcada como <b style="color:var(--orange2)">GRATIS</b> la puedes ver ahora; el resto se desbloquea al comprar.</p>
+    <div class="av-acc" id="avAcc"><span id="avAccTxt">¿Ya eres alumno?</span><span class="av-acc-b" id="avAccB"><a class="av-mini" href="cuenta/?next=/%23temario">Ingresar</a><a class="av-mini pri" href="cuenta/?modo=registro&next=/%23temario">Crear cuenta</a></span></div>
+    <div class="av-pv" id="avPv"><button type="button" data-pv="free" class="on">▶ Clase gratis</button><button type="button" data-pv="drive">📁 El Drive por dentro</button><button type="button" data-pv="comm">💬 La comunidad por dentro</button></div>
+    <div class="av-tabs" id="avTabs"></div>
+    <input id="q" class="av-q" type="search" placeholder="Buscar lección: NTC, flujostato, Baxi, programación…" aria-label="Buscar en el aula">
+    <div class="av">
+      <div class="av-main">
+        <div class="av-player" id="avPlayer"></div>
+        <div class="av-meta" id="avMeta"></div>
+        <h3 class="av-title" id="avTitle"></h3>
+        <div class="av-ctrls" id="avCtrls" hidden>
+          <button type="button" class="av-btn" id="avPrev">← Anterior</button>
+          <button type="button" class="av-btn" id="avMark">Marcar como vista</button>
+          <button type="button" class="av-btn pri" id="avNext">Siguiente →</button>
+          <a class="av-btn" id="avOpen" target="_blank" rel="noopener">Abrir en Drive ↗</a>
+        </div>
+        <div class="av-certs" id="avCerts" hidden><b>🎓 Tus certificados</b><div id="avCertRows"></div></div>
+      </div>
+      <aside class="av-side">
+        <div class="av-side-h"><b id="avSName"></b><span id="avSTxt"></span><div class="av-bar"><i id="avSBar"></i></div></div>
+        <div class="av-list" id="avList"></div>
+      </aside>
+    </div>
+  </div>
+</section>
+
 <section id="logica" style="background:var(--navy2)">
   <div class="wrap">
     <span class="eyebrow">Entiende, no memorices</span>
@@ -762,35 +802,7 @@ fbq('init','TU_PIXEL_ID');fbq('track','PageView');fbq('track','ViewContent',{con
   </div>
 </section>
 
-<!-- Aula virtual dentro de la web -->
-<section id="temario" style="background:var(--navy2)">
-  <div class="wrap">
-    <span class="eyebrow">Aula virtual</span>
-    <h2>Explora el aula <em>por dentro</em></h2>
-    <p class="lead">Todas las lecciones a la vista. La clase marcada como <b style="color:var(--orange2)">GRATIS</b> la puedes ver ahora; el resto se desbloquea al comprar.</p>
-    <div class="av-acc" id="avAcc"><span id="avAccTxt">¿Ya eres alumno?</span><span class="av-acc-b" id="avAccB"><a class="av-mini" href="cuenta/?next=/%23temario">Ingresar</a><a class="av-mini pri" href="cuenta/?modo=registro&next=/%23temario">Crear cuenta</a></span></div>
-    <div class="av-tabs" id="avTabs"></div>
-    <input id="q" class="av-q" type="search" placeholder="Buscar lección: NTC, flujostato, Baxi, programación…" aria-label="Buscar en el aula">
-    <div class="av">
-      <div class="av-main">
-        <div class="av-player" id="avPlayer"></div>
-        <div class="av-meta" id="avMeta"></div>
-        <h3 class="av-title" id="avTitle"></h3>
-        <div class="av-ctrls" id="avCtrls" hidden>
-          <button type="button" class="av-btn" id="avPrev">← Anterior</button>
-          <button type="button" class="av-btn" id="avMark">Marcar como vista</button>
-          <button type="button" class="av-btn pri" id="avNext">Siguiente →</button>
-          <a class="av-btn" id="avOpen" target="_blank" rel="noopener">Abrir en Drive ↗</a>
-        </div>
-        <div class="av-certs" id="avCerts" hidden><b>🎓 Tus certificados</b><div id="avCertRows"></div></div>
-      </div>
-      <aside class="av-side">
-        <div class="av-side-h"><b id="avSName"></b><span id="avSTxt"></span><div class="av-bar"><i id="avSBar"></i></div></div>
-        <div class="av-list" id="avList"></div>
-      </aside>
-    </div>
-  </div>
-</section>
+
 
 
 
@@ -857,6 +869,7 @@ fbq('init','TU_PIXEL_ID');fbq('track','PageView');fbq('track','ViewContent',{con
           <a class="btn btn-pay" href="https://mpago.la/2XSQPaR" target="_blank" rel="noopener">Pagar con Mercado Pago <small>· $49.990</small></a>
           <a class="btn btn-buy" href="https://wa.me/56993992990?text=Hola%2C%20quiero%20comprar%20el%20acceso%20a%20Aprende%20Caldera%20(%2449.990)%20por%20transferencia" target="_blank" rel="noopener">Pagar por transferencia (WhatsApp)</a>
         </div>
+        <div class="paybadges" aria-label="Medios de pago"><span>🔒 Mercado Pago</span><span>Débito</span><span>Crédito</span><span>Transferencia</span><span>Pago único</span></div>
         <div class="abroad"><small>PAGOS DESDE OTROS PAÍSES</small><b>¿Estás fuera de Chile?</b><p>Escríbenos y te enviamos un link para pagar con tarjeta en tu moneda. El acceso te llega igual a tu correo.</p><a href="https://wa.me/56993992990?text=Hola%2C%20estoy%20fuera%20de%20Chile%20y%20quiero%20comprar%20Aprende%20Caldera.%20%C2%BFC%C3%B3mo%20pago%3F" target="_blank" rel="noopener">Pagar desde otro país →</a></div>
         <div class="guarantee"><span class="shield" aria-hidden="true">🛡️</span><span><b>Garantía de 30 días:</b> si no te convence el contenido o tienes problemas para acceder, te devolvemos tu dinero dentro de los primeros 30 días.</span></div>
         <ol class="steps">
@@ -871,6 +884,42 @@ fbq('init','TU_PIXEL_ID');fbq('track','PageView');fbq('track','ViewContent',{con
 </section>
 
 <!-- Preguntas frecuentes -->
+<!-- Más opciones -->
+<section id="extras">
+  <div class="wrap">
+    <span class="eyebrow">Para llegar más lejos</span>
+    <h2>Más opciones <em>para tu oficio</em></h2>
+    <div class="extras">
+      <article class="xcard best"><span class="tag">AHORRA</span><h3>Pack Caldera + Calefón</h3>
+        <p>Las dos bibliotecas con una sola cuenta: calderas murales y calefones, con sus certificados y la comunidad.</p>
+        <ul><li>Aprende Caldera: 86 videos + 59 manuales</li><li>Aprende Calefón: +100 videos y PDF</li><li>Comunidad de +200 técnicos</li></ul>
+        <div class="xprice launch-only">$64.990<s>$79.980</s><small>Ahorras $14.990 · solo hasta el 30 de noviembre</small></div>
+        <div class="xprice after-launch" style="font-size:22px">Precio especial por WhatsApp</div>
+        <a class="btn btn-buy" href="https://wa.me/56993992990?text=Hola%2C%20quiero%20el%20Pack%20Aprende%20Caldera%20%2B%20Aprende%20Calef%C3%B3n" target="_blank" rel="noopener">Quiero el pack →</a></article>
+      <article class="xcard"><span class="tag" style="background:var(--card);color:var(--orange2);border:1px solid var(--line)">1 A 1</span><h3>Asesoría por videollamada</h3>
+        <p>Revisamos tu caso, tu equipo o cómo partir en el rubro, directo conmigo. Ideal si quieres ir más rápido.</p>
+        <ul><li>Videollamada por WhatsApp o Meet</li><li>Casos de fallas, herramientas o cómo cobrar</li><li>Puedes sumarla a tu compra</li></ul>
+        <div class="xprice" style="font-size:22px">Consulta el valor</div>
+        <a class="btn btn-ghost" href="https://wa.me/56993992990?text=Hola%2C%20me%20interesa%20una%20asesor%C3%ADa%201%20a%201" target="_blank" rel="noopener">Consultar asesoría →</a></article>
+    </div>
+  </div>
+</section>
+
+<!-- Tu guía -->
+<section id="guia" style="background:var(--navy2)">
+  <div class="wrap">
+    <span class="eyebrow">Quién está detrás</span>
+    <h2>Tu <em>guía</em></h2>
+    <div class="guide">
+      <div class="ph">S</div>
+      <div><h3>Sebastián Lagos</h3><div class="role">Instalador de gas autorizado SEC Clase 3 · +15 años en terreno</div>
+        <p>Seleccioné y ordené este material para que aprendas calderas con una ruta clara: de los componentes básicos al diagnóstico de fallas, con equipos reales.</p>
+        <p>También dirijo <a href="https://gasfiterialagos.github.io/" target="_blank" rel="noopener" style="color:var(--orange2);font-weight:700">Gasfitería Lagos</a>, servicio técnico en Gran Concepción.</p>
+        <div class="chips2"><span>🛡️ SEC Clase 3</span><span>🔧 +15 años en terreno</span><span>💬 +200 técnicos en la comunidad</span></div></div>
+    </div>
+  </div>
+</section>
+
 <section id="faq">
   <div class="wrap">
     <span class="eyebrow">Preguntas frecuentes</span>
@@ -1026,9 +1075,9 @@ function render(){ if(window.aulaGoCat) window.aulaGoCat(st.cat); }
 <script type="module">
 const MP_LINK="https://mpago.la/2XSQPaR";
 let auth, db, isAdmin, ensureProfile, onAuthStateChanged, signOut, doc, getDoc, setDoc, serverTimestamp;
-const D={"courses":[{"name":"Caldera mural tradicional","mods":[{"n":"Módulo 1 · Bases y mediciones","l":[{"t":"Retorno de inversión y tipos de herramientas","id":"1ruc1d7WAtW_5Tv1Pp3IIgBc_UMaOyzTw"},{"t":"Introducción a la caldera mural","id":"1eeh3u_G_z-MyMCtmEGH4MDyrzzPovmA7"},{"t":"Parte hidráulica de una caldera","id":"1Mkohinr6I0e18bBDFePsX-hY4ccULKG2"},{"t":"Componentes generales de una caldera","id":"1_4lz4lQiobWBkpLAVooEOT4UFK6Lv1Tp"},{"t":"Componentes hidráulicos","id":"1CtyJQy38tlYNQMGpmB8THWd0tcutkxKt"},{"t":"Componentes eléctricos","id":"1pWiKbXeoIakCrV6-wVD3_DqEBzJdYTp6"},{"t":"Diferentes tipos de tester","id":"1uH-1shQxI74Ta_CmyLV57T-cuDNlR8Nq"},{"t":"Medición de resistencia","id":"1QFWDILpjixZt9C-D9bVJFLYfDGHh2mk5"},{"t":"Uso de continuidad","id":"1A4CKZDzL8CHx2D4OSzC0ukfMLgSJ7g9d"}]},{"n":"Módulo 2 · Componentes y cómo cambiarlos","l":[{"t":"Componente: bomba recirculadora","id":"1S9D0Rh58RxLIzhxTWqnxYEYElZasnhVe"},{"t":"Cómo cambiar bomba recirculadora","id":"1FDxWWxo4aQxfmK_-1Kwn67ij8vijo-0x"},{"t":"Componente: flujostato y Vitron","id":"1Xrr6hND3JoctFPUQXtAX4linVEKxgkv5"},{"t":"Cómo cambiar flujostato","id":"1-pSxAImCnP2iVP-IehwAEuEkdlHQeXvA"},{"t":"Flujostato Peisa trabado: falla y solución","id":"14iIPOqB-qG78z2aDYQKsTmf_tRg37l97"},{"t":"Cómo cambiar Vitron","id":"1eq_DV8jcGj50N6KycyRUrvkj7baCTlbh"},{"t":"Componente: transductor de presión","id":"1ESwKVWgAO2jtxWah46sXkoIsENdEmnFw"},{"t":"Cómo cambiar transductor de presión","id":"17g3xd2WQKlUgb4uireQyaxnkUsklHn-h"},{"t":"Componente: forzador y presostato de humo","id":"1seccnq3ZchbAgDs2omUehLjwXPCJG0Ui"},{"t":"Cómo cambiar forzador y presostato de humo","id":"16kvuzhbVuM6-nVUVZzQTmJD6fDyKpdTM"},{"t":"Componente: intercambiadores","id":"1WhGhxx5_tFDI0IebD2g5oq06LnhbnJft"},{"t":"Componente: sensor NTC","id":"1CTb12KQRLyatfBLKqKoNv2zs5Ze4086p"},{"t":"Cómo cambiar sensor NTC","id":"15zGdBsWGtZe0zeGBVGntDkBn14H-b_aC"},{"t":"Cómo cambiar sensor sumergible","id":"1IFGpDHs8PbP0-_0cC_d6X11BTH3N4c8g"},{"t":"Componente: sensor de sobretemperatura (clixon)","id":"12LDRx-JftmJYLmVBOa2IG2Y6YnKpE0ke"},{"t":"Cómo cambiar sensor de sobretemperatura (clixon)","id":"1FHPB9hRESbf59xd_MACl8G-eL0dXJBDD"},{"t":"Componente: servomotor","id":"16pMFXux4TeSuUSmGXWdSrdYj6f-Fw_jn"},{"t":"Cómo cambiar servomotor y válvula de 3 vías","id":"1G8O26qMyETMXuqveh1HmGJCFIp6as7o4"},{"t":"Componente: sonda y electrodos","id":"12Y9Nd-leWSJ1zyk7-19j8ouhWmzoF71t"},{"t":"Componente: válvula de gas","id":"1cWf650d2dQaI7Ov0UvjhJLE4sXrQGCC5"},{"t":"Componente: vaso de expansión","id":"15iBe2qxCrluMpImOL4NX2QGKwGdZNM_M"},{"t":"Componente: válvula de llenado","id":"10qMN_WUMGhufhvb_nYmHpngCjVaUh667"},{"t":"Componente: plaqueta electrónica","id":"16BwHTSLgkd8973bEeU_LlzbjVXj7RwYF"},{"t":"Cómo cambiar plaqueta electrónica","id":"1qGQ3sR_EYqKBCIRj-SudSJwKHafFnoED"}]},{"n":"Módulo 3 · Lógica, mantención y fallas","l":[{"t":"Lógica de funcionamiento","id":"1_RZRhh4cHvqn5bWh13bgh4bxyUYhvR1W"},{"t":"Mantenimiento preventivo (parte 1)","id":"1BbHiQT2z7HgMZKAG4-JvWpnl_RVLxj9W"},{"t":"Mantenimiento preventivo (parte 2)","id":"1wMLY1QSBt9DvGgh9OMR1W0-xLzhlLnW7"},{"t":"Mantenimiento preventivo (parte 3)","id":"1byudbkpFmsEHfyKOuzKoIiAzuLcNZEhV"},{"t":"Posibles fallas y resoluciones","id":"18fBC1hL5yyypLiyADwrnLAPgXPQaU8Im"},{"t":"Qué es y función del termostato","id":"1_5rpZjiF7z3xylTGqenhq7FR38oPVp0e"}]},{"n":"Módulo 4 · Circuito, regulación y diagnóstico","l":[{"t":"Ventilación","id":"1DTR5Qym03mb_ernLiWbQRrY7EYUxi2q8"},{"t":"Llenado de circuito","id":"12zOWyRGKPM2TzI3jod-CRik9tJYEzrAa"},{"t":"Limpieza del circuito radiante","id":"1j6vpIulJMDAm_4sOA69dsnz_xgyc8CIb"},{"t":"Armado de bomba clase 1","id":"19Xntc-50_4jQUuvUmc18BeBrByOpcJXe"},{"t":"Armado de bomba parte 2","id":"1B2y2-Lr0NeJnMUVoqrT0web05-cK_CMb"},{"t":"Bomba profesional Superflush40","id":"1aZXEWQsb3nCk4wMFXLgQrg7LqysBBtE5"},{"t":"Superflush en acción","id":"1IVx2KaqDVeRQ-dImvggChD1KrabdNybe"},{"t":"Radiadores y armado","id":"1xeqL2z_T2WVdQMatU2JQm8ZMP-mkOm_s"},{"t":"Regulación de válvula de gas","id":"1YymHvX-fb1jyRczsDPLXp3R4eKuREnFG"},{"t":"Seguridad","id":"16TOiPx2_avhpk3dycI3sfyQsw0Ez1eyF"},{"t":"Comandos del display","id":"1xesk_QRJbnSKc7i4U7N5lsB3L1FV1CZ3"},{"t":"Programación de una caldera","id":"1xFcLNj7Z_Z10v0_ysWNPTvKzqma8cHU1"},{"t":"Cómo probar caldera sin banco","id":"1zDaoPqzDex72t-YnUkgpLdlysYrQr5fn"},{"t":"Tipos de juntas y flexibles","id":"1gsVPcMjm8uUrohOfbXKHKG3lYDBdZxGQ"},{"t":"Diagnóstico térmico con cámara (parte 1)","id":"1siY88wsptaiJ_FasZZ-yNjpwbHQFFV2X"},{"t":"Diagnóstico térmico (parte 2)","id":"19el3eeRFm2bNHh0pMle-ltTyDQmyTTPy"},{"t":"Diagnóstico térmico y sellador de cañerías","id":"1phDygNdZXoLstPqQAL82YbYh0ZctBRwI"}]},{"n":"Módulo 5 · Equipos por marca","l":[{"t":"Caldera Peisa Diva Duo Mini F","id":"1l21M883EtTw_8LLLsE75uOSLo3HSj7qc"},{"t":"Caldera Peisa Primatec 24F","id":"1szW6gX5uzPgfGIQ0lSjjYiKtBl2ckFa3"},{"t":"Caldera Immergas Maior Eolo","id":"12j6EgYF1FZ66A4gSCWHD5Jz-c_938whA"},{"t":"Caldera Immergas Eolo Star","id":"1gwDeZ2QF_Dgf-Ox2h1RhEiZ55-_jPjDU"},{"t":"Caldera Caldaia Aquaterm XA30F","id":"1JAbT2Fndopk9gWM0nazMn7g2ajRWI57R"},{"t":"Caldera Caldaia Top SA26F","id":"1_HnFRyPEJsykOAaFX5BnXsg5ppxGPbnv"},{"t":"Caldera Baxi Main","id":"1VjSv-sOqnxcahPraiCBTgKwGqyHT6hna"},{"t":"Caldera Baxi Main Four","id":"1dD_SV6x86egS03-nKUZOuPaoqLWrGHZu"},{"t":"Caldera Baxi Main 5","id":"1t4b_il3-uhMZmOTFerOkByoZMu-RmZvG"},{"t":"Caldera Demir-Döküm Nepto","id":"1EHpB_w814Ae3WpYvNYPPLSVCC9rjpKH1"},{"t":"Caldera BGH modelo BCF","id":"1unVuapnM7ZadKKChSAJuO4JkxlX2NlVg"},{"t":"Caldera Innovita línea Perla PRO","id":"1e4dvReIGOJ3evkFyq0UhTD-ixdwPWYmh"}]},{"n":"Módulo 6 · Mantención en terreno","l":[{"t":"Mantenimiento caldera parte 1","id":"1aI8KREiUKTZOmdrT552fOMUcnPU4JSJf"},{"t":"Mantenimiento caldera parte 2","id":"1K8HSAy21NPQsQOCQePyHiRRXd2HrmIvw"},{"t":"Entrevista con un técnico en terreno","id":"1d7uMyzxvrZIKDwNOZdO0lzFk_AH112Es"},{"t":"Prácticas intensivas","id":"1G9ah-o8zJu1cpwkwnmIvs7e16kYgwgdk"},{"t":"Cierre del curso","id":"1w_Jes3UtmKBKrf9ZrENq27JZc6WOg0Y_"}]}]},{"name":"Caldera de condensación","mods":[{"n":"Módulo 1 · Fundamentos","l":[{"t":"Introducción a la condensación","id":"11N_MAU4ax1mUszUmbuHnYf12MNKPgQ8R"},{"t":"Lógica de funcionamiento","id":"1ptE170gjTT_WA1yMGjJX9O7x85FdxbTj"},{"t":"Diferencias de los componentes","id":"1FRJED193qBseIoZ4CXkFG_WfGDQVk7hi"}]},{"n":"Módulo 2 · Agua, mantención y medición","l":[{"t":"Tratamiento de agua","id":"1qwIpNkIvvTVM8rtihcFinLSbeUTG2lOo"},{"t":"Mantenimiento preventivo (parte 1)","id":"1LHdBZou8WIGuvi81FDm5Cq3UFVSvnq3P"},{"t":"Mantenimiento preventivo (parte 2)","id":"13l7sgLWwif1UXUJX_EmEOLx5-oQiAftr"},{"t":"Ventilación de una caldera","id":"1DKYdm9VTqFRObXc7_6eB4D-2JBchVjPd"},{"t":"Prueba y medición de componente","id":"1hSGxx_FQBlJDBvBWwT28JWJd99OK3hUD"}]},{"n":"Módulo 3 · Seguridad, instalación y oficio","l":[{"t":"Seguridad para trabajar","id":"1E671BL__PKZtUDotkG9-vildBa7yUlSs"},{"t":"Primer encendido","id":"1-fVAKX08v2XI4brbURow_uxrKN4gXwzI"},{"t":"Instalación de caldera de condensación","id":"1tiPQ8twMMrKHQs0FZhyPqOCAEsDXbVIn"},{"t":"Cómo cobrar tus servicios","id":"1K4KROwTsxiufywG5XF22sLJX2ZFCXs6i"},{"t":"Cierre del curso de condensación","id":"1OLGMyuRC6jvaJCYOfFMuQCfaqSYtsAbU"}]}]}],"manuals":[{"n":"Baxi","l":[{"t":"Despiece general","id":"1Fr1ixbc5_QDquK6f7rKV46hUr8jwbCMv"},{"t":"Duo-Tec Compact (condensación)","id":"1jCZ53ulrT9LViWDizOkO-nh6d0lJ2alD"},{"t":"Eco 3 Compact","id":"1pH43hrLhEueCUDXwjEY0wIBuEdCDABUi"},{"t":"Eco 3 Compact: despiece","id":"1CsVp4Mmdhz0H0rwLC2fXZXWue7CSklKP"},{"t":"Eco 4S","id":"1wcXStiBu9ikPcBddQE7dkLAE3mb2apSD"},{"t":"Econova 2021","id":"1ZsHe3GeblmfMNxvlRqxcxT5fKqTT0-C4"},{"t":"Errores frecuentes","id":"1VmmiGzHTElu-u0i3UP6ZF8pNTblKSUT7"},{"t":"Luna 3","id":"1RwuV5_uVvw8R2A2fmgYgtypEW7ADvTG9"},{"t":"Luna 3 (manual 2)","id":"1dpAP9eHRROt1tivvbmgqK35GFZIw0b3n"},{"t":"Luna 3 Comfort","id":"1julObYT60OPo2mOkpGoN8r0JNTNOYUHU"},{"t":"Main 2","id":"1qpMu_KNy3NJBIODIq_yftp8VXcxWLai0"},{"t":"Main 5","id":"1O2TsJ2MstzZYUiHRnX3N04nPUsZYKqT7"},{"t":"Main Four 24/24F con anexo TSA","id":"1CJPLtqoBCM1yO6QAwMIc9iyS8kt2I_G0"},{"t":"Triangular TSA-BJ-24-i","id":"1PZ4lnsOE8iTQR7fH9f-wdugnxLUFd5g4"}]},{"n":"Ariston","l":[{"t":"Altea One y Genus One","id":"1j06A9ES_WI4lNbRFjFjT-KNvPqczWT4i"},{"t":"BS 24 CF / FF","id":"1jCRcEOnKSA3I9nwcFLQNuS2TD3tIjtTL"},{"t":"BS II 24F","id":"1T-VOCwnceAVxPaVkstoY-hmVRwPSUWNw"},{"t":"Cares Premium (condensación)","id":"1aFlQ5r_jb6m2Eyv64qvFZ-rCAUmg-s-Y"},{"t":"Clas CF: manual","id":"1JKag5THcPT3Y2xD-_Xd8ZzTpdqCVXrRM"},{"t":"Clas Evo","id":"1jfAeYKhKQF2HmLsn4kqc2ahLf_HJLBU-"},{"t":"Clas System: manual del usuario","id":"1kh29cxsB2GTFlpO8S8hr4OWx0yW-RDsb"},{"t":"Clas X","id":"1Rw_MXnvW09hlgP3PFBUOh5LdiODD9Yg5"},{"t":"Egis CF: manual","id":"1TeD_tJ-mmtF3gql8s1nqfw1fYR3_IVhH"},{"t":"Genus Premium HP 45 a 100","id":"1sJO8Gap0-WF1fF-CWr48xxlhstaBE1EQ"},{"t":"Manual técnico de servicio","id":"1F_ShSJEPgdewDYdzdn2dF6Av1O9Y4yH9"}]},{"n":"Caldaia","l":[{"t":"Climatizador de piscina","id":"1cieMEsw_YwjsEUBTIJrjuWw7yOnWpgMd"},{"t":"Manual digital","id":"1IAhPbn5yBRmAFUBm3TgYqrK29m-MODPA"},{"t":"Plaqueta Genius: X30F, XA30 y climatizadores","id":"1eACrV0t3rQVB4_VpGhct8NEUjnUafTjv"},{"t":"Plaquetas con display rojo: programación","id":"17rtYPaFENnqdyR-bTGu3NYdLQ327nqez"},{"t":"Serie SA26: calderas murales","id":"1W2mIhgjtqNnbdhrO1DnsVVpvahVpxQ8k"},{"t":"Serie digital: manual","id":"1P43wpKiqymrCDBcGe6YmYZO2CcLlLLT5"},{"t":"TOP SA26 digital","id":"1wsBQWdyF3jV489wsQ2-LxqLbrL1TNH85"},{"t":"TOP SA26: manual","id":"123io_NFtF6ILKOG5q1BoLPb5MXybslx6"},{"t":"TOP SA26F: programación nuevo display","id":"1myiqHsjYpwC88q9EcTOY4fNqwhcBhRxL"},{"t":"TOP X30F V3V gas licuado: programación y regulación","id":"1et11e-hquCTWO0d4iF--Fo58qb-Ghth6"},{"t":"XA30: programación y errores","id":"1PbUjLFSJFM8JeNzF0hIK8ax8UzrPVhkP"}]},{"n":"Peisa","l":[{"t":"Climatizador Caldaia CP30/40/70","id":"19LtjgboBG-ChKzA4IOyqXpJ8RZEL-f2Q"},{"t":"Climatizador TX40","id":"1Sl3elIhqMSZvyJOFKKOLHEq9TSR0fGa5"},{"t":"Climatizador de piscina T80","id":"1VddYuHTOMEbJfXz0HH_aklx1w05bfn5G"},{"t":"Climatizador mural Caldaia CX30/40","id":"1cwNPSJtYyYCv2udQF9ovUZbpZKlKrAQX"},{"t":"Manual técnico 15","id":"1FcQrJS16_TTLuRQg2O63uaU2iJ0_AgiU"},{"t":"Manual técnico Peisa","id":"1wO-36g3aUnIg94tPgzd624XOfArvfIOr"},{"t":"Única","id":"1sqtbyQsRaDULnCK-fZ1t0stHbcmsVHvl"},{"t":"Única (versión 3)","id":"1ZD3MhHKyEUPBKdcubKJD5WrLfVGacBl5"}]},{"n":"Immergas","l":[{"t":"Eolo Star","id":"18YnKi09_GS75H-75weUwdAZOvAhOYsQB"},{"t":"Maior Eolo","id":"14sIYCDc-TWiDo42xCAaNuHBEBzMzID5h"},{"t":"Mythos Eolo","id":"1Q6MKVCYfAxnuRkaqpr-p4-HHsaXGCKV2"},{"t":"Nike Star","id":"1II4htgrffy4ziCWdMAN35FNZYqJiKtEB"}]},{"n":"Roca","l":[{"t":"Curso Nora y Sara","id":"1AZl6hu6XZL9fPRmXD0C3Dj8JVoNXecG4"},{"t":"Roca 24/24F","id":"1AonDX3zNAEZ47xMHFf8lG3TsNB_7mt6i"}]},{"n":"BGH / Ferroli","l":[{"t":"BCV24DFA","id":"1LZjZafSgC4yblWJJ6OYqM7ziPw3YUkqh"},{"t":"Kit de herramientas","id":"1B4H9kYw9_XlpAgI4fHZ7AMZd_m2qN_15"}]},{"n":"Termostatos y material general","l":[{"t":"Bomba de calor para piscina","id":"1DadHQleZj79OH6vGrmPYIS-7PDnXNDnB"},{"t":"Esquema de conexión de relé","id":"1JkxG11ld8YEYVi55RPcdj4l5XTw1bXZd"},{"t":"Euterma Minibox 24/30","id":"1Xur-yxWK4cce1FSO5VY2Ms1H5DG3msOL"},{"t":"Manual complementario","id":"1_hKvjrxOuWamUi3Ephf7WtI151Fix4Hw"},{"t":"Manual didáctico de lógica de funcionamiento","id":"1lwoQLeUmNA7xpReRlEzN-6QId59lnnAK"},{"t":"Manual técnico de caldera mural","id":"1zOcpTk7K4wvONcz440WGu9R_1Ku7VtRL"},{"t":"Termostato inalámbrico Peisa","id":"1eifxVf5-59psh2PjNALXXAja6QbHwara"}]}]}, FREE="1_RZRhh4cHvqn5bWh13bgh4bxyUYhvR1W";
+const D={"courses":[{"name":"Caldera mural tradicional","mods":[{"n":"Módulo 1 · Bases y mediciones","l":[{"t":"Retorno de inversión y tipos de herramientas","id":"1ruc1d7WAtW_5Tv1Pp3IIgBc_UMaOyzTw","d":143},{"t":"Introducción a la caldera mural","id":"1eeh3u_G_z-MyMCtmEGH4MDyrzzPovmA7","d":182},{"t":"Parte hidráulica de una caldera","id":"1Mkohinr6I0e18bBDFePsX-hY4ccULKG2","d":224},{"t":"Componentes generales de una caldera","id":"1_4lz4lQiobWBkpLAVooEOT4UFK6Lv1Tp","d":665},{"t":"Componentes hidráulicos","id":"1CtyJQy38tlYNQMGpmB8THWd0tcutkxKt","d":441},{"t":"Componentes eléctricos","id":"1pWiKbXeoIakCrV6-wVD3_DqEBzJdYTp6","d":637},{"t":"Diferentes tipos de tester","id":"1uH-1shQxI74Ta_CmyLV57T-cuDNlR8Nq","d":68},{"t":"Medición de resistencia","id":"1QFWDILpjixZt9C-D9bVJFLYfDGHh2mk5","d":154},{"t":"Uso de continuidad","id":"1A4CKZDzL8CHx2D4OSzC0ukfMLgSJ7g9d","d":67}]},{"n":"Módulo 2 · Componentes y cómo cambiarlos","l":[{"t":"Componente: bomba recirculadora","id":"1S9D0Rh58RxLIzhxTWqnxYEYElZasnhVe","d":476},{"t":"Cómo cambiar bomba recirculadora","id":"1FDxWWxo4aQxfmK_-1Kwn67ij8vijo-0x","d":586},{"t":"Componente: flujostato y Vitron","id":"1Xrr6hND3JoctFPUQXtAX4linVEKxgkv5","d":234},{"t":"Cómo cambiar flujostato","id":"1-pSxAImCnP2iVP-IehwAEuEkdlHQeXvA","d":283},{"t":"Flujostato Peisa trabado: falla y solución","id":"14iIPOqB-qG78z2aDYQKsTmf_tRg37l97","d":42},{"t":"Cómo cambiar Vitron","id":"1eq_DV8jcGj50N6KycyRUrvkj7baCTlbh","d":137},{"t":"Componente: transductor de presión","id":"1ESwKVWgAO2jtxWah46sXkoIsENdEmnFw","d":137},{"t":"Cómo cambiar transductor de presión","id":"17g3xd2WQKlUgb4uireQyaxnkUsklHn-h","d":124},{"t":"Componente: forzador y presostato de humo","id":"1seccnq3ZchbAgDs2omUehLjwXPCJG0Ui","d":225},{"t":"Cómo cambiar forzador y presostato de humo","id":"16kvuzhbVuM6-nVUVZzQTmJD6fDyKpdTM","d":308},{"t":"Componente: intercambiadores","id":"1WhGhxx5_tFDI0IebD2g5oq06LnhbnJft","d":117},{"t":"Componente: sensor NTC","id":"1CTb12KQRLyatfBLKqKoNv2zs5Ze4086p","d":122},{"t":"Cómo cambiar sensor NTC","id":"15zGdBsWGtZe0zeGBVGntDkBn14H-b_aC","d":72},{"t":"Cómo cambiar sensor sumergible","id":"1IFGpDHs8PbP0-_0cC_d6X11BTH3N4c8g","d":209},{"t":"Componente: sensor de sobretemperatura (clixon)","id":"12LDRx-JftmJYLmVBOa2IG2Y6YnKpE0ke","d":129},{"t":"Cómo cambiar sensor de sobretemperatura (clixon)","id":"1FHPB9hRESbf59xd_MACl8G-eL0dXJBDD","d":183},{"t":"Componente: servomotor","id":"16pMFXux4TeSuUSmGXWdSrdYj6f-Fw_jn","d":126},{"t":"Cómo cambiar servomotor y válvula de 3 vías","id":"1G8O26qMyETMXuqveh1HmGJCFIp6as7o4","d":208},{"t":"Componente: sonda y electrodos","id":"12Y9Nd-leWSJ1zyk7-19j8ouhWmzoF71t","d":127},{"t":"Componente: válvula de gas","id":"1cWf650d2dQaI7Ov0UvjhJLE4sXrQGCC5","d":120},{"t":"Componente: vaso de expansión","id":"15iBe2qxCrluMpImOL4NX2QGKwGdZNM_M","d":191},{"t":"Componente: válvula de llenado","id":"10qMN_WUMGhufhvb_nYmHpngCjVaUh667","d":153},{"t":"Componente: plaqueta electrónica","id":"16BwHTSLgkd8973bEeU_LlzbjVXj7RwYF","d":575},{"t":"Cómo cambiar plaqueta electrónica","id":"1qGQ3sR_EYqKBCIRj-SudSJwKHafFnoED","d":240}]},{"n":"Módulo 3 · Lógica, mantención y fallas","l":[{"t":"Lógica de funcionamiento","id":"1_RZRhh4cHvqn5bWh13bgh4bxyUYhvR1W","d":268},{"t":"Mantenimiento preventivo (parte 1)","id":"1BbHiQT2z7HgMZKAG4-JvWpnl_RVLxj9W","d":654},{"t":"Mantenimiento preventivo (parte 2)","id":"1wMLY1QSBt9DvGgh9OMR1W0-xLzhlLnW7","d":605},{"t":"Mantenimiento preventivo (parte 3)","id":"1byudbkpFmsEHfyKOuzKoIiAzuLcNZEhV","d":362},{"t":"Posibles fallas y resoluciones","id":"18fBC1hL5yyypLiyADwrnLAPgXPQaU8Im","d":254},{"t":"Qué es y función del termostato","id":"1_5rpZjiF7z3xylTGqenhq7FR38oPVp0e","d":359}]},{"n":"Módulo 4 · Circuito, regulación y diagnóstico","l":[{"t":"Ventilación","id":"1DTR5Qym03mb_ernLiWbQRrY7EYUxi2q8","d":204},{"t":"Llenado de circuito","id":"12zOWyRGKPM2TzI3jod-CRik9tJYEzrAa","d":143},{"t":"Limpieza del circuito radiante","id":"1j6vpIulJMDAm_4sOA69dsnz_xgyc8CIb","d":198},{"t":"Armado de bomba clase 1","id":"19Xntc-50_4jQUuvUmc18BeBrByOpcJXe","d":197},{"t":"Armado de bomba parte 2","id":"1B2y2-Lr0NeJnMUVoqrT0web05-cK_CMb","d":240},{"t":"Bomba profesional Superflush40","id":"1aZXEWQsb3nCk4wMFXLgQrg7LqysBBtE5","d":389},{"t":"Superflush en acción","id":"1IVx2KaqDVeRQ-dImvggChD1KrabdNybe","d":567},{"t":"Radiadores y armado","id":"1xeqL2z_T2WVdQMatU2JQm8ZMP-mkOm_s","d":295},{"t":"Regulación de válvula de gas","id":"1YymHvX-fb1jyRczsDPLXp3R4eKuREnFG","d":359},{"t":"Seguridad","id":"16TOiPx2_avhpk3dycI3sfyQsw0Ez1eyF","d":82},{"t":"Comandos del display","id":"1xesk_QRJbnSKc7i4U7N5lsB3L1FV1CZ3","d":151},{"t":"Programación de una caldera","id":"1xFcLNj7Z_Z10v0_ysWNPTvKzqma8cHU1","d":368},{"t":"Cómo probar caldera sin banco","id":"1zDaoPqzDex72t-YnUkgpLdlysYrQr5fn","d":540},{"t":"Tipos de juntas y flexibles","id":"1gsVPcMjm8uUrohOfbXKHKG3lYDBdZxGQ","d":240},{"t":"Diagnóstico térmico con cámara (parte 1)","id":"1siY88wsptaiJ_FasZZ-yNjpwbHQFFV2X","d":109},{"t":"Diagnóstico térmico (parte 2)","id":"19el3eeRFm2bNHh0pMle-ltTyDQmyTTPy","d":164},{"t":"Diagnóstico térmico y sellador de cañerías","id":"1phDygNdZXoLstPqQAL82YbYh0ZctBRwI","d":280}]},{"n":"Módulo 5 · Equipos por marca","l":[{"t":"Caldera Peisa Diva Duo Mini F","id":"1l21M883EtTw_8LLLsE75uOSLo3HSj7qc","d":482},{"t":"Caldera Peisa Primatec 24F","id":"1szW6gX5uzPgfGIQ0lSjjYiKtBl2ckFa3","d":127},{"t":"Caldera Immergas Maior Eolo","id":"12j6EgYF1FZ66A4gSCWHD5Jz-c_938whA","d":313},{"t":"Caldera Immergas Eolo Star","id":"1gwDeZ2QF_Dgf-Ox2h1RhEiZ55-_jPjDU","d":280},{"t":"Caldera Caldaia Aquaterm XA30F","id":"1JAbT2Fndopk9gWM0nazMn7g2ajRWI57R","d":354},{"t":"Caldera Caldaia Top SA26F","id":"1_HnFRyPEJsykOAaFX5BnXsg5ppxGPbnv","d":179},{"t":"Caldera Baxi Main","id":"1VjSv-sOqnxcahPraiCBTgKwGqyHT6hna","d":190},{"t":"Caldera Baxi Main Four","id":"1dD_SV6x86egS03-nKUZOuPaoqLWrGHZu","d":350},{"t":"Caldera Baxi Main 5","id":"1t4b_il3-uhMZmOTFerOkByoZMu-RmZvG","d":268},{"t":"Caldera Demir-Döküm Nepto","id":"1EHpB_w814Ae3WpYvNYPPLSVCC9rjpKH1","d":281},{"t":"Caldera BGH modelo BCF","id":"1unVuapnM7ZadKKChSAJuO4JkxlX2NlVg","d":266},{"t":"Caldera Innovita línea Perla PRO","id":"1e4dvReIGOJ3evkFyq0UhTD-ixdwPWYmh","d":526}]},{"n":"Módulo 6 · Mantención en terreno","l":[{"t":"Mantenimiento caldera parte 1","id":"1aI8KREiUKTZOmdrT552fOMUcnPU4JSJf","d":810},{"t":"Mantenimiento caldera parte 2","id":"1K8HSAy21NPQsQOCQePyHiRRXd2HrmIvw","d":1333},{"t":"Entrevista con un técnico en terreno","id":"1d7uMyzxvrZIKDwNOZdO0lzFk_AH112Es","d":231},{"t":"Prácticas intensivas","id":"1G9ah-o8zJu1cpwkwnmIvs7e16kYgwgdk","d":105},{"t":"Cierre del curso","id":"1w_Jes3UtmKBKrf9ZrENq27JZc6WOg0Y_","d":429}]}]},{"name":"Caldera de condensación","mods":[{"n":"Módulo 1 · Fundamentos","l":[{"t":"Introducción a la condensación","id":"11N_MAU4ax1mUszUmbuHnYf12MNKPgQ8R","d":226},{"t":"Lógica de funcionamiento","id":"1ptE170gjTT_WA1yMGjJX9O7x85FdxbTj","d":308},{"t":"Diferencias de los componentes","id":"1FRJED193qBseIoZ4CXkFG_WfGDQVk7hi","d":324}]},{"n":"Módulo 2 · Agua, mantención y medición","l":[{"t":"Tratamiento de agua","id":"1qwIpNkIvvTVM8rtihcFinLSbeUTG2lOo","d":220},{"t":"Mantenimiento preventivo (parte 1)","id":"1LHdBZou8WIGuvi81FDm5Cq3UFVSvnq3P","d":686},{"t":"Mantenimiento preventivo (parte 2)","id":"13l7sgLWwif1UXUJX_EmEOLx5-oQiAftr","d":414},{"t":"Ventilación de una caldera","id":"1DKYdm9VTqFRObXc7_6eB4D-2JBchVjPd","d":229},{"t":"Prueba y medición de componente","id":"1hSGxx_FQBlJDBvBWwT28JWJd99OK3hUD","d":132}]},{"n":"Módulo 3 · Seguridad, instalación y oficio","l":[{"t":"Seguridad para trabajar","id":"1E671BL__PKZtUDotkG9-vildBa7yUlSs","d":247},{"t":"Primer encendido","id":"1-fVAKX08v2XI4brbURow_uxrKN4gXwzI","d":141},{"t":"Instalación de caldera de condensación","id":"1tiPQ8twMMrKHQs0FZhyPqOCAEsDXbVIn","d":1110},{"t":"Cómo cobrar tus servicios","id":"1K4KROwTsxiufywG5XF22sLJX2ZFCXs6i","d":206},{"t":"Cierre del curso de condensación","id":"1OLGMyuRC6jvaJCYOfFMuQCfaqSYtsAbU","d":112}]}]}],"manuals":[{"n":"Baxi","l":[{"t":"Despiece general","id":"1Fr1ixbc5_QDquK6f7rKV46hUr8jwbCMv"},{"t":"Duo-Tec Compact (condensación)","id":"1jCZ53ulrT9LViWDizOkO-nh6d0lJ2alD"},{"t":"Eco 3 Compact","id":"1pH43hrLhEueCUDXwjEY0wIBuEdCDABUi"},{"t":"Eco 3 Compact: despiece","id":"1CsVp4Mmdhz0H0rwLC2fXZXWue7CSklKP"},{"t":"Eco 4S","id":"1wcXStiBu9ikPcBddQE7dkLAE3mb2apSD"},{"t":"Econova 2021","id":"1ZsHe3GeblmfMNxvlRqxcxT5fKqTT0-C4"},{"t":"Errores frecuentes","id":"1VmmiGzHTElu-u0i3UP6ZF8pNTblKSUT7"},{"t":"Luna 3","id":"1RwuV5_uVvw8R2A2fmgYgtypEW7ADvTG9"},{"t":"Luna 3 (manual 2)","id":"1dpAP9eHRROt1tivvbmgqK35GFZIw0b3n"},{"t":"Luna 3 Comfort","id":"1julObYT60OPo2mOkpGoN8r0JNTNOYUHU"},{"t":"Main 2","id":"1qpMu_KNy3NJBIODIq_yftp8VXcxWLai0"},{"t":"Main 5","id":"1O2TsJ2MstzZYUiHRnX3N04nPUsZYKqT7"},{"t":"Main Four 24/24F con anexo TSA","id":"1CJPLtqoBCM1yO6QAwMIc9iyS8kt2I_G0"},{"t":"Triangular TSA-BJ-24-i","id":"1PZ4lnsOE8iTQR7fH9f-wdugnxLUFd5g4"}]},{"n":"Ariston","l":[{"t":"Altea One y Genus One","id":"1j06A9ES_WI4lNbRFjFjT-KNvPqczWT4i"},{"t":"BS 24 CF / FF","id":"1jCRcEOnKSA3I9nwcFLQNuS2TD3tIjtTL"},{"t":"BS II 24F","id":"1T-VOCwnceAVxPaVkstoY-hmVRwPSUWNw"},{"t":"Cares Premium (condensación)","id":"1aFlQ5r_jb6m2Eyv64qvFZ-rCAUmg-s-Y"},{"t":"Clas CF: manual","id":"1JKag5THcPT3Y2xD-_Xd8ZzTpdqCVXrRM"},{"t":"Clas Evo","id":"1jfAeYKhKQF2HmLsn4kqc2ahLf_HJLBU-"},{"t":"Clas System: manual del usuario","id":"1kh29cxsB2GTFlpO8S8hr4OWx0yW-RDsb"},{"t":"Clas X","id":"1Rw_MXnvW09hlgP3PFBUOh5LdiODD9Yg5"},{"t":"Egis CF: manual","id":"1TeD_tJ-mmtF3gql8s1nqfw1fYR3_IVhH"},{"t":"Genus Premium HP 45 a 100","id":"1sJO8Gap0-WF1fF-CWr48xxlhstaBE1EQ"},{"t":"Manual técnico de servicio","id":"1F_ShSJEPgdewDYdzdn2dF6Av1O9Y4yH9"}]},{"n":"Caldaia","l":[{"t":"Climatizador de piscina","id":"1cieMEsw_YwjsEUBTIJrjuWw7yOnWpgMd"},{"t":"Manual digital","id":"1IAhPbn5yBRmAFUBm3TgYqrK29m-MODPA"},{"t":"Plaqueta Genius: X30F, XA30 y climatizadores","id":"1eACrV0t3rQVB4_VpGhct8NEUjnUafTjv"},{"t":"Plaquetas con display rojo: programación","id":"17rtYPaFENnqdyR-bTGu3NYdLQ327nqez"},{"t":"Serie SA26: calderas murales","id":"1W2mIhgjtqNnbdhrO1DnsVVpvahVpxQ8k"},{"t":"Serie digital: manual","id":"1P43wpKiqymrCDBcGe6YmYZO2CcLlLLT5"},{"t":"TOP SA26 digital","id":"1wsBQWdyF3jV489wsQ2-LxqLbrL1TNH85"},{"t":"TOP SA26: manual","id":"123io_NFtF6ILKOG5q1BoLPb5MXybslx6"},{"t":"TOP SA26F: programación nuevo display","id":"1myiqHsjYpwC88q9EcTOY4fNqwhcBhRxL"},{"t":"TOP X30F V3V gas licuado: programación y regulación","id":"1et11e-hquCTWO0d4iF--Fo58qb-Ghth6"},{"t":"XA30: programación y errores","id":"1PbUjLFSJFM8JeNzF0hIK8ax8UzrPVhkP"}]},{"n":"Peisa","l":[{"t":"Climatizador Caldaia CP30/40/70","id":"19LtjgboBG-ChKzA4IOyqXpJ8RZEL-f2Q"},{"t":"Climatizador TX40","id":"1Sl3elIhqMSZvyJOFKKOLHEq9TSR0fGa5"},{"t":"Climatizador de piscina T80","id":"1VddYuHTOMEbJfXz0HH_aklx1w05bfn5G"},{"t":"Climatizador mural Caldaia CX30/40","id":"1cwNPSJtYyYCv2udQF9ovUZbpZKlKrAQX"},{"t":"Manual técnico 15","id":"1FcQrJS16_TTLuRQg2O63uaU2iJ0_AgiU"},{"t":"Manual técnico Peisa","id":"1wO-36g3aUnIg94tPgzd624XOfArvfIOr"},{"t":"Única","id":"1sqtbyQsRaDULnCK-fZ1t0stHbcmsVHvl"},{"t":"Única (versión 3)","id":"1ZD3MhHKyEUPBKdcubKJD5WrLfVGacBl5"}]},{"n":"Immergas","l":[{"t":"Eolo Star","id":"18YnKi09_GS75H-75weUwdAZOvAhOYsQB"},{"t":"Maior Eolo","id":"14sIYCDc-TWiDo42xCAaNuHBEBzMzID5h"},{"t":"Mythos Eolo","id":"1Q6MKVCYfAxnuRkaqpr-p4-HHsaXGCKV2"},{"t":"Nike Star","id":"1II4htgrffy4ziCWdMAN35FNZYqJiKtEB"}]},{"n":"Roca","l":[{"t":"Curso Nora y Sara","id":"1AZl6hu6XZL9fPRmXD0C3Dj8JVoNXecG4"},{"t":"Roca 24/24F","id":"1AonDX3zNAEZ47xMHFf8lG3TsNB_7mt6i"}]},{"n":"BGH / Ferroli","l":[{"t":"BCV24DFA","id":"1LZjZafSgC4yblWJJ6OYqM7ziPw3YUkqh"},{"t":"Kit de herramientas","id":"1B4H9kYw9_XlpAgI4fHZ7AMZd_m2qN_15"}]},{"n":"Termostatos y material general","l":[{"t":"Bomba de calor para piscina","id":"1DadHQleZj79OH6vGrmPYIS-7PDnXNDnB"},{"t":"Esquema de conexión de relé","id":"1JkxG11ld8YEYVi55RPcdj4l5XTw1bXZd"},{"t":"Euterma Minibox 24/30","id":"1Xur-yxWK4cce1FSO5VY2Ms1H5DG3msOL"},{"t":"Manual complementario","id":"1_hKvjrxOuWamUi3Ephf7WtI151Fix4Hw"},{"t":"Manual didáctico de lógica de funcionamiento","id":"1lwoQLeUmNA7xpReRlEzN-6QId59lnnAK"},{"t":"Manual técnico de caldera mural","id":"1zOcpTk7K4wvONcz440WGu9R_1Ku7VtRL"},{"t":"Termostato inalámbrico Peisa","id":"1eifxVf5-59psh2PjNALXXAja6QbHwara"}]}]}, FREE="1_RZRhh4cHvqn5bWh13bgh4bxyUYhvR1W";
 const SECS=[...D.courses.map(c=>({name:c.name,mods:c.mods,doc:false})),{name:'Manuales y PDF',mods:D.manuals,doc:true}];
-const CERTS=[{key:'trad',course:'Curso de caldera tradicional',ci:0},{key:'cond',course:'Curso de caldera de condensación',ci:1}];
+const CERTS=[{key:'trad',course:'Curso de caldera tradicional',cis:[0]},{key:'cond',course:'Curso de caldera de condensación',cis:[1]}];
 const $=id=>document.getElementById(id);
 const norm=s=>s.normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase();
 const esc=s=>String(s??'').replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
@@ -1038,36 +1087,50 @@ let cur={s:0,m:2,l:0};
 SECS.forEach((S,si)=>S.mods.forEach((m,mi)=>m.l.forEach((l,li)=>{ if(l.id===FREE) cur={s:si,m:mi,l:li}; })));
 const flat=s=>SECS[s].mods.flatMap((m,mi)=>m.l.map((l,li)=>({m:mi,l:li,id:l.id})));
 const courseIds=ci=>D.courses[ci].mods.flatMap(m=>m.l.map(l=>l.id));
+const fd=x=>x?Math.floor(x/60)+':'+String(x%60).padStart(2,'0'):''; const fh=x=>{const h=Math.floor(x/3600),m=Math.round(x%3600/60);return h?h+' h '+m+' min':m+' min'}; const sumD=L=>L.reduce((a,l)=>a+(l.d||0),0);
 const pct=ids=>ids.length?Math.round(100*ids.filter(i=>seen.has(i)).length/ids.length):0;
-const can=id=>active||id===FREE;
+const FREES=["1ruc1d7WAtW_5Tv1Pp3IIgBc_UMaOyzTw", "1_RZRhh4cHvqn5bWh13bgh4bxyUYhvR1W", "11N_MAU4ax1mUszUmbuHnYf12MNKPgQ8R"]; const can=id=>active||FREES.includes(id);
+const GOALS={"Módulo 1 · Bases y mediciones":"Reconocer las partes de una caldera mural y medir componentes con el tester.","Módulo 2 · Componentes y cómo cambiarlos":"Saber qué hace cada pieza, probarla y cambiarla: bomba, flujostato, NTC, válvula de gas, plaqueta y más.","Módulo 3 · Lógica, mantención y fallas":"Entender el ciclo de encendido, hacer una mantención preventiva completa y ubicar fallas comunes.","Módulo 4 · Circuito, regulación y diagnóstico":"Llenar y limpiar el circuito, regular la válvula de gas, programar el display y diagnosticar sin banco.","Módulo 5 · Equipos por marca":"Trabajar con equipos reales de Peisa, Baxi, Immergas, Caldaia, BGH y otras marcas.","Módulo 6 · Mantención en terreno":"Ver una mantención completa en terreno, de principio a fin.","Módulo 1 · Fundamentos":"Entender qué cambia en una caldera de condensación y cómo funciona.","Módulo 2 · Agua, mantención y medición":"Tratar el agua, hacer la mantención y medir los componentes de un equipo de condensación.","Módulo 3 · Seguridad, instalación y oficio":"Trabajar seguro, hacer el primer encendido, instalar y cobrar tus servicios."};
+const leadOk=()=>{try{return !!localStorage.getItem('ac_lead')}catch(e){return false}};
 function save(){ if(!progRef) return; clearTimeout(saveT); saveT=setTimeout(()=>setDoc(progRef,{seen:[...seen],updatedAt:serverTimestamp()},{merge:true}).catch(e=>console.warn(e)),800); }
 function tabs(){ $('avTabs').innerHTML=SECS.map((s,i)=>`<button type="button" class="${i===cur.s?'on':''}" data-s="${i}">${s.name}</button>`).join('');
   $('avTabs').querySelectorAll('button').forEach(b=>b.onclick=()=>{ cur={s:+b.dataset.s,m:0,l:0}; render(false); }); }
 function list(){ const S=SECS[cur.s], nq=norm(q);
   $('avList').innerHTML=S.mods.map((m,mi)=>{ const L=m.l.map((l,li)=>({l,li})).filter(x=>!nq||norm(x.l.t+' '+m.n).includes(nq)); if(!L.length) return '';
     const d=m.l.filter(l=>seen.has(l.id)).length, open=nq||mi===cur.m;
-    return `<div class="av-mod${open?' open':''}"><button type="button" class="av-mod-h"><span class="ar">▸</span>${esc(m.n)}<em>${active?d+'/':''}${m.l.length}</em></button><div class="av-les">`+
-      L.map(({l,li})=>`<button type="button" class="av-le${seen.has(l.id)?' seen':''}${mi===cur.m&&li===cur.l?' cur':''}" data-m="${mi}" data-l="${li}">${active?'<span class="av-ck"></span>':(l.id===FREE?'<span class="lk">▶</span>':'<span class="lk">🔒</span>')}<span>${esc(l.t)}</span>${l.id===FREE?'<span class="av-free">GRATIS</span>':''}</button>`).join('')+'</div></div>'; }).join('')||'<p style="padding:14px;color:var(--muted)">No hay lecciones con esa búsqueda.</p>';
+    return `<div class="av-mod${open?' open':''}"><button type="button" class="av-mod-h"><span class="ar">▸</span>${esc(m.n)}<em>${active?d+'/':''}${m.l.length}${sumD(m.l)?' · '+fh(sumD(m.l)):''}</em></button><div class="av-les">`+(GOALS[m.n]?`<div class="av-goal"><b>🎯 Al terminar:</b> ${GOALS[m.n]}</div>`:'')+
+      L.map(({l,li})=>`<button type="button" class="av-le${seen.has(l.id)?' seen':''}${mi===cur.m&&li===cur.l?' cur':''}" data-m="${mi}" data-l="${li}">${active?'<span class="av-ck"></span>':(FREES.includes(l.id)?'<span class="lk">▶</span>':'<span class="lk">🔒</span>')}<span>${esc(l.t)}</span>${l.d?`<span class="dur">${fd(l.d)}</span>`:''}${FREES.includes(l.id)?'<span class="av-free">GRATIS</span>':''}</button>`).join('')+'</div></div>'; }).join('')||'<p style="padding:14px;color:var(--muted)">No hay lecciones con esa búsqueda.</p>';
   $('avList').querySelectorAll('.av-mod-h').forEach(b=>b.onclick=()=>b.parentElement.classList.toggle('open'));
-  $('avList').querySelectorAll('.av-le').forEach(b=>b.onclick=()=>{ cur={s:cur.s,m:+b.dataset.m,l:+b.dataset.l}; render(true); if(innerWidth<900) $('avPlayer').scrollIntoView({behavior:'smooth',block:'center'}); });
+  $('avList').querySelectorAll('.av-le').forEach(b=>b.onclick=()=>{ cur={s:cur.s,m:+b.dataset.m,l:+b.dataset.l}; document.querySelectorAll('#avPv button').forEach(x=>x.classList.remove('on')); render(true); if(innerWidth<900) $('avPlayer').scrollIntoView({behavior:'smooth',block:'center'}); });
 }
 function player(){ const S=SECS[cur.s], m=S.mods[cur.m], l=m.l[cur.l];
   $('avPlayer').className='av-player'+(S.doc&&can(l.id)?' doc':'');
-  if(can(l.id)) $('avPlayer').innerHTML=`<iframe src="https://drive.google.com/file/d/${l.id}/preview" allow="autoplay; fullscreen" allowfullscreen title="${esc(l.t)}"></iframe>`;
+  if(can(l.id)){ const S0=SECS[cur.s]; $('avPlayer').innerHTML=`<button type="button" class="av-cover" style="${l.id===FREE?'background-image:linear-gradient(#0006,#000a),url(assets/cover-logica.jpg)':''}"><span class="pl">▶</span><b>${esc(l.t)}</b><small>${S0.doc?'Abrir documento':(l.d?fd(l.d)+' min · ':'')+(S0.doc?'':'Reproducir')}</small></button>`; $('avPlayer').querySelector('.av-cover').onclick=()=>{ $('avPlayer').innerHTML=`<iframe src="https://drive.google.com/file/d/${l.id}/preview" allow="autoplay; fullscreen" allowfullscreen title="${esc(l.t)}"></iframe>`; }; }
   else $('avPlayer').innerHTML=`<div class="av-lock"><div><div class="ic">🔒</div><h4>Lección para alumnos</h4><p>${user?'Tu cuenta aún no está activa. Completa tu compra y la activamos.':'Compra el acceso o ingresa con tu cuenta para verla.'}</p>
     <div class="row"><a class="av-mini pri" href="#precio">Comprar $49.990</a>${user?`<a class="av-mini" href="${MP_LINK}" target="_blank" rel="noopener">Pagar con Mercado Pago</a>`:'<a class="av-mini" href="cuenta/?next=/%23temario">Ya compré: ingresar</a>'}</div></div></div>`;
-  $('avMeta').textContent=S.doc?`Manuales · ${m.n}`:`${S.name} · ${m.n} · Lección ${cur.l+1}`;
+  $('avMeta').textContent=S.doc?`Manuales · ${m.n}`:`${S.name} · ${m.n} · Lección ${cur.l+1}${l.d?' · '+fd(l.d)+' min':''}`;
   $('avTitle').textContent=l.t;
   $('avCtrls').hidden=!active; $('avOpen').href=`https://drive.google.com/file/d/${l.id}/view`;
   const f=flat(cur.s), i=f.findIndex(x=>x.m===cur.m&&x.l===cur.l); $('avPrev').disabled=i<=0; $('avNext').disabled=i>=f.length-1;
   const sn=seen.has(l.id); $('avMark').className='av-btn'+(sn?' done':''); $('avMark').textContent=sn?'✓ Vista':(S.doc?'Marcar como revisado':'Marcar como vista');
 }
+
+function leadForm(l){
+  $('avPlayer').innerHTML=`<div class="av-lead"><form id="leadF"><h4>Mira la clase gratis</h4><p>Déjanos tu nombre y WhatsApp para verla. Te avisamos si hay novedades.</p>
+    <input id="leadN" placeholder="Tu nombre" autocomplete="name" required><input id="leadP" type="tel" placeholder="WhatsApp: +56 9 1234 5678" autocomplete="tel" required>
+    <button>▶ Ver la clase</button><small>No compartimos tus datos.</small></form></div>`;
+  $('leadF').onsubmit=async e=>{ e.preventDefault(); const name=$('leadN').value.trim(), phone=$('leadP').value.replace(/[^\d+]/g,'');
+    if(name.length<2||phone.replace(/\D/g,'').length<8){ $('leadP').focus(); return; }
+    try{ localStorage.setItem('ac_lead',JSON.stringify({name,phone})); }catch(err){}
+    try{ if(db){ const { addDoc, collection } = await import("https://www.gstatic.com/firebasejs/13.4.0/firebase-firestore.js"); await addDoc(collection(db,'leads'),{name:name.slice(0,80),phone:phone.slice(0,20),page:'caldera',lesson:l.t.slice(0,120),createdAt:serverTimestamp()}); } }catch(err){ console.warn('lead',err); }
+    player(); };
+}
 function side(){ const ids=flat(cur.s).map(x=>x.id);
   $('avSName').textContent=SECS[cur.s].name;
-  $('avSTxt').textContent=active?`${ids.filter(i=>seen.has(i)).length} de ${ids.length} ${SECS[cur.s].doc?'documentos revisados':'lecciones vistas'}`:`${ids.length} ${SECS[cur.s].doc?'documentos':'lecciones'} · ${SECS[cur.s].mods.length} ${SECS[cur.s].doc?'carpetas':'módulos'}`;
+  $('avSTxt').textContent=active?`${ids.filter(i=>seen.has(i)).length} de ${ids.length} ${SECS[cur.s].doc?'documentos revisados':'lecciones vistas'}`:`${ids.length} ${SECS[cur.s].doc?'documentos':'lecciones'} · ${SECS[cur.s].mods.length} ${SECS[cur.s].doc?'carpetas':'módulos'}${SECS[cur.s].doc?'':' · '+fh(SECS[cur.s].mods.reduce((a,m)=>a+sumD(m.l),0))+' de video'}`;
   $('avSBar').style.width=(active?pct(ids):0)+'%'; $('avSBar').parentElement.hidden=!active;
   $('avCerts').hidden=!active;
-  if(active){ $('avCertRows').innerHTML=CERTS.map(c=>{const p=pct(courseIds(c.ci));return `<div class="av-crow"><div class="nm">${c.course}<small>${p<100?p+'% completado':'¡Completado!'}</small></div><button type="button" class="av-btn${p<100?'':' pri'}" data-c="${c.key}" ${p<100?'disabled':''}>Descargar</button></div>`;}).join('');
+  if(active){ $('avCertRows').innerHTML=CERTS.map(c=>{const p=pct(c.cis.flatMap(courseIds));return `<div class="av-crow"><div class="nm">${c.course}<small>${p<100?p+'% completado':'¡Completado!'}</small></div><button type="button" class="av-btn${p<100?'':' pri'}" data-c="${c.key}" ${p<100?'disabled':''}>Descargar</button></div>`;}).join('');
     $('avCertRows').querySelectorAll('button[data-c]').forEach(b=>b.onclick=()=>cert(b.dataset.c,b)); }
 }
 function render(loadPlayer=true){ tabs(); list(); if(loadPlayer) player(); side(); }
@@ -1096,6 +1159,15 @@ function account(){
   $('avAccB').innerHTML=(active?'<a class="av-mini" href="aula/">Abrir aula en pantalla completa</a>':`<a class="av-mini pri" href="${MP_LINK}" target="_blank" rel="noopener">Pagar $49.990</a>`)+'<button type="button" class="av-mini" id="avOut">Salir</button>';
   $('avOut').onclick=async()=>{ await signOut(auth); location.reload(); };
 }
+
+const PV={drive:'<video src="assets/drive-por-dentro.mp4" poster="assets/drive-poster.jpg" controls playsinline preload="none"></video>',
+  comm:'<iframe src="https://drive.google.com/file/d/15Y5SWOG8sZWOOp-M9GoqlcRhjk7KLct8/preview" allow="autoplay; fullscreen" allowfullscreen title="La comunidad por dentro"></iframe>'};
+function pvOn(k){ document.querySelectorAll('#avPv button').forEach(b=>b.classList.toggle('on',b.dataset.pv===k)); }
+document.querySelectorAll('#avPv button').forEach(b=>b.onclick=()=>{ const k=b.dataset.pv; pvOn(k);
+  if(k==='free'){ SECS.forEach((S,si)=>S.mods.forEach((m,mi)=>m.l.forEach((l,li)=>{ if(l.id===FREE) cur={s:si,m:mi,l:li}; }))); render(true); return; }
+  $('avPlayer').className='av-player'; $('avPlayer').innerHTML=PV[k]; $('avMeta').textContent='Recorrido'; $('avTitle').textContent=k==='drive'?'El Drive por dentro':'La comunidad por dentro'; $('avCtrls').hidden=true; });
+document.querySelectorAll('[data-cat]').forEach(b=>b.onclick=()=>{ window.aulaGoCat(b.dataset.cat); pvOn(''); document.getElementById('temario').scrollIntoView({behavior:'smooth'}); });
+document.querySelectorAll('[data-free-go]').forEach(a=>a.addEventListener('click',()=>{ const b=document.querySelector('#avPv [data-pv="free"]'); if(b) b.click(); }));
 render(true);
 try{ ({ auth, db, isAdmin, ensureProfile, onAuthStateChanged, signOut, doc, getDoc, setDoc, serverTimestamp } = await import("./js/firebase.js")); }catch(e){ console.warn('Firebase no disponible',e); }
 if(onAuthStateChanged) onAuthStateChanged(auth, async u=>{
@@ -1105,6 +1177,18 @@ if(onAuthStateChanged) onAuthStateChanged(auth, async u=>{
   }catch(e){ console.warn(e); }
   account(); render(true);
 });
+</script>
+<script>
+// Al terminar el lanzamiento la web pasa sola al precio normal
+(()=>{ const END=new Date('2026-11-30T23:59:59-03:00').getTime(); if(Date.now()<END) return;
+  const H=document.documentElement; H.classList.add('cd-ended');
+  const WA_BUY='https://wa.me/56993992990?text='+encodeURIComponent('Hola, quiero comprar el acceso a Aprende Caldera');
+  document.querySelectorAll('.topbar').forEach(e=>e.innerHTML='🔥 Aprende Caldera · <b>pago único, acceso permanente</b>');
+  document.querySelectorAll('.discount,.price-deadline,.offer-deadline,.next-price,.cd,.offer-old,.price s,.mbar-cd').forEach(e=>e.style.display='none');
+  const w=document.createTreeWalker(document.body,NodeFilter.SHOW_TEXT); let n; while(n=w.nextNode()){ if(n.nodeValue.includes('$49.990')) n.nodeValue=n.nodeValue.replaceAll('$49.990','$119.990').replace(' hasta el 30 de noviembre',''); if(n.nodeValue.includes('PRECIO DE LANZAMIENTO')) n.nodeValue=n.nodeValue.replace('PRECIO DE LANZAMIENTO','ACCESO COMPLETO'); }
+  document.querySelectorAll('a[href*="mpago.la/2XSQPaR"]').forEach(a=>{a.href=WA_BUY;});
+  document.querySelectorAll('a[href*="%2449.990"]').forEach(a=>{a.href=a.href.replace('%2449.990','%24119.990');});
+})();
 </script>
 </body>
 </html>

@@ -23,66 +23,79 @@ header{background:#fff;border-bottom:1px solid var(--line)}.hd{max-width:1100px;
 .u{background:#fff;border:1px solid var(--line);border-radius:14px;padding:14px 16px;display:grid;grid-template-columns:1fr auto;gap:10px;align-items:center}
 .u .nm{font-weight:800}.u .em{color:var(--muted);font-size:14px;word-break:break-all}.u .meta{font-size:12.5px;color:var(--muted);margin-top:4px}
 .badge{display:inline-block;font-size:12px;font-weight:800;padding:2px 8px;border-radius:99px;margin-left:6px}.b-on{background:#dcfce7;color:#14532d}.b-off{background:var(--soft);color:#8a1f19}
-.acts{display:flex;gap:6px;flex-wrap:wrap;justify-content:flex-end}
+.acts{display:grid;gap:8px;justify-items:end}.prow{display:flex;gap:6px;flex-wrap:wrap;align-items:center;justify-content:flex-end}.lnk{border:0;background:none;color:var(--brand);font:inherit;font-size:12.5px;font-weight:700;cursor:pointer;padding:0 4px}
 .note{background:#fffbeb;border:1px solid #fde68a;border-radius:14px;padding:12px 14px;font-size:14px;margin-bottom:14px}
 .center{min-height:70vh;display:grid;place-items:center;text-align:center;padding:20px}
 .toast{position:fixed;left:50%;bottom:20px;transform:translateX(-50%);background:var(--ink);color:#fff;padding:10px 16px;border-radius:12px;font-weight:700;display:none}
-@media(max-width:640px){.u{grid-template-columns:1fr}.acts{justify-content:flex-start}.stats{grid-template-columns:1fr 1fr}}
+@media(max-width:640px){.u{grid-template-columns:1fr}.acts{justify-items:start}.prow{justify-content:flex-start}.stats{grid-template-columns:1fr 1fr}}
 [hidden]{display:none!important}
 </style></head><body>
 <header><div class="hd"><a class="logo" href="../"><img src="../assets/aprende-caldera-mark.svg" alt="">Aprende Caldera</a><small>Administrador</small><span class="sp"></span><a href="../aula/">Ver aula</a><a href="#" id="out" style="color:var(--muted)">Salir</a></div></header>
 <div class="center" id="wait"><p>Cargando…</p></div>
 <div class="center" id="deny" hidden><div><h2>Acceso solo para el administrador</h2><p id="denyTxt"></p><a href="../cuenta/?next=/admin/">Ingresar con otra cuenta</a></div></div>
 <main class="wrap" id="app" hidden>
-  <div class="stats"><div class="stat"><b id="sTot">0</b><span>cuentas creadas</span></div><div class="stat"><b id="sOn">0</b><span>con acceso activo</span></div><div class="stat"><b id="sOff">0</b><span>esperando activación</span></div></div>
-  <div class="note">Al activar a alguien, comparte también la carpeta de Drive con su correo: toca <b>“Compartir Drive”</b>, pega el correo como lector y envía.</div>
+  <div class="stats"><div class="stat"><b id="sTot">0</b><span>cuentas creadas</span></div><div class="stat"><b id="sOn">0</b><span>con algún curso activo</span></div><div class="stat"><b id="sOff">0</b><span>sin ningún curso activo</span></div></div>
+  <div class="note">Cada cuenta sirve para las dos webs. Activa el curso que compró (Caldera o Calefón) y comparte esa carpeta de Drive con su correo: toca <b>“Compartir Drive”</b>, pega el correo como lector y envía.</div>
+  <div class="bar-top" style="margin-bottom:6px"><button class="btn ghost" id="tabU" style="border-color:var(--ink)">Cuentas</button><button class="btn ghost" id="tabL">Interesados (clase gratis)</button></div>
+  <div id="leadsBox" hidden><div class="list" id="leads"></div></div>
+  <div id="usersBox">
   <div class="bar-top"><input id="q" placeholder="Buscar por nombre o correo…"><select id="f"><option value="all">Todos</option><option value="off" selected>Esperando activación</option><option value="on">Activos</option></select><button class="btn ghost" id="reload">Actualizar</button></div>
   <div class="list" id="list"></div>
+  </div>
 </main>
 <div class="toast" id="toast"></div>
 <script type="module">
-import { auth, db, isAdmin, onAuthStateChanged, signOut, collection, query, orderBy, limit, getDocs, doc, updateDoc, getDoc, serverTimestamp, DRIVE_FOLDER, WA } from "../js/firebase.js";
+import { auth, db, isAdmin, onAuthStateChanged, signOut, collection, query, orderBy, limit, getDocs, doc, updateDoc, getDoc, serverTimestamp, WA } from "../js/firebase.js";
 const $=id=>document.getElementById(id); let users=[];
-const TOTAL=86;
+const P={
+  caldera:{label:'Caldera',field:'access',at:'activatedAt',pcol:'progress',total:86,drive:'https://drive.google.com/drive/folders/1BkXwaE-ZCP1YaN3yr8vzfPZkkLGzSskG',url:'https://aprendecaldera.github.io/aula/',name:'Aprende Caldera'},
+  calefon:{label:'Calefón',field:'calefon',at:'calefonAt',pcol:'progress_calefon',total:88,drive:'https://drive.google.com/drive/folders/1yR0QOfEu9D9z-yGz3OIviYX0-8WI-FKd',url:'https://aprendecalefon.github.io/aula/',name:'Aprende Calefón'}};
 const esc=s=>String(s??'').replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
 const fdate=t=>t&&t.toDate?t.toDate().toLocaleDateString('es-CL',{day:'2-digit',month:'short',year:'numeric'}):'—';
+const anyOn=u=>!!(u.access||u.calefon);
 function toast(t){const e=$('toast');e.textContent=t;e.style.display='block';clearTimeout(e._t);e._t=setTimeout(()=>e.style.display='none',2200);}
+function stats(){ $('sTot').textContent=users.length; const on=users.filter(anyOn).length; $('sOn').textContent=on; $('sOff').textContent=users.length-on; }
 async function load(){
   $('list').innerHTML='<p>Cargando cuentas…</p>';
   const s=await getDocs(query(collection(db,'users'),orderBy('createdAt','desc'),limit(500)));
-  users=s.docs.map(d=>({id:d.id,...d.data(),prog:null}));
-  $('sTot').textContent=users.length; const on=users.filter(u=>u.access).length; $('sOn').textContent=on; $('sOff').textContent=users.length-on;
-  draw();
-  for(const u of users.filter(u=>u.access)){ try{const p=await getDoc(doc(db,'progress',u.id)); u.prog=p.exists()?(p.data().seen||[]).length:0;}catch(e){} }
+  users=s.docs.map(d=>({id:d.id,...d.data(),prog:{}})); stats(); draw();
+  for(const u of users){ for(const k in P){ if(!u[P[k].field]) continue; try{const p=await getDoc(doc(db,P[k].pcol,u.id)); u.prog[k]=p.exists()?(p.data().seen||[]).length:0;}catch(e){} } }
   draw();
 }
+function prodRow(u,k){ const c=P[k], on=!!u[c.field];
+  const msg=encodeURIComponent(`Hola ${(u.name||'').split(' ')[0]}! Tu acceso a ${c.name} ya está activo ✅\n\nEntra aquí con tu correo ${u.email}:\n${c.url}\n\nComunidad de técnicos: https://chat.whatsapp.com/KGWquHws7v46xEPFJAPkH9`);
+  const pr=u.prog[k]!=null?' · '+Math.min(100,Math.round(100*u.prog[k]/c.total))+'%':'';
+  return `<div class="prow"><span class="badge ${on?'b-on':'b-off'}">${c.label}: ${on?'activo'+pr:'sin activar'}</span>
+    ${on?`<button class="btn off" data-k="${k}" data-id="${u.id}" data-v="0">Quitar</button>`:`<button class="btn on" data-k="${k}" data-id="${u.id}" data-v="1">Activar ${c.label}</button>`}
+    <a class="btn ghost" href="${c.drive}" target="_blank" rel="noopener">Compartir Drive</a>
+    ${on?`<a class="btn ghost" href="${WA}${msg}" target="_blank" rel="noopener">Bienvenida</a>`:''}</div>`; }
 function draw(){
   const q=$('q').value.trim().toLowerCase(), f=$('f').value;
-  const L=users.filter(u=>(f==='all'||(f==='on')===!!u.access)&&(!q||(u.name||'').toLowerCase().includes(q)||(u.email||'').includes(q)));
-  $('list').innerHTML=L.length?L.map(u=>{
-    const msg=encodeURIComponent(`Hola ${(u.name||'').split(' ')[0]}! Tu cuenta de Aprende Caldera ya está activa ✅\n\nEntra aquí con tu correo ${u.email}:\nhttps://aprendecaldera.github.io/aula/\n\nComunidad de técnicos: https://chat.whatsapp.com/KGWquHws7v46xEPFJAPkH9`);
-    return `<div class="u"><div><div class="nm">${esc(u.name||'(sin nombre)')}<span class="badge ${u.access?'b-on':'b-off'}">${u.access?'Activo':'Sin activar'}</span></div>
-      <div class="em">${esc(u.email)}</div><div class="meta">Registro: ${fdate(u.createdAt)}${u.access?' · Activado: '+fdate(u.activatedAt):''}${u.prog!=null?' · Avance: '+Math.min(100,Math.round(100*u.prog/TOTAL))+'%':''}</div></div>
-      <div class="acts">${u.access?`<button class="btn off" data-off="${u.id}">Desactivar</button>`:`<button class="btn on" data-on="${u.id}">Activar</button>`}
-      <button class="btn ghost" data-copy="${esc(u.email)}">Copiar correo</button><a class="btn ghost" href="${DRIVE_FOLDER}" target="_blank" rel="noopener">Compartir Drive</a>
-      <a class="btn ghost" href="${WA}${msg}" target="_blank" rel="noopener">Mensaje de bienvenida</a></div></div>`;}).join(''):'<p>No hay cuentas en esta lista.</p>';
-  $('list').querySelectorAll('[data-on]').forEach(b=>b.onclick=()=>setAccess(b.dataset.on,true,b));
-  $('list').querySelectorAll('[data-off]').forEach(b=>b.onclick=()=>{ if(confirm('¿Quitar el acceso a esta cuenta?')) setAccess(b.dataset.off,false,b); });
+  const L=users.filter(u=>(f==='all'||(f==='on')===anyOn(u))&&(!q||(u.name||'').toLowerCase().includes(q)||(u.email||'').includes(q)));
+  $('list').innerHTML=L.length?L.map(u=>`<div class="u"><div><div class="nm">${esc(u.name||'(sin nombre)')}</div><div class="em">${esc(u.email)} <button class="lnk" data-copy="${esc(u.email)}">copiar</button></div><div class="meta">Registro: ${fdate(u.createdAt)}</div></div>
+    <div class="acts">${prodRow(u,'caldera')}${prodRow(u,'calefon')}</div></div>`).join(''):'<p>No hay cuentas en esta lista.</p>';
+  $('list').querySelectorAll('button[data-k]').forEach(b=>b.onclick=()=>{ const v=b.dataset.v==='1'; if(!v&&!confirm('¿Quitar este acceso?'))return; setAccess(b.dataset.id,b.dataset.k,v,b); });
   $('list').querySelectorAll('[data-copy]').forEach(b=>b.onclick=async()=>{ try{await navigator.clipboard.writeText(b.dataset.copy);toast('Correo copiado');}catch(e){prompt('Copia el correo:',b.dataset.copy);} });
 }
-async function setAccess(id,val,btn){ btn.disabled=true;
-  try{ await updateDoc(doc(db,'users',id),val?{access:true,activatedAt:serverTimestamp()}:{access:false});
-    const u=users.find(x=>x.id===id); u.access=val; if(val) u.activatedAt={toDate:()=>new Date()};
-    const on=users.filter(u=>u.access).length; $('sOn').textContent=on; $('sOff').textContent=users.length-on;
-    toast(val?'Cuenta activada':'Acceso quitado'); draw(); }
+async function setAccess(id,k,val,btn){ const c=P[k]; btn.disabled=true;
+  try{ await updateDoc(doc(db,'users',id),val?{[c.field]:true,[c.at]:serverTimestamp()}:{[c.field]:false});
+    const u=users.find(x=>x.id===id); u[c.field]=val; stats(); toast(val?c.label+' activado':'Acceso quitado'); draw(); }
   catch(e){ console.error(e); toast('No se pudo guardar. Revisa las reglas de Firestore.'); btn.disabled=false; } }
+async function loadLeads(){ $('leads').innerHTML='<p>Cargando interesados…</p>';
+  try{ const s=await getDocs(query(collection(db,'leads'),orderBy('createdAt','desc'),limit(300)));
+    const L=s.docs.map(d=>d.data());
+    $('leads').innerHTML=L.length?L.map(x=>{ const ph=String(x.phone||'').replace(/[^\d]/g,''); const msg=encodeURIComponent(`Hola ${(x.name||'').split(' ')[0]}! Soy Seba de ${x.page==='calefon'?'Aprende Calefón':'Aprende Caldera'} 👋 ¿Alcanzaste a ver la clase gratis? Si tienes alguna duda del curso te ayudo por acá.`);
+      return `<div class="u"><div><div class="nm">${esc(x.name)}</div><div class="em">+${esc(ph)} · ${x.page==='calefon'?'Calefón':'Caldera'}</div><div class="meta">${fdate(x.createdAt)} · vio: ${esc(x.lesson||'')}</div></div><div class="acts"><div class="prow"><a class="btn on" href="https://wa.me/${ph}?text=${msg}" target="_blank" rel="noopener">Escribir por WhatsApp</a></div></div></div>`; }).join(''):'<p>Aún no hay interesados.</p>';
+  }catch(e){ console.error(e); $('leads').innerHTML='<p>No se pudieron leer. Revisa que las reglas nuevas estén publicadas.</p>'; } }
+$('tabU').onclick=()=>{ $('usersBox').hidden=false; $('leadsBox').hidden=true; $('tabU').style.borderColor='var(--ink)'; $('tabL').style.borderColor=''; };
+$('tabL').onclick=()=>{ $('usersBox').hidden=true; $('leadsBox').hidden=false; $('tabL').style.borderColor='var(--ink)'; $('tabU').style.borderColor=''; loadLeads(); };
 $('q').oninput=draw; $('f').onchange=draw; $('reload').onclick=load;
 $('out').onclick=async e=>{e.preventDefault();await signOut(auth);location.href='../';};
 onAuthStateChanged(auth,async u=>{
   if(!u){ location.replace('../cuenta/?next=/admin/'); return; }
   $('wait').hidden=true;
   if(!isAdmin(u)){ $('deny').hidden=false; $('denyTxt').textContent='Iniciaste sesión como '+u.email+'.'; return; }
-  $('app').hidden=false; try{ await load(); }catch(e){ console.error(e); $('list').innerHTML='<p>No se pudieron leer las cuentas. Revisa que las reglas de Firestore estén publicadas con tu correo de administrador.</p>'; }
+  $('app').hidden=false; try{ await load(); }catch(e){ console.error(e); $('list').innerHTML='<p>No se pudieron leer las cuentas. Revisa que las reglas de Firestore estén publicadas.</p>'; }
 });
 </script>
 </body></html>

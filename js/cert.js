@@ -1,4 +1,6 @@
 // Dibuja el certificado de finalización sobre la plantilla (2000×1414) y lo descarga en PDF
+const DIRECTOR = "Director de Aprende Caldera";
+const VERIFY = "aprendecaldera.github.io/verificar";
 const BG = new URL("../assets/cert-bg.jpg", import.meta.url).href;
 const SIG = new URL("../assets/firma.png", import.meta.url).href;
 const load = src => new Promise((ok, ko) => { const i = new Image(); i.onload = () => ok(i); i.onerror = ko; i.src = src; });
@@ -21,11 +23,11 @@ export async function drawCertificate(canvas, { name, course, date, code }) {
   x.font = "500 23px Montserrat, Arial, sans-serif"; x.fillStyle = "#3c4a57";
   x.fillText("FECHA DE FINALIZACIÓN:  " + date, 136, 902);
   x.font = "500 17px Montserrat, Arial, sans-serif"; x.fillStyle = "#7a8691";
-  x.fillText("Código de verificación: " + code + "  ·  aprendecaldera.github.io/verificar", 136, 935);
+  x.fillText("Código de verificación: " + code + "  ·  " + VERIFY, 136, 935);
   const r = Math.min(440 / sig.width, 150 / sig.height), w = sig.width * r, h = sig.height * r;
   x.drawImage(sig, 1665 - w / 2, 1298 - h, w, h);
   x.font = "700 22px Inter, Arial, sans-serif"; x.fillStyle = "#e8401e";
-  x.fillText("Director de Aprende Caldera", 1430, 1342);
+  x.fillText(DIRECTOR, 1430, 1342);
   return canvas;
 }
 
