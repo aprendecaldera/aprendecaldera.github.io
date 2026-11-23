@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Aula | Aprende Caldera</title>
+<meta name="robots" content="noindex,nofollow">
+<link rel="icon" type="image/svg+xml" href="../assets/aprende-caldera-mark.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Anton&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#160d12;--bg2:#21121a;--card:#2c1822;--line:#4a2a39;--fg:#f6eef1;--muted:#c8aab6;--or:#ff4d3d;--or2:#ffb347;--ok:#25d366}
+*{box-sizing:border-box}html,body{margin:0}body{background:var(--bg);color:var(--fg);font:15px/1.5 Inter,system-ui,sans-serif}
+a{color:inherit}button{font:inherit;cursor:pointer}
+.top{position:sticky;top:0;z-index:20;background:rgba(22,13,18,.94);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.top-in{max-width:1320px;margin:auto;padding:10px 16px;display:flex;align-items:center;gap:14px}
+.logo{display:flex;align-items:center;gap:8px;text-decoration:none;font:400 20px Anton,Impact,sans-serif;letter-spacing:.5px}
+.logo img{width:28px;height:28px}.logo small{font:700 11px Inter;letter-spacing:2px;color:var(--or2);background:#3a1f2b;padding:3px 8px;border-radius:99px;margin-left:4px}
+.gprog{flex:1;display:flex;align-items:center;gap:10px;justify-content:flex-end;font-size:13px;color:var(--muted)}
+.bar{height:8px;background:#3a2530;border-radius:99px;overflow:hidden}.bar i{display:block;height:100%;background:linear-gradient(90deg,var(--or),var(--or2));border-radius:99px;transition:width .4s}
+.gprog .bar{width:160px}
+.help-btn{border:1px solid var(--line);background:var(--card);color:var(--fg);padding:8px 12px;border-radius:10px;font-weight:700;font-size:13px;text-decoration:none;white-space:nowrap}
+.tabs{max-width:1320px;margin:auto;padding:0 16px;display:flex;gap:6px;overflow-x:auto}
+.tab{background:none;border:0;color:var(--muted);padding:10px 14px;border-bottom:3px solid transparent;font-weight:800;white-space:nowrap}
+.tab.on{color:var(--fg);border-color:var(--or)}
+.main{max-width:1320px;margin:auto;padding:18px 16px 60px;display:grid;grid-template-columns:minmax(0,1fr) 380px;gap:22px;align-items:start}
+.player{background:#000;border-radius:16px;overflow:hidden;aspect-ratio:16/9;border:1px solid var(--line);position:relative}
+.player.doc{aspect-ratio:auto;height:68vh;min-height:420px}
+.player iframe{width:100%;height:100%;border:0;display:block}
+.ph{position:absolute;inset:0;display:grid;place-items:center;text-align:center;padding:20px;color:var(--muted)}
+.meta{margin:14px 0 6px;color:var(--or2);font-weight:800;font-size:12px;letter-spacing:1.5px;text-transform:uppercase}
+h1{margin:0 0 12px;font:400 clamp(24px,3.2vw,36px)/1.1 Anton,Impact,sans-serif;letter-spacing:.3px}
+.ctrls{display:flex;flex-wrap:wrap;gap:8px}
+.btn{border:1px solid var(--line);background:var(--card);color:var(--fg);padding:10px 14px;border-radius:12px;font-weight:700;text-decoration:none;display:inline-flex;align-items:center;gap:6px}
+.btn:hover{border-color:var(--or)}.btn.pri{background:var(--or);border-color:var(--or);color:#1f0d15}.btn.done{background:#123a22;border-color:#2b7a48;color:#c9f7d8}
+.btn:disabled{opacity:.4;cursor:default}
+.tip{margin-top:16px;background:var(--bg2);border:1px solid var(--line);border-radius:14px;padding:14px 16px;color:var(--muted);font-size:14px}
+.tip b{color:var(--fg)}
+.side{background:var(--bg2);border:1px solid var(--line);border-radius:16px;overflow:hidden;position:sticky;top:112px;max-height:calc(100vh - 130px);display:flex;flex-direction:column}
+.side-h{padding:14px 16px;border-bottom:1px solid var(--line)}
+.side-h b{display:block;font-size:16px}.side-h span{font-size:13px;color:var(--muted)}
+.side-h .bar{margin-top:8px}
+.list{overflow:auto}
+.mod{border-bottom:1px solid var(--line)}
+.mod-h{width:100%;background:none;border:0;color:var(--fg);text-align:left;padding:12px 16px;display:flex;align-items:center;gap:10px;font-weight:800}
+.mod-h em{font-style:normal;margin-left:auto;font-size:12px;color:var(--muted);font-weight:700;white-space:nowrap}
+.mod-h .ar{transition:transform .2s;color:var(--muted)}.mod.open .ar{transform:rotate(90deg)}
+.les{display:none;padding:0 8px 8px}.mod.open .les{display:block}
+.le{width:100%;background:none;border:0;color:var(--muted);text-align:left;padding:8px 10px;border-radius:10px;display:flex;gap:10px;align-items:flex-start;font-size:14px}
+.le:hover{background:#2a1720;color:var(--fg)}.le.cur{background:#3a1f2b;color:var(--fg)}
+.ck{flex:none;width:20px;height:20px;border-radius:50%;border:2px solid #6a4555;display:grid;place-items:center;font-size:11px;margin-top:1px}
+.le.seen .ck{background:var(--ok);border-color:var(--ok);color:#04210f}
+.le.seen .ck::after{content:'✓';font-weight:900}
+.n{flex:none;color:#8a6f7a;font-weight:700;min-width:18px}
+@media(max-width:980px){.main{grid-template-columns:1fr}.side{position:static;max-height:none}.gprog .bar{width:80px}.gprog span{display:none}}
+@media(max-width:520px){.logo{font-size:17px}.logo small{display:none}.help-btn{padding:7px 9px}.ctrls{display:grid;grid-template-columns:1fr 1fr}.ctrls .btn{justify-content:center;padding:11px 8px;font-size:14px}#prev{order:1}#next{order:2}#mark{order:3}#open{order:4}}
+</style></head><body>
+<header class="top">
+  <div class="top-in">
+    <a class="logo" href="../"><img src="../assets/aprende-caldera-mark.svg" alt="">APRENDE CALDERA<small>AULA</small></a>
+    <div class="gprog"><span id="gtxt">0% completado</span><div class="bar"><i id="gbar" style="width:0"></i></div></div>
+    <a class="help-btn" href="https://wa.me/56993992990?text=Hola%2C%20tengo%20una%20duda%20con%20el%20aula%20de%20Aprende%20Caldera" target="_blank" rel="noopener">💬 Ayuda</a>
+  </div>
+  <nav class="tabs" id="tabs"></nav>
+</header>
+<main class="main">
+  <section>
+    <div class="player" id="player"><div class="ph">Elige una lección para comenzar</div></div>
+    <div class="meta" id="meta"></div>
+    <h1 id="title"></h1>
+    <div class="ctrls">
+      <button class="btn" id="prev">← Anterior</button>
+      <button class="btn" id="mark">Marcar como vista</button>
+      <button class="btn pri" id="next">Siguiente →</button>
+      <a class="btn" id="open" target="_blank" rel="noopener">Abrir en Drive ↗</a>
+    </div>
+    <div class="tip">🔐 <b>¿Te sale “Necesitas acceso” o no carga?</b> Inicia sesión en Google con el <b>correo Gmail que nos diste al comprar</b>, o toca <b>“Abrir en Drive”</b>. Si sigue sin funcionar, escríbenos con el botón de Ayuda.</div>
+  </section>
+  <aside class="side">
+    <div class="side-h"><b id="sname"></b><span id="stxt"></span><div class="bar"><i id="sbar" style="width:0"></i></div></div>
+    <div class="list" id="list"></div>
+  </aside>
+</main>
+<script>
+const D={"courses":[{"name":"Caldera mural tradicional","mods":[{"n":"Módulo 1 · Bases y mediciones","l":[{"t":"Retorno de inversión y tipos de herramientas","id":"1ruc1d7WAtW_5Tv1Pp3IIgBc_UMaOyzTw"},{"t":"Introducción a la caldera mural","id":"1eeh3u_G_z-MyMCtmEGH4MDyrzzPovmA7"},{"t":"Parte hidráulica de una caldera","id":"1Mkohinr6I0e18bBDFePsX-hY4ccULKG2"},{"t":"Componentes generales de una caldera","id":"1_4lz4lQiobWBkpLAVooEOT4UFK6Lv1Tp"},{"t":"Componentes hidráulicos","id":"1CtyJQy38tlYNQMGpmB8THWd0tcutkxKt"},{"t":"Componentes eléctricos","id":"1pWiKbXeoIakCrV6-wVD3_DqEBzJdYTp6"},{"t":"Diferentes tipos de tester","id":"1uH-1shQxI74Ta_CmyLV57T-cuDNlR8Nq"},{"t":"Medición de resistencia","id":"1QFWDILpjixZt9C-D9bVJFLYfDGHh2mk5"},{"t":"Uso de continuidad","id":"1A4CKZDzL8CHx2D4OSzC0ukfMLgSJ7g9d"}]},{"n":"Módulo 2 · Componentes y cómo cambiarlos","l":[{"t":"Componente: bomba recirculadora","id":"1S9D0Rh58RxLIzhxTWqnxYEYElZasnhVe"},{"t":"Cómo cambiar bomba recirculadora","id":"1FDxWWxo4aQxfmK_-1Kwn67ij8vijo-0x"},{"t":"Componente: flujostato y Vitron","id":"1Xrr6hND3JoctFPUQXtAX4linVEKxgkv5"},{"t":"Cómo cambiar flujostato","id":"1-pSxAImCnP2iVP-IehwAEuEkdlHQeXvA"},{"t":"Flujostato Peisa trabado: falla y solución","id":"14iIPOqB-qG78z2aDYQKsTmf_tRg37l97"},{"t":"Cómo cambiar Vitron","id":"1eq_DV8jcGj50N6KycyRUrvkj7baCTlbh"},{"t":"Componente: transductor de presión","id":"1ESwKVWgAO2jtxWah46sXkoIsENdEmnFw"},{"t":"Cómo cambiar transductor de presión","id":"17g3xd2WQKlUgb4uireQyaxnkUsklHn-h"},{"t":"Componente: forzador y presostato de humo","id":"1seccnq3ZchbAgDs2omUehLjwXPCJG0Ui"},{"t":"Cómo cambiar forzador y presostato de humo","id":"16kvuzhbVuM6-nVUVZzQTmJD6fDyKpdTM"},{"t":"Componente: intercambiadores","id":"1WhGhxx5_tFDI0IebD2g5oq06LnhbnJft"},{"t":"Componente: sensor NTC","id":"1CTb12KQRLyatfBLKqKoNv2zs5Ze4086p"},{"t":"Cómo cambiar sensor NTC","id":"15zGdBsWGtZe0zeGBVGntDkBn14H-b_aC"},{"t":"Cómo cambiar sensor sumergible","id":"1IFGpDHs8PbP0-_0cC_d6X11BTH3N4c8g"},{"t":"Componente: sensor de sobretemperatura (clixon)","id":"12LDRx-JftmJYLmVBOa2IG2Y6YnKpE0ke"},{"t":"Cómo cambiar sensor de sobretemperatura (clixon)","id":"1FHPB9hRESbf59xd_MACl8G-eL0dXJBDD"},{"t":"Componente: servomotor","id":"16pMFXux4TeSuUSmGXWdSrdYj6f-Fw_jn"},{"t":"Cómo cambiar servomotor y válvula de 3 vías","id":"1G8O26qMyETMXuqveh1HmGJCFIp6as7o4"},{"t":"Componente: sonda y electrodos","id":"12Y9Nd-leWSJ1zyk7-19j8ouhWmzoF71t"},{"t":"Componente: válvula de gas","id":"1cWf650d2dQaI7Ov0UvjhJLE4sXrQGCC5"},{"t":"Componente: vaso de expansión","id":"15iBe2qxCrluMpImOL4NX2QGKwGdZNM_M"},{"t":"Componente: válvula de llenado","id":"10qMN_WUMGhufhvb_nYmHpngCjVaUh667"},{"t":"Componente: plaqueta electrónica","id":"16BwHTSLgkd8973bEeU_LlzbjVXj7RwYF"},{"t":"Cómo cambiar plaqueta electrónica","id":"1qGQ3sR_EYqKBCIRj-SudSJwKHafFnoED"}]},{"n":"Módulo 3 · Lógica, mantención y fallas","l":[{"t":"Lógica de funcionamiento","id":"1_RZRhh4cHvqn5bWh13bgh4bxyUYhvR1W"},{"t":"Mantenimiento preventivo (parte 1)","id":"1BbHiQT2z7HgMZKAG4-JvWpnl_RVLxj9W"},{"t":"Mantenimiento preventivo (parte 2)","id":"1wMLY1QSBt9DvGgh9OMR1W0-xLzhlLnW7"},{"t":"Mantenimiento preventivo (parte 3)","id":"1byudbkpFmsEHfyKOuzKoIiAzuLcNZEhV"},{"t":"Posibles fallas y resoluciones","id":"18fBC1hL5yyypLiyADwrnLAPgXPQaU8Im"},{"t":"Qué es y función del termostato","id":"1_5rpZjiF7z3xylTGqenhq7FR38oPVp0e"}]},{"n":"Módulo 4 · Circuito, regulación y diagnóstico","l":[{"t":"Ventilación","id":"1DTR5Qym03mb_ernLiWbQRrY7EYUxi2q8"},{"t":"Llenado de circuito","id":"12zOWyRGKPM2TzI3jod-CRik9tJYEzrAa"},{"t":"Limpieza del circuito radiante","id":"1j6vpIulJMDAm_4sOA69dsnz_xgyc8CIb"},{"t":"Armado de bomba clase 1","id":"19Xntc-50_4jQUuvUmc18BeBrByOpcJXe"},{"t":"Armado de bomba parte 2","id":"1B2y2-Lr0NeJnMUVoqrT0web05-cK_CMb"},{"t":"Bomba profesional Superflush40","id":"1aZXEWQsb3nCk4wMFXLgQrg7LqysBBtE5"},{"t":"Superflush en acción","id":"1IVx2KaqDVeRQ-dImvggChD1KrabdNybe"},{"t":"Radiadores y armado","id":"1xeqL2z_T2WVdQMatU2JQm8ZMP-mkOm_s"},{"t":"Regulación de válvula de gas","id":"1YymHvX-fb1jyRczsDPLXp3R4eKuREnFG"},{"t":"Seguridad","id":"16TOiPx2_avhpk3dycI3sfyQsw0Ez1eyF"},{"t":"Comandos del display","id":"1xesk_QRJbnSKc7i4U7N5lsB3L1FV1CZ3"},{"t":"Programación de una caldera","id":"1xFcLNj7Z_Z10v0_ysWNPTvKzqma8cHU1"},{"t":"Cómo probar caldera sin banco","id":"1zDaoPqzDex72t-YnUkgpLdlysYrQr5fn"},{"t":"Tipos de juntas y flexibles","id":"1gsVPcMjm8uUrohOfbXKHKG3lYDBdZxGQ"},{"t":"Diagnóstico térmico con cámara (parte 1)","id":"1siY88wsptaiJ_FasZZ-yNjpwbHQFFV2X"},{"t":"Diagnóstico térmico (parte 2)","id":"19el3eeRFm2bNHh0pMle-ltTyDQmyTTPy"},{"t":"Diagnóstico térmico y sellador de cañerías","id":"1phDygNdZXoLstPqQAL82YbYh0ZctBRwI"}]},{"n":"Módulo 5 · Equipos por marca","l":[{"t":"Caldera Peisa Diva Duo Mini F","id":"1l21M883EtTw_8LLLsE75uOSLo3HSj7qc"},{"t":"Caldera Peisa Primatec 24F","id":"1szW6gX5uzPgfGIQ0lSjjYiKtBl2ckFa3"},{"t":"Caldera Immergas Maior Eolo","id":"12j6EgYF1FZ66A4gSCWHD5Jz-c_938whA"},{"t":"Caldera Immergas Eolo Star","id":"1gwDeZ2QF_Dgf-Ox2h1RhEiZ55-_jPjDU"},{"t":"Caldera Caldaia Aquaterm XA30F","id":"1JAbT2Fndopk9gWM0nazMn7g2ajRWI57R"},{"t":"Caldera Caldaia Top SA26F","id":"1_HnFRyPEJsykOAaFX5BnXsg5ppxGPbnv"},{"t":"Caldera Baxi Main","id":"1VjSv-sOqnxcahPraiCBTgKwGqyHT6hna"},{"t":"Caldera Baxi Main Four","id":"1dD_SV6x86egS03-nKUZOuPaoqLWrGHZu"},{"t":"Caldera Baxi Main 5","id":"1t4b_il3-uhMZmOTFerOkByoZMu-RmZvG"},{"t":"Caldera Demir-Döküm Nepto","id":"1EHpB_w814Ae3WpYvNYPPLSVCC9rjpKH1"},{"t":"Caldera BGH modelo BCF","id":"1unVuapnM7ZadKKChSAJuO4JkxlX2NlVg"},{"t":"Caldera Innovita línea Perla PRO","id":"1e4dvReIGOJ3evkFyq0UhTD-ixdwPWYmh"}]},{"n":"Módulo 6 · Mantención en terreno","l":[{"t":"Mantenimiento caldera parte 1","id":"1aI8KREiUKTZOmdrT552fOMUcnPU4JSJf"},{"t":"Mantenimiento caldera parte 2","id":"1K8HSAy21NPQsQOCQePyHiRRXd2HrmIvw"},{"t":"Entrevista con un técnico en terreno","id":"1d7uMyzxvrZIKDwNOZdO0lzFk_AH112Es"},{"t":"Prácticas intensivas","id":"1G9ah-o8zJu1cpwkwnmIvs7e16kYgwgdk"},{"t":"Cierre del curso","id":"1w_Jes3UtmKBKrf9ZrENq27JZc6WOg0Y_"}]}]},{"name":"Caldera de condensación","mods":[{"n":"Módulo 1 · Fundamentos","l":[{"t":"Introducción a la condensación","id":"11N_MAU4ax1mUszUmbuHnYf12MNKPgQ8R"},{"t":"Lógica de funcionamiento","id":"1ptE170gjTT_WA1yMGjJX9O7x85FdxbTj"},{"t":"Diferencias de los componentes","id":"1FRJED193qBseIoZ4CXkFG_WfGDQVk7hi"}]},{"n":"Módulo 2 · Agua, mantención y medición","l":[{"t":"Tratamiento de agua","id":"1qwIpNkIvvTVM8rtihcFinLSbeUTG2lOo"},{"t":"Mantenimiento preventivo (parte 1)","id":"1LHdBZou8WIGuvi81FDm5Cq3UFVSvnq3P"},{"t":"Mantenimiento preventivo (parte 2)","id":"13l7sgLWwif1UXUJX_EmEOLx5-oQiAftr"},{"t":"Ventilación de una caldera","id":"1DKYdm9VTqFRObXc7_6eB4D-2JBchVjPd"},{"t":"Prueba y medición de componente","id":"1hSGxx_FQBlJDBvBWwT28JWJd99OK3hUD"}]},{"n":"Módulo 3 · Seguridad, instalación y oficio","l":[{"t":"Seguridad para trabajar","id":"1E671BL__PKZtUDotkG9-vildBa7yUlSs"},{"t":"Primer encendido","id":"1-fVAKX08v2XI4brbURow_uxrKN4gXwzI"},{"t":"Instalación de caldera de condensación","id":"1tiPQ8twMMrKHQs0FZhyPqOCAEsDXbVIn"},{"t":"Cómo cobrar tus servicios","id":"1K4KROwTsxiufywG5XF22sLJX2ZFCXs6i"},{"t":"Cierre del curso de condensación","id":"1OLGMyuRC6jvaJCYOfFMuQCfaqSYtsAbU"}]}]}],"manuals":[{"n":"Baxi","l":[{"t":"Despiece general","id":"1Fr1ixbc5_QDquK6f7rKV46hUr8jwbCMv"},{"t":"Duo-Tec Compact (condensación)","id":"1jCZ53ulrT9LViWDizOkO-nh6d0lJ2alD"},{"t":"Eco 3 Compact","id":"1pH43hrLhEueCUDXwjEY0wIBuEdCDABUi"},{"t":"Eco 3 Compact: despiece","id":"1CsVp4Mmdhz0H0rwLC2fXZXWue7CSklKP"},{"t":"Eco 4S","id":"1wcXStiBu9ikPcBddQE7dkLAE3mb2apSD"},{"t":"Econova 2021","id":"1ZsHe3GeblmfMNxvlRqxcxT5fKqTT0-C4"},{"t":"Errores frecuentes","id":"1VmmiGzHTElu-u0i3UP6ZF8pNTblKSUT7"},{"t":"Luna 3","id":"1RwuV5_uVvw8R2A2fmgYgtypEW7ADvTG9"},{"t":"Luna 3 (manual 2)","id":"1dpAP9eHRROt1tivvbmgqK35GFZIw0b3n"},{"t":"Luna 3 Comfort","id":"1julObYT60OPo2mOkpGoN8r0JNTNOYUHU"},{"t":"Main 2","id":"1qpMu_KNy3NJBIODIq_yftp8VXcxWLai0"},{"t":"Main 5","id":"1O2TsJ2MstzZYUiHRnX3N04nPUsZYKqT7"},{"t":"Main Four 24/24F con anexo TSA","id":"1CJPLtqoBCM1yO6QAwMIc9iyS8kt2I_G0"},{"t":"Triangular TSA-BJ-24-i","id":"1PZ4lnsOE8iTQR7fH9f-wdugnxLUFd5g4"}]},{"n":"Ariston","l":[{"t":"Altea One y Genus One","id":"1j06A9ES_WI4lNbRFjFjT-KNvPqczWT4i"},{"t":"BS 24 CF / FF","id":"1jCRcEOnKSA3I9nwcFLQNuS2TD3tIjtTL"},{"t":"BS II 24F","id":"1T-VOCwnceAVxPaVkstoY-hmVRwPSUWNw"},{"t":"Cares Premium (condensación)","id":"1aFlQ5r_jb6m2Eyv64qvFZ-rCAUmg-s-Y"},{"t":"Clas CF: manual","id":"1JKag5THcPT3Y2xD-_Xd8ZzTpdqCVXrRM"},{"t":"Clas Evo","id":"1jfAeYKhKQF2HmLsn4kqc2ahLf_HJLBU-"},{"t":"Clas System: manual del usuario","id":"1kh29cxsB2GTFlpO8S8hr4OWx0yW-RDsb"},{"t":"Clas X","id":"1Rw_MXnvW09hlgP3PFBUOh5LdiODD9Yg5"},{"t":"Egis CF: manual","id":"1TeD_tJ-mmtF3gql8s1nqfw1fYR3_IVhH"},{"t":"Genus Premium HP 45 a 100","id":"1sJO8Gap0-WF1fF-CWr48xxlhstaBE1EQ"},{"t":"Manual técnico de servicio","id":"1F_ShSJEPgdewDYdzdn2dF6Av1O9Y4yH9"}]},{"n":"Caldaia","l":[{"t":"Climatizador de piscina","id":"1cieMEsw_YwjsEUBTIJrjuWw7yOnWpgMd"},{"t":"Manual digital","id":"1IAhPbn5yBRmAFUBm3TgYqrK29m-MODPA"},{"t":"Plaqueta Genius: X30F, XA30 y climatizadores","id":"1eACrV0t3rQVB4_VpGhct8NEUjnUafTjv"},{"t":"Plaquetas con display rojo: programación","id":"17rtYPaFENnqdyR-bTGu3NYdLQ327nqez"},{"t":"Serie SA26: calderas murales","id":"1W2mIhgjtqNnbdhrO1DnsVVpvahVpxQ8k"},{"t":"Serie digital: manual","id":"1P43wpKiqymrCDBcGe6YmYZO2CcLlLLT5"},{"t":"TOP SA26 digital","id":"1wsBQWdyF3jV489wsQ2-LxqLbrL1TNH85"},{"t":"TOP SA26: manual","id":"123io_NFtF6ILKOG5q1BoLPb5MXybslx6"},{"t":"TOP SA26F: programación nuevo display","id":"1myiqHsjYpwC88q9EcTOY4fNqwhcBhRxL"},{"t":"TOP X30F V3V gas licuado: programación y regulación","id":"1et11e-hquCTWO0d4iF--Fo58qb-Ghth6"},{"t":"XA30: programación y errores","id":"1PbUjLFSJFM8JeNzF0hIK8ax8UzrPVhkP"}]},{"n":"Peisa","l":[{"t":"Climatizador Caldaia CP30/40/70","id":"19LtjgboBG-ChKzA4IOyqXpJ8RZEL-f2Q"},{"t":"Climatizador TX40","id":"1Sl3elIhqMSZvyJOFKKOLHEq9TSR0fGa5"},{"t":"Climatizador de piscina T80","id":"1VddYuHTOMEbJfXz0HH_aklx1w05bfn5G"},{"t":"Climatizador mural Caldaia CX30/40","id":"1cwNPSJtYyYCv2udQF9ovUZbpZKlKrAQX"},{"t":"Manual técnico 15","id":"1FcQrJS16_TTLuRQg2O63uaU2iJ0_AgiU"},{"t":"Manual técnico Peisa","id":"1wO-36g3aUnIg94tPgzd624XOfArvfIOr"},{"t":"Única","id":"1sqtbyQsRaDULnCK-fZ1t0stHbcmsVHvl"},{"t":"Única (versión 3)","id":"1ZD3MhHKyEUPBKdcubKJD5WrLfVGacBl5"}]},{"n":"Immergas","l":[{"t":"Eolo Star","id":"18YnKi09_GS75H-75weUwdAZOvAhOYsQB"},{"t":"Maior Eolo","id":"14sIYCDc-TWiDo42xCAaNuHBEBzMzID5h"},{"t":"Mythos Eolo","id":"1Q6MKVCYfAxnuRkaqpr-p4-HHsaXGCKV2"},{"t":"Nike Star","id":"1II4htgrffy4ziCWdMAN35FNZYqJiKtEB"}]},{"n":"Roca","l":[{"t":"Curso Nora y Sara","id":"1AZl6hu6XZL9fPRmXD0C3Dj8JVoNXecG4"},{"t":"Roca 24/24F","id":"1AonDX3zNAEZ47xMHFf8lG3TsNB_7mt6i"}]},{"n":"BGH / Ferroli","l":[{"t":"BCV24DFA","id":"1LZjZafSgC4yblWJJ6OYqM7ziPw3YUkqh"},{"t":"Kit de herramientas","id":"1B4H9kYw9_XlpAgI4fHZ7AMZd_m2qN_15"}]},{"n":"Termostatos y material general","l":[{"t":"Bomba de calor para piscina","id":"1DadHQleZj79OH6vGrmPYIS-7PDnXNDnB"},{"t":"Esquema de conexión de relé","id":"1JkxG11ld8YEYVi55RPcdj4l5XTw1bXZd"},{"t":"Euterma Minibox 24/30","id":"1Xur-yxWK4cce1FSO5VY2Ms1H5DG3msOL"},{"t":"Manual complementario","id":"1_hKvjrxOuWamUi3Ephf7WtI151Fix4Hw"},{"t":"Manual didáctico de lógica de funcionamiento","id":"1lwoQLeUmNA7xpReRlEzN-6QId59lnnAK"},{"t":"Manual técnico de caldera mural","id":"1zOcpTk7K4wvONcz440WGu9R_1Ku7VtRL"},{"t":"Termostato inalámbrico Peisa","id":"1eifxVf5-59psh2PjNALXXAja6QbHwara"}]}]};
+const SECS=[...D.courses.map(c=>({name:c.name,mods:c.mods,doc:false})),{name:'Manuales y PDF',mods:D.manuals,doc:true}];
+const store={get(k,d){try{const v=localStorage.getItem(k);return v?JSON.parse(v):d}catch(e){return d}},set(k,v){try{localStorage.setItem(k,JSON.stringify(v))}catch(e){}}};
+let seen=new Set(store.get('ac_seen',[]));
+let cur={s:0,m:0,l:0};
+const $=id=>document.getElementById(id);
+const flat=s=>SECS[s].mods.flatMap((m,mi)=>m.l.map((l,li)=>({m:mi,l:li,id:l.id})));
+function saveSeen(){store.set('ac_seen',[...seen]);}
+function pct(ids){return ids.length?Math.round(100*ids.filter(i=>seen.has(i)).length/ids.length):0}
+function progress(){
+  const vids=D.courses.flatMap(c=>c.mods.flatMap(m=>m.l.map(l=>l.id)));
+  const g=pct(vids); $('gbar').style.width=g+'%'; $('gtxt').textContent=g+'% de los videos vistos';
+  const ids=flat(cur.s).map(x=>x.id), done=ids.filter(i=>seen.has(i)).length;
+  $('sname').textContent=SECS[cur.s].name; $('stxt').textContent=`${done} de ${ids.length} ${SECS[cur.s].doc?'documentos revisados':'lecciones vistas'}`;
+  $('sbar').style.width=pct(ids)+'%';
+}
+function tabs(){ $('tabs').innerHTML=SECS.map((s,i)=>`<button class="tab${i===cur.s?' on':''}" data-s="${i}">${s.name}</button>`).join('');
+  $('tabs').querySelectorAll('.tab').forEach(b=>b.onclick=()=>{const s=+b.dataset.s; const last=store.get('ac_last_'+s,null); go(s,last?last.m:0,last?last.l:0);}); }
+function list(){ const S=SECS[cur.s];
+  $('list').innerHTML=S.mods.map((m,mi)=>{ const ids=m.l.map(l=>l.id), d=ids.filter(i=>seen.has(i)).length;
+    return `<div class="mod${mi===cur.m?' open':''}"><button class="mod-h" data-m="${mi}"><span class="ar">▸</span>${m.n}<em>${d}/${ids.length}</em></button><div class="les">`+
+      m.l.map((l,li)=>`<button class="le${seen.has(l.id)?' seen':''}${mi===cur.m&&li===cur.l?' cur':''}" data-m="${mi}" data-l="${li}"><span class="ck"></span>${S.doc?'':`<span class="n">${li+1}</span>`}<span>${l.t}</span></button>`).join('')+`</div></div>`;}).join('');
+  $('list').querySelectorAll('.mod-h').forEach(b=>b.onclick=()=>b.parentElement.classList.toggle('open'));
+  $('list').querySelectorAll('.le').forEach(b=>b.onclick=()=>{go(cur.s,+b.dataset.m,+b.dataset.l); if(innerWidth<980) $('player').scrollIntoView({behavior:'smooth',block:'start'});});
+  const c=$('list').querySelector('.le.cur'); if(c&&innerWidth>=980) c.scrollIntoView({block:'nearest'});
+}
+function render(){ const S=SECS[cur.s], m=S.mods[cur.m], l=m.l[cur.l];
+  $('player').className='player'+(S.doc?' doc':'');
+  $('player').innerHTML=`<iframe src="https://drive.google.com/file/d/${l.id}/preview" allow="autoplay; fullscreen" allowfullscreen title="${l.t.replace(/"/g,'')}"></iframe>`;
+  $('meta').textContent=S.doc?`Manuales · ${m.n}`:`${S.name} · ${m.n} · Lección ${cur.l+1}`;
+  $('title').textContent=l.t; document.title=l.t+' | Aula Aprende Caldera';
+  $('open').href=`https://drive.google.com/file/d/${l.id}/view`;
+  const f=flat(cur.s), i=f.findIndex(x=>x.m===cur.m&&x.l===cur.l);
+  $('prev').disabled=i<=0; $('next').disabled=i>=f.length-1;
+  const sn=seen.has(l.id); $('mark').className='btn'+(sn?' done':''); $('mark').textContent=sn?'✓ Vista':(S.doc?'Marcar como revisado':'Marcar como vista');
+  tabs(); list(); progress();
+}
+function go(s,m,l){ cur={s,m,l}; store.set('ac_last_'+s,{m,l}); store.set('ac_tab',s); history.replaceState(null,'',`#${s}-${m}-${l}`); render(); }
+function step(d){ const f=flat(cur.s), i=f.findIndex(x=>x.m===cur.m&&x.l===cur.l), n=f[i+d]; if(n) go(cur.s,n.m,n.l); }
+$('prev').onclick=()=>step(-1);
+$('next').onclick=()=>{ const l=SECS[cur.s].mods[cur.m].l[cur.l]; seen.add(l.id); saveSeen(); step(1); render(); };
+$('mark').onclick=()=>{ const id=SECS[cur.s].mods[cur.m].l[cur.l].id; seen.has(id)?seen.delete(id):seen.add(id); saveSeen(); render(); };
+(function init(){ const h=location.hash.slice(1).split('-').map(Number);
+  if(h.length===3&&SECS[h[0]]&&SECS[h[0]].mods[h[1]]&&SECS[h[0]].mods[h[1]].l[h[2]]) return go(h[0],h[1],h[2]);
+  const s=store.get('ac_tab',0), last=store.get('ac_last_'+s,null); go(SECS[s]?s:0,last?last.m:0,last?last.l:0); })();
+</script>
+</body></html>
