@@ -5,15 +5,15 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="icon" type="image/svg+xml" href="assets/aprende-caldera-mark.svg">
 <title>Aprende Caldera | Curso de reparación y mantención de calderas</title>
-<meta name="description" content="Curso completo de reparación de calderas murales: 86 clases en video, +50 manuales, certificado y comunidad de técnicos. Prueba 7 clases gratis.">
+<meta name="description" content="Curso completo de reparación de calderas murales: 86 clases en video, +50 manuales, certificado y comunidad de técnicos. Prueba 3 clases gratis.">
 <!-- Vista previa para compartir en WhatsApp / redes -->
 <meta property="og:type" content="website">
 <meta property="og:locale" content="es_CL">
 <meta property="og:site_name" content="Aprende Caldera">
 <meta property="og:url" content="https://aprendecaldera.github.io/">
 <meta property="og:title" content="Aprende Caldera | Curso de reparación y mantención de calderas">
-<meta property="og:description" content="Curso completo de reparación de calderas murales: 86 clases en video, +50 manuales, certificado y comunidad de técnicos. Prueba 7 clases gratis.">
-<meta property="og:image" content="https://aprendecaldera.github.io/assets/og2.jpg">
+<meta property="og:description" content="Curso completo de reparación de calderas murales: 86 clases en video, +50 manuales, certificado y comunidad de técnicos. Prueba 3 clases gratis.">
+<meta property="og:image" content="https://aprendecaldera.github.io/assets/og.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
@@ -1299,7 +1299,7 @@ const flat=s=>SECS[s].mods.flatMap((m,mi)=>m.l.map((l,li)=>({m:mi,l:li,id:l.id})
 const courseIds=ci=>D.courses[ci].mods.flatMap(m=>m.l.map(l=>l.id));
 const fd=x=>x?Math.floor(x/60)+':'+String(x%60).padStart(2,'0'):''; const fh=x=>{const h=Math.floor(x/3600),m=Math.round(x%3600/60);return h?h+' h '+m+' min':m+' min'}; const sumD=L=>L.reduce((a,l)=>a+(l.d||0),0);
 const pct=ids=>ids.length?Math.round(100*ids.filter(i=>seen.has(i)).length/ids.length):0;
-const FREES=["1ruc1d7WAtW_5Tv1Pp3IIgBc_UMaOyzTw", "1eeh3u_G_z-MyMCtmEGH4MDyrzzPovmA7", "1Xrr6hND3JoctFPUQXtAX4linVEKxgkv5", "1_RZRhh4cHvqn5bWh13bgh4bxyUYhvR1W", "12zOWyRGKPM2TzI3jod-CRik9tJYEzrAa", "1VjSv-sOqnxcahPraiCBTgKwGqyHT6hna", "11N_MAU4ax1mUszUmbuHnYf12MNKPgQ8R"]; const can=id=>active||FREES.includes(id);
+const FREES=["1ruc1d7WAtW_5Tv1Pp3IIgBc_UMaOyzTw", "1_RZRhh4cHvqn5bWh13bgh4bxyUYhvR1W", "11N_MAU4ax1mUszUmbuHnYf12MNKPgQ8R"]; const can=id=>active||FREES.includes(id);
 const GOALS={"Módulo 1 · Bases y mediciones":"Reconocer las partes de una caldera mural y medir componentes con el tester.","Módulo 2 · Componentes y cómo cambiarlos":"Saber qué hace cada pieza, probarla y cambiarla: bomba, flujostato, NTC, válvula de gas, plaqueta y más.","Módulo 3 · Lógica, mantención y fallas":"Entender el ciclo de encendido, hacer una mantención preventiva completa y ubicar fallas comunes.","Módulo 4 · Circuito, regulación y diagnóstico":"Llenar y limpiar el circuito, regular la válvula de gas, programar el display y diagnosticar sin banco.","Módulo 5 · Equipos por marca":"Trabajar con equipos reales de Peisa, Baxi, Immergas, Caldaia, BGH y otras marcas.","Módulo 6 · Mantención en terreno":"Ver una mantención completa en terreno, de principio a fin.","Módulo 1 · Fundamentos":"Entender qué cambia en una caldera de condensación y cómo funciona.","Módulo 2 · Agua, mantención y medición":"Tratar el agua, hacer la mantención y medir los componentes de un equipo de condensación.","Módulo 3 · Seguridad, instalación y oficio":"Trabajar seguro, hacer el primer encendido, instalar y cobrar tus servicios."};
 const leadOk=()=>{try{return !!localStorage.getItem('ac_lead')}catch(e){return false}};
 function save(){ if(!progRef) return; clearTimeout(saveT); saveT=setTimeout(()=>setDoc(progRef,{seen:[...seen],updatedAt:serverTimestamp()},{merge:true}).catch(e=>console.warn(e)),800); }
