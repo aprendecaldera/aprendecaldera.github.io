@@ -36,7 +36,8 @@ header{background:#fff;border-bottom:1px solid var(--line)}.hd{max-width:1100px;
 <main class="wrap" id="app" hidden>
   <div class="stats"><div class="stat"><b id="sTot">0</b><span>cuentas creadas</span></div><div class="stat"><b id="sOn">0</b><span>con algún curso activo</span></div><div class="stat"><b id="sOff">0</b><span>sin ningún curso activo</span></div></div>
   <div class="note">Cada cuenta sirve para las dos webs. Activa el curso que compró (Caldera o Calefón) y comparte esa carpeta de Drive con su correo: toca <b>“Compartir Drive”</b>, pega el correo como lector y envía.</div>
-  <div class="bar-top" style="margin-bottom:6px"><button class="btn ghost" id="tabU" style="border-color:var(--ink)">Cuentas</button><button class="btn ghost" id="tabL">Interesados (clase gratis)</button><button class="btn ghost" id="tabV">Ventas</button></div>
+  <div class="bar-top" style="margin-bottom:6px"><button class="btn ghost" id="tabU" style="border-color:var(--ink)">Cuentas</button><button class="btn ghost" id="tabL">Interesados (clase gratis)</button><button class="btn ghost" id="tabV">Ventas</button><button class="btn ghost" id="tabP">Pagos sin terminar</button></div>
+  <div id="pendBox" hidden><p class="note">Personas que tocaron <b>Comprar</b> y llegaron a Mercado Pago, pero todavía no tienen ese curso activo. Escríbeles para ayudarlas a terminar la compra.</p><div class="list" id="pend"></div></div>
   <div id="ventasBox" hidden><div class="stats" id="vStats"></div><div class="list" id="ventas"></div></div>
   <div id="leadsBox" hidden><div class="list" id="leads"></div></div>
   <div id="usersBox">
@@ -88,10 +89,24 @@ async function loadLeads(){ $('leads').innerHTML='<p>Cargando interesados…</p>
     $('leads').innerHTML=L.length?L.map(x=>{ const ph=String(x.phone||'').replace(/[^\d]/g,''); const msg=encodeURIComponent(`Hola ${(x.name||'').split(' ')[0]}! Soy Seba de ${x.page==='calefon'?'Aprende Calefón':'Aprende Caldera'} 👋 ¿Alcanzaste a ver la clase gratis? Si tienes alguna duda del curso te ayudo por acá.`);
       return `<div class="u"><div><div class="nm">${esc(x.name)}</div><div class="em">+${esc(ph)} · ${x.page==='calefon'?'Calefón':'Caldera'}</div><div class="meta">${fdate(x.createdAt)} · vio: ${esc(x.lesson||'')}</div></div><div class="acts"><div class="prow"><a class="btn on" href="https://wa.me/${ph}?text=${msg}" target="_blank" rel="noopener">Escribir por WhatsApp</a></div></div></div>`; }).join(''):'<p>Aún no hay interesados.</p>';
   }catch(e){ console.error(e); $('leads').innerHTML='<p>No se pudieron leer. Revisa que las reglas nuevas estén publicadas.</p>'; } }
-function tab(k){ ['U','L','V'].forEach(x=>{ $('tab'+x).style.borderColor=x===k?'var(--ink)':''; }); $('usersBox').hidden=k!=='U'; $('leadsBox').hidden=k!=='L'; $('ventasBox').hidden=k!=='V'; }
+function tab(k){ ['U','L','V','P'].forEach(x=>{ $('tab'+x).style.borderColor=x===k?'var(--ink)':''; }); $('usersBox').hidden=k!=='U'; $('leadsBox').hidden=k!=='L'; $('ventasBox').hidden=k!=='V'; $('pendBox').hidden=k!=='P'; }
 $('tabU').onclick=()=>tab('U');
 $('tabL').onclick=()=>{ tab('L'); loadLeads(); };
 $('tabV').onclick=()=>{ tab('V'); loadVentas(); };
+$('tabP').onclick=()=>{ tab('P'); loadPend(); };
+const CAMPOS={calefon:['calefon'],caldera:['access'],pack:['access','calefon'],prueba:['prueba']};
+async function loadPend(){ $('pend').innerHTML='<p>Cargando…</p>';
+  try{ const s=await getDocs(query(collection(db,'intentos'),orderBy('creado','desc'),limit(300)));
+    const us=await getDocs(query(collection(db,'users'),limit(1000))); const U={}; us.docs.forEach(d=>U[d.id]=d.data());
+    const visto=new Set(), P=[];
+    s.docs.map(d=>d.data()).forEach(x=>{ const k=x.uid+'|'+x.curso; if(visto.has(k)||x.curso==='prueba') return; visto.add(k);
+      const u=U[x.uid]||{}; if((CAMPOS[x.curso]||[]).every(c=>u[c])) return; P.push({...x,name:u.name||''}); });
+    $('pend').innerHTML=P.length?P.map(x=>{ const nom=(x.name||'').split(' ')[0]; const curso=NOM[x.curso]||x.curso;
+      const asunto=encodeURIComponent('Tu acceso a '+curso);
+      const cuerpo=encodeURIComponent(`Hola${nom?' '+nom:''}! Soy Seba de ${curso} 👋\n\nVi que empezaste la compra pero no alcanzaste a terminarla. ¿Tuviste algún problema con el pago? Si quieres te ayudo, o puedes terminarla acá:\n${x.curso==='caldera'?'https://aprendecaldera.github.io':'https://aprendecalefon.github.io'}/comprar/?curso=${x.curso}\n\nEl precio de lanzamiento es solo hasta el 30 de noviembre.\n\nSaludos!`);
+      return `<div class="u"><div><div class="nm">${esc(x.name||'(sin nombre)')} · ${esc(curso)} · $${Number(x.precio||0).toLocaleString('es-CL')}</div><div class="em">${esc(x.email||'')} <button class="lnk" data-copy="${esc(x.email||'')}">copiar</button></div><div class="meta">${fdate(x.creado)}</div></div><div class="acts"><a class="btn ghost" href="mailto:${esc(x.email||'')}?subject=${asunto}&body=${cuerpo}">✉️ Escribir correo</a></div></div>`; }).join(''):'<p>No hay pagos sin terminar. 🎉</p>';
+    $('pend').querySelectorAll('[data-copy]').forEach(b=>b.onclick=()=>{ navigator.clipboard.writeText(b.dataset.copy); b.textContent='copiado'; });
+  }catch(e){ console.error(e); $('pend').innerHTML='<p>No se pudieron leer. Revisa que las reglas nuevas estén publicadas.</p>'; } }
 const NOM={calefon:'Aprende Calefón',caldera:'Aprende Caldera',pack:'Pack Caldera + Calefón'}, EST={approved:'Aprobado',pending:'Pendiente',in_process:'En proceso',rejected:'Rechazado',cancelled:'Cancelado',refunded:'Devuelto'};
 async function loadVentas(){ $('ventas').innerHTML='<p>Cargando ventas…</p>';
   try{ const s=await getDocs(query(collection(db,'payments'),orderBy('actualizado','desc'),limit(300)));
