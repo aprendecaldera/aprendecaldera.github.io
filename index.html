@@ -815,12 +815,7 @@ footer.site a{color:#1d1d1f}
   .phero{padding:32px 0 36px}
 }
 </style>
-<!-- Meta Pixel: reemplaza TU_PIXEL_ID por el ID de tu píxel y quita los comentarios para activarlo
-<script>
-!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
-fbq('init','TU_PIXEL_ID');fbq('track','PageView');fbq('track','ViewContent',{content_name:'Aprende Caldera',value:49990,currency:'CLP'});
-</script>
--->
+<script src="js/pixel.js"></script>
 </head>
 <body>
 
@@ -837,7 +832,7 @@ fbq('init','TU_PIXEL_ID');fbq('track','PageView');fbq('track','ViewContent',{con
 </div>
 
 <header>
-  <div class="topbar"><span class="tb-long">Precio de lanzamiento </span><span style="white-space:nowrap">$49.990 termina en</span> <b data-cd="short">—</b></div>
+  <div class="topbar"><span class="tb-long">Precio de lanzamiento </span><span style="white-space:nowrap">$39.990 termina en</span> <b data-cd="short">—</b></div>
   <div class="wrap">
     <a class="logo" href="#inicio"><img src="assets/aprende-caldera-mark.svg" alt="Logo de Aprende Caldera"><b>Aprende Caldera</b></a>
     <nav>
@@ -865,14 +860,14 @@ fbq('init','TU_PIXEL_ID');fbq('track','PageView');fbq('track','ViewContent',{con
     <aside class="pcard" id="comprar">
       <div class="hv" id="hv"><button type="button" class="hv-cover" style="background-image:linear-gradient(#0004,#000a),url(assets/cover-logica.jpg)" onclick="this.parentElement.innerHTML='<iframe src=&quot;https://drive.google.com/file/d/1ruc1d7WAtW_5Tv1Pp3IIgBc_UMaOyzTw/preview&quot; allow=&quot;autoplay; fullscreen&quot; allowfullscreen title=&quot;Clase gratis&quot;></iframe>'"><span class="pl">▶</span><small>Ver clase gratis · 2:23</small></button></div>
       <div class="pcb">
-        <div class="pprice"><b>$49.990</b><s class="launch-only">$119.990</s><span class="discount launch-only">58% DCTO</span></div>
+        <div class="pprice"><b>$39.990</b><s class="launch-only">$119.990</s><span class="discount launch-only">67% DCTO</span></div>
         <p class="pdead launch-only">El precio de lanzamiento termina en <b data-cd="short">—</b></p>
-        <a class="btn btn-buy pmain" href="https://mpago.la/2XSQPaR" target="_blank" rel="noopener">Comprar ahora</a>
-        <a class="btn btn-ghost psec" href="https://wa.me/56993992990?text=Hola%2C%20quiero%20comprar%20Aprende%20Caldera%20(%2449.990)%20por%20transferencia" target="_blank" rel="noopener">Pagar por transferencia</a>
+        <a class="btn btn-buy pmain" href="comprar/?curso=caldera">Comprar ahora</a>
+        <a class="btn btn-ghost psec" href="https://wa.me/56993992990?text=Hola%2C%20quiero%20comprar%20Aprende%20Caldera%20(%2439.990)%20por%20transferencia" target="_blank" rel="noopener">Pagar por transferencia</a>
         <p class="pnote">Pago único · Garantía de 30 días</p>
         <div class="pinc"><b>Este curso incluye:</b>
           <span>▶ 7 h de video en 2 cursos</span><span>📄 +50 manuales y PDF de +10 marcas</span><span>🎓 Certificado de finalización</span><span>💬 Comunidad privada de técnicos</span><span>♾ Acceso de por vida, en celular y PC</span></div>
-        <p class="phow">Después de pagar, envíanos el comprobante por <a href="https://wa.me/56993992990?text=Hola%2C%20acabo%20de%20pagar%20Aprende%20Caldera.%20Te%20env%C3%ADo%20el%20comprobante" target="_blank" rel="noopener">WhatsApp</a> y activamos tu cuenta.</p>
+        <p class="phow">Tu curso se <b>activa automáticamente</b> al pagar. Si pagas por transferencia, envíanos el comprobante por <a href="https://wa.me/56993992990?text=Hola%2C%20acabo%20de%20pagar%20Aprende%20Caldera.%20Te%20env%C3%ADo%20el%20comprobante" target="_blank" rel="noopener">WhatsApp</a> y lo activamos.</p>
       </div>
     </aside>
   </div>
@@ -1057,8 +1052,8 @@ fbq('init','TU_PIXEL_ID');fbq('track','PageView');fbq('track','ViewContent',{con
     <div class="offer">
       <div>
         <p class="muted" style="margin:0;font-weight:800;letter-spacing:1px">PRECIO DE LANZAMIENTO</p>
-        <p class="offer-old"><s>$119.990 CLP</s> <span class="discount">58% DCTO</span></p>
-        <div class="big">$49.990 <small>CLP</small></div>
+        <p class="offer-old"><s>$119.990 CLP</s> <span class="discount">67% DCTO</span></p>
+        <div class="big">$39.990 <small>CLP</small></div>
         <p class="offer-deadline">Oferta válida hasta el 30 de noviembre</p>
         <p class="next-price">Desde el 1 de diciembre sube a <b>$119.990</b>.</p>
         <div class="cd" aria-label="Tiempo restante de la oferta"><div><b data-cd="d">0</b><span>días</span></div><div><b data-cd="h">00</b><span>horas</span></div><div><b data-cd="m">00</b><span>min</span></div><div><b data-cd="s">00</b><span>seg</span></div></div>
@@ -1074,18 +1069,19 @@ fbq('init','TU_PIXEL_ID');fbq('track','PageView');fbq('track','ViewContent',{con
       </div>
       <div>
         <div class="pay">
-          <a class="btn btn-pay" href="https://mpago.la/2XSQPaR" target="_blank" rel="noopener">Pagar con Mercado Pago <small>· $49.990</small></a>
-          <a class="btn btn-buy" href="https://wa.me/56993992990?text=Hola%2C%20quiero%20comprar%20el%20acceso%20a%20Aprende%20Caldera%20(%2449.990)%20por%20transferencia" target="_blank" rel="noopener">Pagar por transferencia (WhatsApp)</a>
+          <a class="btn btn-pay" href="comprar/?curso=caldera">Pagar con Mercado Pago <small>· $39.990</small></a>
+          <a class="btn btn-buy" href="https://wa.me/56993992990?text=Hola%2C%20quiero%20comprar%20el%20acceso%20a%20Aprende%20Caldera%20(%2439.990)%20por%20transferencia" target="_blank" rel="noopener">Pagar por transferencia (WhatsApp)</a>
         </div>
         <div class="paybadges" aria-label="Medios de pago"><span>Mercado Pago</span><span>Débito</span><span>Crédito</span><span>Transferencia</span><span>Pago único</span></div>
         <div class="abroad"><small>PAGOS DESDE OTROS PAÍSES</small><b>¿Estás fuera de Chile?</b><p>Escríbenos y te enviamos un link para pagar con tarjeta en tu moneda. El acceso te llega igual a tu correo.</p><a href="https://wa.me/56993992990?text=Hola%2C%20estoy%20fuera%20de%20Chile%20y%20quiero%20comprar%20Aprende%20Caldera.%20%C2%BFC%C3%B3mo%20pago%3F" target="_blank" rel="noopener">Pagar desde otro país →</a></div>
         <div class="guarantee"><span class="shield" aria-hidden="true"></span><span><b>Garantía de 30 días:</b> si no te convence el contenido o tienes problemas para acceder, te devolvemos tu dinero dentro de los primeros 30 días.</span></div>
         <ol class="steps">
-          <li><a href="cuenta/?modo=registro&next=/%23temario" style="color:var(--orange2);font-weight:800">Crea tu cuenta</a> con tu Gmail y paga con Mercado Pago o por transferencia.</li>
-          <li>Envíanos el comprobante por WhatsApp con el correo de tu cuenta.</li>
-          <li>Activamos tu cuenta: ves todas las lecciones aquí mismo y te enviamos el link de la comunidad.</li>
+          <li>Toca <b>Comprar</b> y crea tu cuenta con tu Gmail (un clic con Google).</li>
+          <li>Paga con Mercado Pago: tarjeta de débito, crédito u otros medios.</li>
+          <li>Tu curso se <b>activa automáticamente</b> y entras al aula al instante, con el link de la comunidad.</li>
         </ol>
-        <a class="link" style="display:inline-block;margin-top:8px;font-weight:800" href="https://wa.me/56993992990?text=Hola%2C%20acabo%20de%20pagar%20Aprende%20Caldera.%20Te%20env%C3%ADo%20el%20comprobante%20y%20mi%20correo" target="_blank" rel="noopener">Ya pagué: enviar comprobante →</a>
+        <p class="muted" style="font-size:13px;margin:6px 0 0">¿Prefieres transferencia? Escríbenos por WhatsApp y te activamos apenas recibamos el comprobante.</p>
+        <a class="link" style="display:inline-block;margin-top:8px;font-weight:800" href="https://wa.me/56993992990?text=Hola%2C%20acabo%20de%20pagar%20Aprende%20Caldera.%20Te%20env%C3%ADo%20el%20comprobante%20y%20mi%20correo" target="_blank" rel="noopener">Pagué por transferencia: enviar comprobante →</a>
       </div>
     </div>
   </div>
@@ -1101,15 +1097,15 @@ fbq('init','TU_PIXEL_ID');fbq('track','PageView');fbq('track','ViewContent',{con
       <article class="xcard best"><span class="tag">AHORRA</span><h3>Pack Caldera + Calefón</h3>
         <p>Las dos bibliotecas con una sola cuenta: calderas murales y calefones, con sus certificados y la comunidad.</p>
         <ul><li>Aprende Caldera: 86 videos + 59 manuales</li><li>Aprende Calefón: 88 videos + material extra</li><li>Comunidad de +200 técnicos</li></ul>
-        <div class="xprice launch-only">$64.990<s>$79.980</s><small>Ahorras $14.990 · solo hasta el 30 de noviembre</small></div>
+        <div class="xprice launch-only">$59.990<s>$69.980</s><small>Ahorras $9.990 · solo hasta el 30 de noviembre</small></div>
         <div class="xprice after-launch" style="font-size:22px">Precio especial por WhatsApp</div>
-        <div class="xbtns"><a class="btn btn-buy" href="https://wa.me/56993992990?text=Hola%2C%20quiero%20el%20Pack%20Aprende%20Caldera%20%2B%20Aprende%20Calef%C3%B3n" target="_blank" rel="noopener">Quiero el pack →</a><a class="xlink" href="https://aprendecalefon.github.io/" target="_blank" rel="noopener">Ver Aprende Calefón ↗</a></div></article>
+        <div class="xbtns"><a class="btn btn-buy" href="comprar/?curso=pack">Quiero el pack →</a><a class="xlink" href="https://aprendecalefon.github.io/" target="_blank" rel="noopener">Ver Aprende Calefón ↗</a></div></article>
       <article class="xcard"><span class="tag" style="background:#ff7a1a;color:#1a0b00">OTRO CURSO</span><h3>Solo Aprende Calefón</h3>
         <p>¿Te interesa solo calefones? Puedes llevar ese curso por separado: tiro natural, tiro forzado, instalación y conversión.</p>
         <ul><li>88 videos en 3 cursos, casi 18 horas</li><li>Junkers, Bosch, Splendid, Orbis, Rheem y más</li><li>Su propio certificado de finalización</li></ul>
         <div class="xprice launch-only">$29.990<s>$59.990</s><small>Precio especial hasta el 30 de noviembre</small></div>
         <div class="xprice after-launch">$59.990</div>
-        <div class="xbtns"><a class="btn btn-ghost" href="https://aprendecalefon.github.io/" target="_blank" rel="noopener">Ver el curso ↗</a><a class="xlink" href="https://mpago.la/25EDXe5" target="_blank" rel="noopener">Comprar con Mercado Pago →</a></div></article>
+        <div class="xbtns"><a class="btn btn-ghost" href="https://aprendecalefon.github.io/" target="_blank" rel="noopener">Ver el curso ↗</a><a class="xlink" href="comprar/?curso=calefon">Comprar con Mercado Pago →</a></div></article>
       <article class="xcard"><span class="tag" style="background:var(--card);color:var(--orange2);border:1px solid var(--line)">1 A 1</span><h3>Asesoría por videollamada</h3>
         <p>Revisamos tu caso, tu equipo o cómo partir en el rubro, directo conmigo. Ideal si quieres ir más rápido.</p>
         <ul><li>Videollamada por WhatsApp o Meet</li><li>Casos de fallas, herramientas o cómo cobrar</li><li>Puedes sumarla a tu compra</li></ul>
@@ -1140,7 +1136,7 @@ fbq('init','TU_PIXEL_ID');fbq('track','PageView');fbq('track','ViewContent',{con
     <h2>Antes de <em>decidir</em></h2>
     <div class="faq">
       <details><summary>¿Sirve si estoy empezando desde cero?</summary><p>Sí. El primer módulo parte por lo básico: partes de la caldera, componentes hidráulicos y eléctricos, y uso del tester. Después avanza a cambio de componentes, mantención y diagnóstico.</p></details>
-      <details><summary>¿Cómo recibo el acceso?</summary><p>Creas tu cuenta en la web con tu Gmail, pagas y nos envías el comprobante por WhatsApp. Activamos tu cuenta y desde ese momento ves todas las lecciones en el aula, aquí mismo en la web. También te enviamos el link de la comunidad.</p></details>
+      <details><summary>¿Cómo recibo el acceso?</summary><p>Tocas Comprar, creas tu cuenta con tu Gmail y pagas con Mercado Pago. Tu curso se activa automáticamente y entras al aula al instante, aquí mismo en la web, con el link de la comunidad. Si pagas por transferencia, nos envías el comprobante por WhatsApp y te activamos al tiro.</p></details>
       <details><summary>¿Entrega certificado?</summary><p>Sí. Al completar todas las lecciones de un curso, descargas al instante tu certificado de finalización con tu nombre y un código de verificación. Es un certificado de Aprende Caldera: acredita que completaste el curso, pero no reemplaza una licencia SEC ni un título técnico.</p></details>
       <details><summary>¿Incluye calderas de condensación?</summary><p>Sí. Hay un curso aparte de 13 videos: lógica de funcionamiento, diferencias de componentes, tratamiento de agua, mantención, ventilación, primer encendido e instalación.</p></details>
       <details><summary>¿Puedo verlo en el celular? ¿El acceso caduca?</summary><p>Sí, funciona en celular, tablet o computador. Y no caduca: es un pago único con acceso permanente, y los nuevos materiales se suman sin costo.</p></details>
@@ -1154,7 +1150,7 @@ fbq('init','TU_PIXEL_ID');fbq('track','PageView');fbq('track','ViewContent',{con
 <section class="final">
   <div class="wrap">
     <h2>Empieza <em>hoy</em></h2>
-    <p class="lead" style="margin-inline:auto">$49.990 CLP hasta el 30 de noviembre · pago único · acceso permanente a la biblioteca y la comunidad.</p>
+    <p class="lead" style="margin-inline:auto">$39.990 CLP hasta el 30 de noviembre · pago único · acceso permanente a la biblioteca y la comunidad.</p>
     <div class="row">
       <a class="btn btn-buy" href="#precio">Quiero acceder →</a>
       <a class="btn btn-ghost" href="https://wa.me/56993992990?text=Hola%2C%20tengo%20una%20duda%20sobre%20Aprende%20Caldera" target="_blank" rel="noopener">Tengo una duda</a>
@@ -1173,8 +1169,8 @@ fbq('init','TU_PIXEL_ID');fbq('track','PageView');fbq('track','ViewContent',{con
 <a class="btn wa-float" href="https://wa.me/56993992990?text=Hola%2C%20tengo%20una%20duda%20sobre%20Aprende%20Caldera" target="_blank" rel="noopener" aria-label="¿Dudas? Escríbenos por WhatsApp"><span>¿Dudas? Escríbenos</span></a>
 
 <div class="mbar">
-  <div><b>$49.990</b><small class="mbar-cd">Termina en <span data-cd="short">—</span></small><small class="mbar-sub">Pago único · acceso de por vida</small></div>
-  <a class="btn btn-buy" href="https://mpago.la/2XSQPaR" target="_blank" rel="noopener">Comprar ahora</a>
+  <div><b>$39.990</b><small class="mbar-cd">Termina en <span data-cd="short">—</span></small><small class="mbar-sub">Pago único · acceso de por vida</small></div>
+  <a class="btn btn-buy" href="comprar/?curso=caldera">Comprar ahora</a>
 </div>
 
 <script>
@@ -1283,7 +1279,7 @@ function render(){ if(window.aulaGoCat) window.aulaGoCat(st.cat); }
 })();
 </script>
 <script type="module">
-const MP_LINK="https://mpago.la/2XSQPaR";
+const MP_LINK="comprar/?curso=caldera";
 let auth, db, isAdmin, ensureProfile, onAuthStateChanged, signOut, doc, getDoc, setDoc, serverTimestamp;
 const D={"courses":[{"name":"Caldera mural tradicional","mods":[{"n":"Módulo 1 · Bases y mediciones","l":[{"t":"Retorno de inversión y tipos de herramientas","id":"1ruc1d7WAtW_5Tv1Pp3IIgBc_UMaOyzTw","d":143},{"t":"Introducción a la caldera mural","id":"1eeh3u_G_z-MyMCtmEGH4MDyrzzPovmA7","d":182},{"t":"Parte hidráulica de una caldera","id":"1Mkohinr6I0e18bBDFePsX-hY4ccULKG2","d":224},{"t":"Componentes generales de una caldera","id":"1_4lz4lQiobWBkpLAVooEOT4UFK6Lv1Tp","d":665},{"t":"Componentes hidráulicos","id":"1CtyJQy38tlYNQMGpmB8THWd0tcutkxKt","d":441},{"t":"Componentes eléctricos","id":"1pWiKbXeoIakCrV6-wVD3_DqEBzJdYTp6","d":637},{"t":"Diferentes tipos de tester","id":"1uH-1shQxI74Ta_CmyLV57T-cuDNlR8Nq","d":68},{"t":"Medición de resistencia","id":"1QFWDILpjixZt9C-D9bVJFLYfDGHh2mk5","d":154},{"t":"Uso de continuidad","id":"1A4CKZDzL8CHx2D4OSzC0ukfMLgSJ7g9d","d":67}]},{"n":"Módulo 2 · Componentes y cómo cambiarlos","l":[{"t":"Componente: bomba recirculadora","id":"1S9D0Rh58RxLIzhxTWqnxYEYElZasnhVe","d":476},{"t":"Cómo cambiar bomba recirculadora","id":"1FDxWWxo4aQxfmK_-1Kwn67ij8vijo-0x","d":586},{"t":"Componente: flujostato y Vitron","id":"1Xrr6hND3JoctFPUQXtAX4linVEKxgkv5","d":234},{"t":"Cómo cambiar flujostato","id":"1-pSxAImCnP2iVP-IehwAEuEkdlHQeXvA","d":283},{"t":"Flujostato Peisa trabado: falla y solución","id":"14iIPOqB-qG78z2aDYQKsTmf_tRg37l97","d":42},{"t":"Cómo cambiar Vitron","id":"1eq_DV8jcGj50N6KycyRUrvkj7baCTlbh","d":137},{"t":"Componente: transductor de presión","id":"1ESwKVWgAO2jtxWah46sXkoIsENdEmnFw","d":137},{"t":"Cómo cambiar transductor de presión","id":"17g3xd2WQKlUgb4uireQyaxnkUsklHn-h","d":124},{"t":"Componente: forzador y presostato de humo","id":"1seccnq3ZchbAgDs2omUehLjwXPCJG0Ui","d":225},{"t":"Cómo cambiar forzador y presostato de humo","id":"16kvuzhbVuM6-nVUVZzQTmJD6fDyKpdTM","d":308},{"t":"Componente: intercambiadores","id":"1WhGhxx5_tFDI0IebD2g5oq06LnhbnJft","d":117},{"t":"Componente: sensor NTC","id":"1CTb12KQRLyatfBLKqKoNv2zs5Ze4086p","d":122},{"t":"Cómo cambiar sensor NTC","id":"15zGdBsWGtZe0zeGBVGntDkBn14H-b_aC","d":72},{"t":"Cómo cambiar sensor sumergible","id":"1IFGpDHs8PbP0-_0cC_d6X11BTH3N4c8g","d":209},{"t":"Componente: sensor de sobretemperatura (clixon)","id":"12LDRx-JftmJYLmVBOa2IG2Y6YnKpE0ke","d":129},{"t":"Cómo cambiar sensor de sobretemperatura (clixon)","id":"1FHPB9hRESbf59xd_MACl8G-eL0dXJBDD","d":183},{"t":"Componente: servomotor","id":"16pMFXux4TeSuUSmGXWdSrdYj6f-Fw_jn","d":126},{"t":"Cómo cambiar servomotor y válvula de 3 vías","id":"1G8O26qMyETMXuqveh1HmGJCFIp6as7o4","d":208},{"t":"Componente: sonda y electrodos","id":"12Y9Nd-leWSJ1zyk7-19j8ouhWmzoF71t","d":127},{"t":"Componente: válvula de gas","id":"1cWf650d2dQaI7Ov0UvjhJLE4sXrQGCC5","d":120},{"t":"Componente: vaso de expansión","id":"15iBe2qxCrluMpImOL4NX2QGKwGdZNM_M","d":191},{"t":"Componente: válvula de llenado","id":"10qMN_WUMGhufhvb_nYmHpngCjVaUh667","d":153},{"t":"Componente: plaqueta electrónica","id":"16BwHTSLgkd8973bEeU_LlzbjVXj7RwYF","d":575},{"t":"Cómo cambiar plaqueta electrónica","id":"1qGQ3sR_EYqKBCIRj-SudSJwKHafFnoED","d":240}]},{"n":"Módulo 3 · Lógica, mantención y fallas","l":[{"t":"Lógica de funcionamiento","id":"1_RZRhh4cHvqn5bWh13bgh4bxyUYhvR1W","d":268},{"t":"Mantenimiento preventivo (parte 1)","id":"1BbHiQT2z7HgMZKAG4-JvWpnl_RVLxj9W","d":654},{"t":"Mantenimiento preventivo (parte 2)","id":"1wMLY1QSBt9DvGgh9OMR1W0-xLzhlLnW7","d":605},{"t":"Mantenimiento preventivo (parte 3)","id":"1byudbkpFmsEHfyKOuzKoIiAzuLcNZEhV","d":362},{"t":"Posibles fallas y resoluciones","id":"18fBC1hL5yyypLiyADwrnLAPgXPQaU8Im","d":254},{"t":"Qué es y función del termostato","id":"1_5rpZjiF7z3xylTGqenhq7FR38oPVp0e","d":359}]},{"n":"Módulo 4 · Circuito, regulación y diagnóstico","l":[{"t":"Ventilación","id":"1DTR5Qym03mb_ernLiWbQRrY7EYUxi2q8","d":204},{"t":"Llenado de circuito","id":"12zOWyRGKPM2TzI3jod-CRik9tJYEzrAa","d":143},{"t":"Limpieza del circuito radiante","id":"1j6vpIulJMDAm_4sOA69dsnz_xgyc8CIb","d":198},{"t":"Armado de bomba clase 1","id":"19Xntc-50_4jQUuvUmc18BeBrByOpcJXe","d":197},{"t":"Armado de bomba parte 2","id":"1B2y2-Lr0NeJnMUVoqrT0web05-cK_CMb","d":240},{"t":"Bomba profesional Superflush40","id":"1aZXEWQsb3nCk4wMFXLgQrg7LqysBBtE5","d":389},{"t":"Superflush en acción","id":"1IVx2KaqDVeRQ-dImvggChD1KrabdNybe","d":567},{"t":"Radiadores y armado","id":"1xeqL2z_T2WVdQMatU2JQm8ZMP-mkOm_s","d":295},{"t":"Regulación de válvula de gas","id":"1YymHvX-fb1jyRczsDPLXp3R4eKuREnFG","d":359},{"t":"Seguridad","id":"16TOiPx2_avhpk3dycI3sfyQsw0Ez1eyF","d":82},{"t":"Comandos del display","id":"1xesk_QRJbnSKc7i4U7N5lsB3L1FV1CZ3","d":151},{"t":"Programación de una caldera","id":"1xFcLNj7Z_Z10v0_ysWNPTvKzqma8cHU1","d":368},{"t":"Cómo probar caldera sin banco","id":"1zDaoPqzDex72t-YnUkgpLdlysYrQr5fn","d":540},{"t":"Tipos de juntas y flexibles","id":"1gsVPcMjm8uUrohOfbXKHKG3lYDBdZxGQ","d":240},{"t":"Diagnóstico térmico con cámara (parte 1)","id":"1siY88wsptaiJ_FasZZ-yNjpwbHQFFV2X","d":109},{"t":"Diagnóstico térmico (parte 2)","id":"19el3eeRFm2bNHh0pMle-ltTyDQmyTTPy","d":164},{"t":"Diagnóstico térmico y sellador de cañerías","id":"1phDygNdZXoLstPqQAL82YbYh0ZctBRwI","d":280}]},{"n":"Módulo 5 · Equipos por marca","l":[{"t":"Caldera Peisa Diva Duo Mini F","id":"1l21M883EtTw_8LLLsE75uOSLo3HSj7qc","d":482},{"t":"Caldera Peisa Primatec 24F","id":"1szW6gX5uzPgfGIQ0lSjjYiKtBl2ckFa3","d":127},{"t":"Caldera Immergas Maior Eolo","id":"12j6EgYF1FZ66A4gSCWHD5Jz-c_938whA","d":313},{"t":"Caldera Immergas Eolo Star","id":"1gwDeZ2QF_Dgf-Ox2h1RhEiZ55-_jPjDU","d":280},{"t":"Caldera Caldaia Aquaterm XA30F","id":"1JAbT2Fndopk9gWM0nazMn7g2ajRWI57R","d":354},{"t":"Caldera Caldaia Top SA26F","id":"1_HnFRyPEJsykOAaFX5BnXsg5ppxGPbnv","d":179},{"t":"Caldera Baxi Main","id":"1VjSv-sOqnxcahPraiCBTgKwGqyHT6hna","d":190},{"t":"Caldera Baxi Main Four","id":"1dD_SV6x86egS03-nKUZOuPaoqLWrGHZu","d":350},{"t":"Caldera Baxi Main 5","id":"1t4b_il3-uhMZmOTFerOkByoZMu-RmZvG","d":268},{"t":"Caldera Demir-Döküm Nepto","id":"1EHpB_w814Ae3WpYvNYPPLSVCC9rjpKH1","d":281},{"t":"Caldera BGH modelo BCF","id":"1unVuapnM7ZadKKChSAJuO4JkxlX2NlVg","d":266},{"t":"Caldera Innovita línea Perla PRO","id":"1e4dvReIGOJ3evkFyq0UhTD-ixdwPWYmh","d":526}]},{"n":"Módulo 6 · Mantención en terreno","l":[{"t":"Mantenimiento caldera parte 1","id":"1aI8KREiUKTZOmdrT552fOMUcnPU4JSJf","d":810},{"t":"Mantenimiento caldera parte 2","id":"1K8HSAy21NPQsQOCQePyHiRRXd2HrmIvw","d":1333},{"t":"Entrevista con un técnico en terreno","id":"1d7uMyzxvrZIKDwNOZdO0lzFk_AH112Es","d":231},{"t":"Prácticas intensivas","id":"1G9ah-o8zJu1cpwkwnmIvs7e16kYgwgdk","d":105},{"t":"Cierre del curso","id":"1w_Jes3UtmKBKrf9ZrENq27JZc6WOg0Y_","d":429}]}]},{"name":"Caldera de condensación","mods":[{"n":"Módulo 1 · Fundamentos","l":[{"t":"Introducción a la condensación","id":"11N_MAU4ax1mUszUmbuHnYf12MNKPgQ8R","d":226},{"t":"Lógica de funcionamiento","id":"1ptE170gjTT_WA1yMGjJX9O7x85FdxbTj","d":308},{"t":"Diferencias de los componentes","id":"1FRJED193qBseIoZ4CXkFG_WfGDQVk7hi","d":324}]},{"n":"Módulo 2 · Agua, mantención y medición","l":[{"t":"Tratamiento de agua","id":"1qwIpNkIvvTVM8rtihcFinLSbeUTG2lOo","d":220},{"t":"Mantenimiento preventivo (parte 1)","id":"1LHdBZou8WIGuvi81FDm5Cq3UFVSvnq3P","d":686},{"t":"Mantenimiento preventivo (parte 2)","id":"13l7sgLWwif1UXUJX_EmEOLx5-oQiAftr","d":414},{"t":"Ventilación de una caldera","id":"1DKYdm9VTqFRObXc7_6eB4D-2JBchVjPd","d":229},{"t":"Prueba y medición de componente","id":"1hSGxx_FQBlJDBvBWwT28JWJd99OK3hUD","d":132}]},{"n":"Módulo 3 · Seguridad, instalación y oficio","l":[{"t":"Seguridad para trabajar","id":"1E671BL__PKZtUDotkG9-vildBa7yUlSs","d":247},{"t":"Primer encendido","id":"1-fVAKX08v2XI4brbURow_uxrKN4gXwzI","d":141},{"t":"Instalación de caldera de condensación","id":"1tiPQ8twMMrKHQs0FZhyPqOCAEsDXbVIn","d":1110},{"t":"Cómo cobrar tus servicios","id":"1K4KROwTsxiufywG5XF22sLJX2ZFCXs6i","d":206},{"t":"Cierre del curso de condensación","id":"1OLGMyuRC6jvaJCYOfFMuQCfaqSYtsAbU","d":112}]}]}],"manuals":[{"n":"Baxi","l":[{"t":"Despiece general","id":"1Fr1ixbc5_QDquK6f7rKV46hUr8jwbCMv"},{"t":"Duo-Tec Compact (condensación)","id":"1jCZ53ulrT9LViWDizOkO-nh6d0lJ2alD"},{"t":"Eco 3 Compact","id":"1pH43hrLhEueCUDXwjEY0wIBuEdCDABUi"},{"t":"Eco 3 Compact: despiece","id":"1CsVp4Mmdhz0H0rwLC2fXZXWue7CSklKP"},{"t":"Eco 4S","id":"1wcXStiBu9ikPcBddQE7dkLAE3mb2apSD"},{"t":"Econova 2021","id":"1ZsHe3GeblmfMNxvlRqxcxT5fKqTT0-C4"},{"t":"Errores frecuentes","id":"1VmmiGzHTElu-u0i3UP6ZF8pNTblKSUT7"},{"t":"Luna 3","id":"1RwuV5_uVvw8R2A2fmgYgtypEW7ADvTG9"},{"t":"Luna 3 (manual 2)","id":"1dpAP9eHRROt1tivvbmgqK35GFZIw0b3n"},{"t":"Luna 3 Comfort","id":"1julObYT60OPo2mOkpGoN8r0JNTNOYUHU"},{"t":"Main 2","id":"1qpMu_KNy3NJBIODIq_yftp8VXcxWLai0"},{"t":"Main 5","id":"1O2TsJ2MstzZYUiHRnX3N04nPUsZYKqT7"},{"t":"Main Four 24/24F con anexo TSA","id":"1CJPLtqoBCM1yO6QAwMIc9iyS8kt2I_G0"},{"t":"Triangular TSA-BJ-24-i","id":"1PZ4lnsOE8iTQR7fH9f-wdugnxLUFd5g4"}]},{"n":"Ariston","l":[{"t":"Altea One y Genus One","id":"1j06A9ES_WI4lNbRFjFjT-KNvPqczWT4i"},{"t":"BS 24 CF / FF","id":"1jCRcEOnKSA3I9nwcFLQNuS2TD3tIjtTL"},{"t":"BS II 24F","id":"1T-VOCwnceAVxPaVkstoY-hmVRwPSUWNw"},{"t":"Cares Premium (condensación)","id":"1aFlQ5r_jb6m2Eyv64qvFZ-rCAUmg-s-Y"},{"t":"Clas CF: manual","id":"1JKag5THcPT3Y2xD-_Xd8ZzTpdqCVXrRM"},{"t":"Clas Evo","id":"1jfAeYKhKQF2HmLsn4kqc2ahLf_HJLBU-"},{"t":"Clas System: manual del usuario","id":"1kh29cxsB2GTFlpO8S8hr4OWx0yW-RDsb"},{"t":"Clas X","id":"1Rw_MXnvW09hlgP3PFBUOh5LdiODD9Yg5"},{"t":"Egis CF: manual","id":"1TeD_tJ-mmtF3gql8s1nqfw1fYR3_IVhH"},{"t":"Genus Premium HP 45 a 100","id":"1sJO8Gap0-WF1fF-CWr48xxlhstaBE1EQ"},{"t":"Manual técnico de servicio","id":"1F_ShSJEPgdewDYdzdn2dF6Av1O9Y4yH9"}]},{"n":"Caldaia","l":[{"t":"Climatizador de piscina","id":"1cieMEsw_YwjsEUBTIJrjuWw7yOnWpgMd"},{"t":"Manual digital","id":"1IAhPbn5yBRmAFUBm3TgYqrK29m-MODPA"},{"t":"Plaqueta Genius: X30F, XA30 y climatizadores","id":"1eACrV0t3rQVB4_VpGhct8NEUjnUafTjv"},{"t":"Plaquetas con display rojo: programación","id":"17rtYPaFENnqdyR-bTGu3NYdLQ327nqez"},{"t":"Serie SA26: calderas murales","id":"1W2mIhgjtqNnbdhrO1DnsVVpvahVpxQ8k"},{"t":"Serie digital: manual","id":"1P43wpKiqymrCDBcGe6YmYZO2CcLlLLT5"},{"t":"TOP SA26 digital","id":"1wsBQWdyF3jV489wsQ2-LxqLbrL1TNH85"},{"t":"TOP SA26: manual","id":"123io_NFtF6ILKOG5q1BoLPb5MXybslx6"},{"t":"TOP SA26F: programación nuevo display","id":"1myiqHsjYpwC88q9EcTOY4fNqwhcBhRxL"},{"t":"TOP X30F V3V gas licuado: programación y regulación","id":"1et11e-hquCTWO0d4iF--Fo58qb-Ghth6"},{"t":"XA30: programación y errores","id":"1PbUjLFSJFM8JeNzF0hIK8ax8UzrPVhkP"}]},{"n":"Peisa","l":[{"t":"Climatizador Caldaia CP30/40/70","id":"19LtjgboBG-ChKzA4IOyqXpJ8RZEL-f2Q"},{"t":"Climatizador TX40","id":"1Sl3elIhqMSZvyJOFKKOLHEq9TSR0fGa5"},{"t":"Climatizador de piscina T80","id":"1VddYuHTOMEbJfXz0HH_aklx1w05bfn5G"},{"t":"Climatizador mural Caldaia CX30/40","id":"1cwNPSJtYyYCv2udQF9ovUZbpZKlKrAQX"},{"t":"Manual técnico 15","id":"1FcQrJS16_TTLuRQg2O63uaU2iJ0_AgiU"},{"t":"Manual técnico Peisa","id":"1wO-36g3aUnIg94tPgzd624XOfArvfIOr"},{"t":"Única","id":"1sqtbyQsRaDULnCK-fZ1t0stHbcmsVHvl"},{"t":"Única (versión 3)","id":"1ZD3MhHKyEUPBKdcubKJD5WrLfVGacBl5"}]},{"n":"Immergas","l":[{"t":"Eolo Star","id":"18YnKi09_GS75H-75weUwdAZOvAhOYsQB"},{"t":"Maior Eolo","id":"14sIYCDc-TWiDo42xCAaNuHBEBzMzID5h"},{"t":"Mythos Eolo","id":"1Q6MKVCYfAxnuRkaqpr-p4-HHsaXGCKV2"},{"t":"Nike Star","id":"1II4htgrffy4ziCWdMAN35FNZYqJiKtEB"}]},{"n":"Roca","l":[{"t":"Curso Nora y Sara","id":"1AZl6hu6XZL9fPRmXD0C3Dj8JVoNXecG4"},{"t":"Roca 24/24F","id":"1AonDX3zNAEZ47xMHFf8lG3TsNB_7mt6i"}]},{"n":"BGH / Ferroli","l":[{"t":"BCV24DFA","id":"1LZjZafSgC4yblWJJ6OYqM7ziPw3YUkqh"},{"t":"Kit de herramientas","id":"1B4H9kYw9_XlpAgI4fHZ7AMZd_m2qN_15"}]},{"n":"Termostatos y material general","l":[{"t":"Bomba de calor para piscina","id":"1DadHQleZj79OH6vGrmPYIS-7PDnXNDnB"},{"t":"Esquema de conexión de relé","id":"1JkxG11ld8YEYVi55RPcdj4l5XTw1bXZd"},{"t":"Euterma Minibox 24/30","id":"1Xur-yxWK4cce1FSO5VY2Ms1H5DG3msOL"},{"t":"Manual complementario","id":"1_hKvjrxOuWamUi3Ephf7WtI151Fix4Hw"},{"t":"Manual didáctico de lógica de funcionamiento","id":"1lwoQLeUmNA7xpReRlEzN-6QId59lnnAK"},{"t":"Manual técnico de caldera mural","id":"1zOcpTk7K4wvONcz440WGu9R_1Ku7VtRL"},{"t":"Termostato inalámbrico Peisa","id":"1eifxVf5-59psh2PjNALXXAja6QbHwara"}]}]}, FREE="1_RZRhh4cHvqn5bWh13bgh4bxyUYhvR1W";
 const SECS=[...D.courses.map(c=>({name:c.name,mods:c.mods,doc:false})),{name:'Manuales y PDF',mods:D.manuals,doc:true}];
@@ -1317,7 +1313,7 @@ function player(){ const S=SECS[cur.s], m=S.mods[cur.m], l=m.l[cur.l];
   $('avPlayer').className='av-player'+(S.doc&&can(l.id)?' doc':'');
   if(can(l.id)){ const S0=SECS[cur.s]; $('avPlayer').innerHTML=`<button type="button" class="av-cover" style="${l.id===FREE?'background-image:linear-gradient(#0006,#000a),url(assets/cover-logica.jpg)':''}"><span class="pl">▶</span><b>${esc(l.t)}</b><small>${S0.doc?'Abrir documento':(l.d?fd(l.d)+' min · ':'')+(S0.doc?'':'Reproducir')}</small></button>`; $('avPlayer').querySelector('.av-cover').onclick=()=>{ $('avPlayer').innerHTML=`<iframe src="https://drive.google.com/file/d/${l.id}/preview" allow="autoplay; fullscreen" allowfullscreen title="${esc(l.t)}"></iframe>`; }; }
   else $('avPlayer').innerHTML=`<div class="av-lock"><div><div class="ic">🔒</div><h4>Lección para alumnos</h4><p>${user?'Tu cuenta aún no está activa. Completa tu compra y la activamos.':'Compra el acceso o ingresa con tu cuenta para verla.'}</p>
-    <div class="row"><a class="av-mini pri" href="#precio">Comprar $49.990</a>${user?`<a class="av-mini" href="${MP_LINK}" target="_blank" rel="noopener">Pagar con Mercado Pago</a>`:'<a class="av-mini" href="cuenta/?next=/%23temario">Ya compré: ingresar</a>'}</div></div></div>`;
+    <div class="row"><a class="av-mini pri" href="#precio">Comprar $39.990</a>${user?`<a class="av-mini" href="${MP_LINK}" target="_blank" rel="noopener">Pagar con Mercado Pago</a>`:'<a class="av-mini" href="cuenta/?next=/%23temario">Ya compré: ingresar</a>'}</div></div></div>`;
   $('avMeta').textContent=S.doc?`Manuales · ${m.n}`:`${S.name} · ${m.n} · Lección ${cur.l+1}${l.d?' · '+fd(l.d)+' min':''}`;
   $('avTitle').textContent=l.t;
   $('avCtrls').hidden=!active; $('avOpen').href=`https://drive.google.com/file/d/${l.id}/view`;
@@ -1366,7 +1362,7 @@ function account(){
   const n=esc((profile&&profile.name||user.email||'').split(' ')[0]);
   $('navLogin').textContent='Mi aula'; $('navLogin').href='aula/';
   $('avAccTxt').innerHTML=active?`Hola <b>${n}</b>, tu acceso está activo ✅ Tu avance se guarda en tu cuenta.`:`Hola <b>${n}</b>, tu cuenta aún no está activa. Completa tu compra y te la activamos.`;
-  $('avAccB').innerHTML=(active?'<a class="av-mini" href="aula/">Abrir aula en pantalla completa</a>':`<a class="av-mini pri" href="${MP_LINK}" target="_blank" rel="noopener">Pagar $49.990</a>`)+'<button type="button" class="av-mini" id="avOut">Salir</button>';
+  $('avAccB').innerHTML=(active?'<a class="av-mini" href="aula/">Abrir aula en pantalla completa</a><a class="av-mini" href="https://chat.whatsapp.com/KGWquHws7v46xEPFJAPkH9" target="_blank" rel="noopener">💬 Comunidad</a>':`<a class="av-mini pri" href="${MP_LINK}" target="_blank" rel="noopener">Pagar $39.990</a>`)+'<button type="button" class="av-mini" id="avOut">Salir</button>';
   $('avOut').onclick=async()=>{ await signOut(auth); location.reload(); };
 }
 
@@ -1395,15 +1391,21 @@ if(onAuthStateChanged) onAuthStateChanged(auth, async u=>{
   const WA_BUY='https://wa.me/56993992990?text='+encodeURIComponent('Hola, quiero comprar el acceso a Aprende Caldera');
   document.querySelectorAll('.topbar').forEach(e=>e.innerHTML='🔥 Aprende Caldera · <b>pago único, acceso permanente</b>');
   document.querySelectorAll('.discount,.price-deadline,.offer-deadline,.next-price,.cd,.offer-old,.price s,.mbar-cd').forEach(e=>e.style.display='none');
-  const w=document.createTreeWalker(document.body,NodeFilter.SHOW_TEXT); let n; while(n=w.nextNode()){ if(n.nodeValue.includes('$49.990')) n.nodeValue=n.nodeValue.replaceAll('$49.990','$119.990').replace(' hasta el 30 de noviembre',''); if(n.nodeValue.includes('PRECIO DE LANZAMIENTO')) n.nodeValue=n.nodeValue.replace('PRECIO DE LANZAMIENTO','ACCESO COMPLETO'); }
-  document.querySelectorAll('a[href*="mpago.la/2XSQPaR"]').forEach(a=>{a.href=WA_BUY;});
-  document.querySelectorAll('a[href*="mpago.la/25EDXe5"]').forEach(a=>{a.href='https://wa.me/56993992990?text='+encodeURIComponent('Hola, quiero comprar Aprende Calefón');a.textContent='Comprar por WhatsApp →';});
-  document.querySelectorAll('a[href*="%2449.990"]').forEach(a=>{a.href=a.href.replace('%2449.990','%24119.990');});
+  const w=document.createTreeWalker(document.body,NodeFilter.SHOW_TEXT); let n; while(n=w.nextNode()){ if(n.nodeValue.includes('$39.990')) n.nodeValue=n.nodeValue.replaceAll('$39.990','$119.990').replace(' hasta el 30 de noviembre',''); if(n.nodeValue.includes('PRECIO DE LANZAMIENTO')) n.nodeValue=n.nodeValue.replace('PRECIO DE LANZAMIENTO','ACCESO COMPLETO'); }
+  document.querySelectorAll('a[href*="curso=pack"]').forEach(a=>{a.href='https://wa.me/56993992990?text='+encodeURIComponent('Hola, quiero el Pack Aprende Caldera + Aprende Calefón');a.target='_blank';});
+  document.querySelectorAll('a[href*="%2439.990"]').forEach(a=>{a.href=a.href.replace('%2439.990','%24119.990');});
 })();
 </script>
 <script>
 (()=>{ const bar=document.querySelector('.mbar'), card=document.getElementById('comprar'); if(!bar||!card) return;
   new IntersectionObserver(e=>bar.classList.toggle('show',!e[0].isIntersecting && e[0].boundingClientRect.top<0),{threshold:0}).observe(card); })();
+</script>
+<script>
+// Eventos del pixel
+trk("ViewContent",{content_name:"Aprende Caldera",content_ids:["caldera"],content_type:"product",value:39990,currency:"CLP"});
+document.addEventListener("click",function(e){var a=e.target.closest("a,button"); if(!a) return;
+  if(a.matches("[data-free-go],.hv-cover,.av-cover")) trk("Lead",{content_name:"Clase gratis"});
+  else if((a.getAttribute("href")||"").indexOf("wa.me")>-1) trk("Contact");});
 </script>
 </body>
 </html>
