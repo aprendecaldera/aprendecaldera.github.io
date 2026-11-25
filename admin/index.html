@@ -51,7 +51,7 @@ import { auth, db, isAdmin, onAuthStateChanged, signOut, collection, query, orde
 const $=id=>document.getElementById(id); let users=[];
 const P={
   caldera:{label:'Caldera',field:'access',at:'activatedAt',pcol:'progress',total:86,drive:'https://drive.google.com/drive/folders/1BkXwaE-ZCP1YaN3yr8vzfPZkkLGzSskG',url:'https://aprendecaldera.github.io/aula/',name:'Aprende Caldera'},
-  calefon:{label:'Calefón',field:'calefon',at:'calefonAt',pcol:'progress_calefon',total:88,drive:'https://drive.google.com/drive/folders/1yR0QOfEu9D9z-yGz3OIviYX0-8WI-FKd',url:'https://aprendecalefon.github.io/aula/',name:'Aprende Calefón'}};
+  calefon:{label:'Calefón',field:'calefon',at:'calefonAt',pcol:'progress_calefon',total:101,drive:'https://drive.google.com/drive/folders/1yR0QOfEu9D9z-yGz3OIviYX0-8WI-FKd',url:'https://aprendecalefon.github.io/aula/',name:'Aprende Calefón'}};
 const esc=s=>String(s??'').replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
 const fdate=t=>t&&t.toDate?t.toDate().toLocaleDateString('es-CL',{day:'2-digit',month:'short',year:'numeric'}):'—';
 const anyOn=u=>!!(u.access||u.calefon);
@@ -81,7 +81,10 @@ function draw(){
 }
 async function setAccess(id,k,val,btn){ const c=P[k]; btn.disabled=true;
   try{ await updateDoc(doc(db,'users',id),val?{[c.field]:true,[c.at]:serverTimestamp()}:{[c.field]:false});
-    const u=users.find(x=>x.id===id); u[c.field]=val; stats(); toast(val?c.label+' activado':'Acceso quitado'); draw(); }
+    const u=users.find(x=>x.id===id); u[c.field]=val; stats(); toast(val?c.label+' activado':'Acceso quitado'); draw();
+    if(val){ try{ const { compartirAcceso } = await import('../js/firebase.js'); const r=await compartirAcceso(k==='calefon'?'calefon':'caldera', id);
+        toast(r.ok?c.label+' activado y Drive compartido ✓':'Activado, pero no se pudo compartir el Drive: compártelo a mano'); }
+      catch(e){ console.error(e); toast('Activado. Comparte el Drive a mano (no se pudo automático)'); } } }
   catch(e){ console.error(e); toast('No se pudo guardar. Revisa las reglas de Firestore.'); btn.disabled=false; } }
 async function loadLeads(){ $('leads').innerHTML='<p>Cargando interesados…</p>';
   try{ const s=await getDocs(query(collection(db,'leads'),orderBy('createdAt','desc'),limit(300)));
@@ -114,7 +117,7 @@ async function loadVentas(){ $('ventas').innerHTML='<p>Cargando ventas…</p>';
     const total=ok.reduce((a,v)=>a+Number(v.monto||0),0), mes=new Date(); mes.setDate(1); mes.setHours(0,0,0,0);
     const delMes=ok.filter(v=>v.actualizado&&v.actualizado.toDate&&v.actualizado.toDate()>=mes);
     $('vStats').innerHTML=`<div class="stat"><b>${ok.length}</b><span>ventas aprobadas</span></div><div class="stat"><b>$${total.toLocaleString('es-CL')}</b><span>total vendido</span></div><div class="stat"><b>$${delMes.reduce((a,v)=>a+Number(v.monto||0),0).toLocaleString('es-CL')}</b><span>este mes (${delMes.length})</span></div>`;
-    $('ventas').innerHTML=V.length?V.map(v=>`<div class="u"><div><div class="nm">${esc(NOM[v.curso]||v.curso||'—')} · $${Number(v.monto||0).toLocaleString('es-CL')}<span class="badge ${v.estado==='approved'?'b-on':'b-off'}">${EST[v.estado]||esc(v.estado||'')}</span>${v.revisar?'<span class="badge b-off">Revisar monto</span>':''}</div><div class="em">${esc(v.email||'')}</div><div class="meta">${fdate(v.actualizado)} · pago N° ${esc(v.id)} · ${esc(v.metodo||'')}${v.activado?' · curso activado automáticamente':''}</div></div></div>`).join(''):'<p>Aún no hay ventas por la web.</p>';
+    $('ventas').innerHTML=V.length?V.map(v=>`<div class="u"><div><div class="nm">${esc(NOM[v.curso]||v.curso||'—')} · $${Number(v.monto||0).toLocaleString('es-CL')}<span class="badge ${v.estado==='approved'?'b-on':'b-off'}">${EST[v.estado]||esc(v.estado||'')}</span>${v.revisar?'<span class="badge b-off">Revisar monto</span>':''}</div><div class="em">${esc(v.email||'')}</div><div class="meta">${fdate(v.actualizado)} · pago N° ${esc(v.id)} · ${esc(v.metodo||'')}${v.activado?' · curso activado automáticamente':''}${v.activado?(v.drive?' · Drive compartido ✓':' · <b style="color:#b45309">⚠ compartir Drive a mano con '+esc(v.driveEmail||v.email||'')+'</b>'):''}</div></div></div>`).join(''):'<p>Aún no hay ventas por la web.</p>';
   }catch(e){ console.error(e); $('ventas').innerHTML='<p>No se pudieron leer. Revisa que las reglas nuevas estén publicadas.</p>'; } }
 $('q').oninput=draw; $('f').onchange=draw; $('reload').onclick=load;
 $('out').onclick=async e=>{e.preventDefault();await signOut(auth);location.href='../';};
