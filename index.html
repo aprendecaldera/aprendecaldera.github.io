@@ -941,6 +941,11 @@ footer{background:#fbf7f2!important;color:#5f594f!important}
 .mkBlock h3{margin:0;font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:36px;line-height:1.1;color:#1c1a17}
 .mkBlock p{margin:0;font-size:17px;line-height:1.6;color:#4a463f}
 .mkBlock .m img,.mkBlock .m video{width:100%;border-radius:22px;box-shadow:0 24px 50px rgba(28,26,23,.16);aspect-ratio:16/9;object-fit:cover;display:block;background:#0b1a2e}
+.mkVid,.mkVidF{width:100%;aspect-ratio:16/9;border-radius:22px;box-shadow:0 24px 50px rgba(28,26,23,.16);overflow:hidden;display:block;position:relative;background:#0b1a2e}
+.mkVid{border:0;background-size:cover;background-position:center;cursor:pointer;display:grid;place-items:center;color:#fff}
+.mkVid .pl{width:72px;height:72px;border-radius:50%;background:#fff;color:#1c1a17;display:grid;place-items:center;font-size:24px;box-shadow:0 10px 30px #0006}
+.mkVid small{position:absolute;left:50%;transform:translateX(-50%);bottom:14px;background:#000c;border-radius:999px;padding:6px 14px;font-weight:700;white-space:nowrap;font-size:13px}
+.mkVidF iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
 .mkCert{background:#fff;border:1px solid #ebe3d7;border-radius:22px;padding:40px;box-shadow:0 24px 50px rgba(28,26,23,.10);display:flex;flex-direction:column;gap:10px;align-items:center;text-align:center}
 .mkCert small{font-weight:800;letter-spacing:.14em;font-size:12px;color:#8a8378}.mkCert b{font-family:'Bricolage Grotesque',sans-serif;font-size:30px}
 @media(min-width:900px){.mkBlock.rev .m{order:-1}}
@@ -1000,7 +1005,7 @@ footer{background:#fbf7f2!important;color:#5f594f!important}
     <h1>Repara calderas murales <span class="mkA">entendiendo cada código</span></h1>
     <p class="mkSub">Diagnostica, repara, mantiene y programa calderas murales tradicionales y de condensación, paso a paso y con equipos reales. Incluye más de 50 manuales de +10 marcas.</p>
     <div class="mkCta" id="comprar"><a class="mkBuy" href="comprar/?curso=caldera">Comprar · $49.990</a><a class="mkGhost" href="#temario" data-free-go>▶ Ver 3 clases gratis</a></div>
-    <div class="mkTrust"><div class="lpTrust"><div class="lpShield">🛡️ <span><b>Garantía de 30 días:</b> si el curso no te sirve, te devolvemos tu dinero.</span></div><a class="lpStars" href="#resenas" id="lpStars" hidden></a><span class="lpCount" id="lpCount" hidden></span></div></div>
+    <div class="mkTrust"><div class="lpTrust"><div class="lpShield">🛡️ <span><b>Garantía de 7 días:</b> si el curso no te sirve, te devolvemos tu dinero.</span></div><a class="lpStars" href="#resenas" id="lpStars" hidden></a><span class="lpCount" id="lpCount" hidden></span></div></div>
   </div>
   <div class="mkCol" aria-label="Muestras del curso">
     <div class="mkMain"><div class="hv" id="hv"><button type="button" class="hv-cover" style="background-image:linear-gradient(#0004,#000a),url(assets/cover-logica.jpg)" onclick="this.parentElement.innerHTML='<iframe src=&quot;https://drive.google.com/file/d/1eeh3u_G_z-MyMCtmEGH4MDyrzzPovmA7/preview&quot; allow=&quot;autoplay; fullscreen&quot; allowfullscreen title=&quot;Clase gratis&quot;></iframe>'"><span class="pl">▶</span><small>Ver clase gratis · 3:02</small></button></div></div>
@@ -1012,7 +1017,7 @@ footer{background:#fbf7f2!important;color:#5f594f!important}
 
 <section class="mkSec"><div class="mkW">
   <div class="mkHead"><h2>Todo lo que necesitas para trabajar <em>con seguridad</em></h2><p>Primero entiendes, después lo ves en terreno, y al final mides y diagnosticas solo.</p></div>
-  <div class="mkBlocks"><div class="mkBlock"><div class="t"><span class="k">01 · ENTIENDE</span><h3>La caldera mural por dentro</h3><p>Circuito hidráulico, gas, encendido y electrónica explicados en orden, para que sepas qué hace cada componente antes de tocarlo.</p></div><div class="m"><img src="assets/cover-logica.jpg" alt="Lógica de funcionamiento de una caldera mural" loading="lazy"></div></div><div class="mkBlock rev"><div class="t"><span class="k">02 · DIAGNOSTICA</span><h3>Del código de error a la pieza que falla</h3><p>Clases de terreno con calderas tradicionales y de condensación: mediciones, regulación, mantención y programación paso a paso.</p></div><div class="m"><video controls playsinline preload="none" poster="assets/drive-poster.jpg"><source src="assets/drive-por-dentro.mp4" type="video/mp4"></video></div></div><div class="mkBlock"><div class="t"><span class="k">03 · CONSULTA</span><h3>Más de 50 manuales de +10 marcas</h3><p>Manuales técnicos y PDF de apoyo para tener a mano los datos de cada equipo cuando estás en terreno.</p></div><div class="m"><img src="assets/aula-desk.jpg" alt="Manuales y clases en el aula" loading="lazy"></div></div><div class="mkBlock rev"><div class="t"><span class="k">04 · CERTIFÍCATE</span><h3>Un certificado que se puede verificar</h3><p>Al terminar descargas tu certificado con código de verificación. Acredita que completaste el curso; no reemplaza la licencia SEC.</p></div><div class="m"><div class="mkCert"><small>CERTIFICADO DE FINALIZACIÓN</small><b>Tu nombre aquí</b><span>completó el curso «Aprende Caldera»</span><small style="letter-spacing:0;font-weight:600;margin-top:10px">Con código de verificación</small></div></div></div></div>
+  <div class="mkBlocks"><div class="mkBlock"><div class="t"><span class="k">01 · ENTIENDE</span><h3>La caldera mural por dentro</h3><p>Circuito hidráulico, gas, encendido y electrónica explicados en orden, para que sepas qué hace cada componente antes de tocarlo.</p></div><div class="m"><button type="button" class="mkVid" style="background-image:linear-gradient(#0003,#0008),url(assets/cover-logica.jpg)" onclick="this.outerHTML='<div class=&quot;mkVidF&quot;><iframe src=&quot;https://drive.google.com/file/d/1_RZRhh4cHvqn5bWh13bgh4bxyUYhvR1W/preview&quot; allow=&quot;autoplay; fullscreen&quot; allowfullscreen title=&quot;Lógica de funcionamiento&quot;></iframe></div>'"><span class="pl">▶</span><small>Clase: Lógica de funcionamiento · 4:28</small></button></div></div><div class="mkBlock rev"><div class="t"><span class="k">02 · DIAGNOSTICA</span><h3>Del código de error a la pieza que falla</h3><p>Clases de terreno con calderas tradicionales y de condensación: mediciones, regulación, mantención y programación paso a paso.</p></div><div class="m"><img src="assets/aula-desk.jpg" alt="Clases de terreno en el aula de Aprende Caldera" loading="lazy"></div></div><div class="mkBlock"><div class="t"><span class="k">03 · CONSULTA</span><h3>Más de 50 manuales de +10 marcas</h3><p>Manuales técnicos y PDF de apoyo para tener a mano los datos de cada equipo cuando estás en terreno.</p></div><div class="m"><img src="assets/aula-mob.jpg" alt="Manuales y clases en el aula desde el celular" loading="lazy" style="object-fit:contain;background:#f4efe7"></div></div><div class="mkBlock rev"><div class="t"><span class="k">04 · CERTIFÍCATE</span><h3>Un certificado que se puede verificar</h3><p>Al terminar descargas tu certificado con código de verificación. Acredita que completaste el curso; no reemplaza la licencia SEC.</p></div><div class="m"><div class="mkCert"><small>CERTIFICADO DE FINALIZACIÓN</small><b>Tu nombre aquí</b><span>completó el curso «Aprende Caldera»</span><small style="letter-spacing:0;font-weight:600;margin-top:10px">Con código de verificación</small></div></div></div></div>
 </div></section>
 
 <section id="logica" style="background:var(--navy2)">
@@ -1112,12 +1117,12 @@ footer{background:#fbf7f2!important;color:#5f594f!important}
     </div>
   </div>
 </section>
-<section id="resenas" hidden>
+<section id="resenas" style="background:#1c1a17!important;color:#fbf7f2;padding:88px 0">
   <div class="wrap">
-    <span class="eyebrow">Opiniones de alumnos</span>
-    <h2>Lo que dicen <em>los alumnos</em></h2>
-    <p class="lead" id="rvSum"></p>
-    <div class="rvGrid" id="rvGrid"></div>
+    <h2 style="color:#fbf7f2!important;text-align:center">Lo que dicen <em>los alumnos</em></h2>
+    <p class="lead" id="rvSum" style="color:#b8b0a3!important;text-align:center;margin-inline:auto"></p>
+    <div class="rvGrid" id="rvGrid"><div class="rvEmpty">Aún no hay comentarios. Cuando los alumnos dejen su opinión desde el aula, aparecerán aquí automáticamente.</div></div>
+    <p style="text-align:center;margin-top:22px;color:#b8b0a3">¿Ya eres alumno? <a href="aula/" style="color:#fdba74;font-weight:800">Deja tu opinión desde el aula →</a></p>
   </div>
 </section>
 <section id="lpCmp">
@@ -1154,7 +1159,7 @@ footer{background:#fbf7f2!important;color:#5f594f!important}
       <span style="text-align:center;font-size:13px;color:#8a8378">Precio de lanzamiento hasta el 30 de noviembre</span></div>
     <ul class="mkInc"><li><span>Caldera mural tradicional: bases, componentes, lógica y diagnóstico</span></li><li><span>Caldera de condensación</span></li><li><span>Más de 50 manuales y PDF de +10 marcas</span></li><li><span>Certificado verificable</span></li><li><span>Comunidad privada de técnicos</span></li></ul>
   </div>
-  <div class="mkG"><span>🛡️</span><span><b>Garantía de 30 días:</b> si el curso no te sirve, te devolvemos tu dinero.</span></div>
+  <div class="mkG"><span>🛡️</span><span><b>Garantía de 7 días:</b> si el curso no te sirve, te devolvemos tu dinero.</span></div>
 </div></section>
 
 <section id="guia" style="background:var(--navy2)">
@@ -1210,7 +1215,7 @@ footer{background:#fbf7f2!important;color:#5f594f!important}
     </div>
   </div>
 </section>
-<section class="mkFinal"><div class="mkW"><div class="box"><h2>Empieza hoy a reparar calderas con seguridad</h2><p>$49.990 de lanzamiento hasta el 30 de noviembre, pago único y garantía de 30 días.</p><div class="r"><a href="#precio" style="background:#1c1a17;color:#fff">Comprar ahora</a><a href="https://wa.me/56993992990?text=Hola%2C%20tengo%20una%20duda%20sobre%20Aprende%20Caldera" target="_blank" rel="noopener" style="background:#fff;color:#1c1a17">Tengo una duda</a></div></div></div></section>
+<section class="mkFinal"><div class="mkW"><div class="box"><h2>Empieza hoy a reparar calderas con seguridad</h2><p>$49.990 de lanzamiento hasta el 30 de noviembre, pago único y garantía de 7 días.</p><div class="r"><a href="#precio" style="background:#1c1a17;color:#fff">Comprar ahora</a><a href="https://wa.me/56993992990?text=Hola%2C%20tengo%20una%20duda%20sobre%20Aprende%20Caldera" target="_blank" rel="noopener" style="background:#fff;color:#1c1a17">Tengo una duda</a></div></div></div></section>
 
 <script>
 (()=>{const f=n=>'$'+Math.round(n).toLocaleString('es-CL');const P=49990;
@@ -1220,29 +1225,28 @@ footer{background:#fbf7f2!important;color:#5f594f!important}
  N.oninput=V.oninput=up;up();})();
 </script>
 <style>
-.rvGrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,340px));justify-content:center;gap:16px;margin-top:22px}
-.rvCard{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:20px;display:flex;flex-direction:column;gap:10px}
-.rvCard .st{color:#f59e0b;font-size:18px;letter-spacing:2px}
-.rvCard p{margin:0;color:var(--text);line-height:1.5;font-size:15px}
-.rvCard .who{display:flex;align-items:center;gap:10px;margin-top:auto;font-weight:700;color:var(--text);font-size:14px}
-.rvCard .rvAv{width:34px;height:34px;border-radius:50%;background:#fff1e6;color:var(--orange);display:grid;place-items:center;font-weight:800}
-.rvCard .ok{font-weight:600;color:var(--muted);font-size:12px}
-#rvSum{color:var(--muted)}
+.rvGrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),360px));justify-content:center;gap:20px;margin-top:26px}
+.rvCard{background:#2a2723!important;border:0!important;border-radius:20px;padding:26px;display:flex;flex-direction:column;gap:14px;box-shadow:none!important}
+.rvCard .st{color:#fbbf24;font-size:18px;letter-spacing:2px}
+.rvCard p{margin:0;color:#fbf7f2;line-height:1.55;font-size:17px}
+.rvCard .who{display:flex;align-items:center;gap:12px;margin-top:auto;font-weight:700;color:#fbf7f2;font-size:15px}
+.rvCard .rvAv{width:40px;height:40px;border-radius:50%;background:var(--orange);color:#fff;display:grid;place-items:center;font-weight:800}
+.rvCard .ok{font-weight:600;color:#b8b0a3;font-size:13px}
+.rvEmpty{grid-column:1/-1;max-width:560px;margin:0 auto;text-align:center;background:#2a2723;border-radius:20px;padding:28px;color:#d6cfc3;font-size:16px;line-height:1.5}
 </style>
 <script type="module">
 import { db } from "./js/firebase.js";
-import { collection, query, where, limit, getDocs } from "https://www.gstatic.com/firebasejs/13.4.0/firebase-firestore.js";
+import { collection, query, where, limit, onSnapshot } from "https://www.gstatic.com/firebasejs/13.4.0/firebase-firestore.js";
 const esc=s=>String(s??'').replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
 try{
-  const s=await getDocs(query(collection(db,'resenas'),where('aprobada','==',true),limit(60)));
-  const R=s.docs.map(d=>d.data()).filter(r=>r.sitio==='caldera')
-    .sort((a,b)=>(b.createdAt?.seconds||0)-(a.createdAt?.seconds||0));
-  if(R.length){
+  onSnapshot(query(collection(db,'resenas'),where('aprobada','==',true),limit(60)),s=>{
+    const R=s.docs.map(d=>d.data()).filter(r=>r.sitio==='caldera').sort((a,b)=>(b.createdAt?.seconds||0)-(a.createdAt?.seconds||0));
+    const G=document.getElementById('rvGrid'),S=document.getElementById('rvSum');
+    if(!R.length){S.textContent='';G.innerHTML='<div class="rvEmpty">Aún no hay comentarios. Cuando los alumnos dejen su opinión desde el aula, aparecerán aquí automáticamente.</div>';return;}
     const prom=R.reduce((a,r)=>a+(+r.stars||0),0)/R.length;
-    document.getElementById('rvSum').textContent=`${prom.toFixed(1).replace('.',',')} de 5 estrellas · ${R.length} ${R.length===1?'reseña':'reseñas'} de alumnos con cuenta en el aula.`;
-    document.getElementById('rvGrid').innerHTML=R.slice(0,12).map(r=>`<div class="rvCard"><div class="st">${'★'.repeat(r.stars)}${'☆'.repeat(5-r.stars)}</div><p>${esc(r.text)}</p><div class="who"><span class="rvAv">${esc((r.name||'?')[0].toUpperCase())}</span><span>${esc(r.name)}<br><span class="ok">Alumno verificado</span></span></div></div>`).join('');
-    document.getElementById('resenas').hidden=false;
-  }
+    S.textContent=`${prom.toFixed(1).replace('.',',')} de 5 estrellas · ${R.length} ${R.length===1?'reseña':'reseñas'} de alumnos con cuenta en el aula.`;
+    G.innerHTML=R.slice(0,12).map(r=>`<div class="rvCard"><div class="st">${'★'.repeat(r.stars)}${'☆'.repeat(5-r.stars)}</div><p>${esc(r.text)}</p><div class="who"><span class="rvAv">${esc((r.name||'?')[0].toUpperCase())}</span><span>${esc(r.name)}<br><span class="ok">Alumno verificado</span></span></div></div>`).join('');
+  },e=>console.warn('Reseñas no disponibles',e));
 }catch(e){ console.warn('Reseñas no disponibles', e); }
 </script>
 </main>
