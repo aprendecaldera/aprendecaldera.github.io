@@ -202,4 +202,76 @@ onAuthStateChanged(auth, async u=>{
   }catch(e){ console.error(e); gate('<h2>No pudimos cargar tu aula</h2><p>Revisa tu conexión y recarga la página. Si sigue igual, escríbenos.</p><a class="btn pri" href="">Recargar</a>'); }
 });
 </script>
+
+<!-- RESENAS-AULA -->
+<style>
+#rvBtn{position:fixed;left:16px;bottom:16px;z-index:60;background:var(--or);color:#111;border:0;border-radius:999px;padding:12px 18px;font:800 14px system-ui,sans-serif;box-shadow:0 8px 24px rgba(0,0,0,.35);cursor:pointer}
+#rvBg{position:fixed;inset:0;background:rgba(0,0,0,.6);z-index:70;display:flex;align-items:center;justify-content:center;padding:16px}
+#rvBox{background:var(--bg2);border:1px solid var(--line);border-radius:18px;max-width:460px;width:100%;padding:22px;color:var(--fg);font-family:system-ui,sans-serif}
+#rvBox h3{margin:0 0 6px;font-size:20px}#rvBox p{margin:0 0 14px;color:var(--muted);font-size:14px;line-height:1.45}
+.rvStars{display:flex;gap:6px;margin:6px 0 14px}.rvStars button{background:none;border:0;font-size:32px;line-height:1;cursor:pointer;color:#3b5577;padding:0}.rvStars button.on{color:var(--or2)}
+#rvBox label{display:block;font-size:13px;font-weight:700;margin:0 0 6px}
+#rvBox input,#rvBox textarea{width:100%;box-sizing:border-box;background:var(--bg);border:1px solid var(--line);border-radius:10px;color:var(--fg);padding:10px 12px;font:15px system-ui,sans-serif;margin-bottom:12px}
+#rvBox textarea{min-height:110px;resize:vertical}
+.rvRow{display:flex;gap:10px;justify-content:flex-end;align-items:center;flex-wrap:wrap}
+.rvRow button{border:0;border-radius:10px;padding:11px 16px;font:800 14px system-ui,sans-serif;cursor:pointer}
+#rvSend{background:var(--or);color:#111}#rvClose{background:transparent;color:var(--muted);border:1px solid var(--line)!important}
+#rvMsg{font-size:13px;color:var(--muted);margin-right:auto}
+.rvState{font-size:13px;padding:8px 12px;border-radius:10px;background:var(--bg);border:1px solid var(--line);margin-bottom:12px}
+</style>
+<script type="module">
+import { auth, db, onAuthStateChanged, doc, getDoc, setDoc, serverTimestamp } from "../js/firebase.js";
+const $=id=>document.getElementById(id);
+let U=null, prof=null, prev=null, stars=0;
+function corto(n){ const p=String(n||'').trim().split(/\s+/).filter(Boolean); if(!p.length) return ''; return p[0]+(p[1]?' '+p[1][0].toUpperCase()+'.':''); }
+function ui(){
+  if($('rvBtn')) return;
+  const b=document.createElement('button'); b.id='rvBtn'; b.textContent='⭐ Deja tu reseña'; b.onclick=abrir; document.body.appendChild(b);
+}
+function pintar(){ document.querySelectorAll('.rvStars button').forEach((x,i)=>x.classList.toggle('on',i<stars)); }
+function cerrar(){ const e=$('rvBg'); if(e) e.remove(); }
+function abrir(){
+  cerrar();
+  const est = prev ? (prev.aprobada ? '✅ Tu reseña ya está publicada en la página. Si la cambias, vuelve a revisión.' : '🕒 Tu reseña está en revisión. Puedes editarla mientras tanto.') : '';
+  const d=document.createElement('div'); d.id='rvBg';
+  d.innerHTML=`<div id="rvBox" role="dialog" aria-modal="true" aria-labelledby="rvT">
+    <h3 id="rvT">¿Qué te ha parecido el curso?</h3>
+    <p>Tu opinión ayuda a otros técnicos a decidir. Se publica con tu nombre de pila y la inicial de tu apellido, después de revisarla.</p>
+    ${est?`<div class="rvState">${est}</div>`:''}
+    <label>Tu calificación</label>
+    <div class="rvStars">${[1,2,3,4,5].map(i=>`<button type="button" data-i="${i}" aria-label="${i} estrellas">★</button>`).join('')}</div>
+    <label for="rvName">Nombre que se mostrará</label>
+    <input id="rvName" maxlength="40">
+    <label for="rvText">Tu comentario</label>
+    <textarea id="rvText" maxlength="600" placeholder="¿Qué aprendiste? ¿Te sirvió en terreno?"></textarea>
+    <div class="rvRow"><span id="rvMsg"></span><button id="rvClose" type="button">Cerrar</button><button id="rvSend" type="button">Enviar reseña</button></div>
+  </div>`;
+  document.body.appendChild(d);
+  d.onclick=e=>{ if(e.target===d) cerrar(); };
+  $('rvClose').onclick=cerrar;
+  stars = prev ? prev.stars : 0;
+  $('rvName').value = prev ? prev.name : corto(prof && prof.name || U.displayName || '');
+  $('rvText').value = prev ? prev.text : '';
+  d.querySelectorAll('.rvStars button').forEach(x=>x.onclick=()=>{ stars=+x.dataset.i; pintar(); });
+  pintar();
+  $('rvSend').onclick=enviar;
+}
+async function enviar(){
+  const name=$('rvName').value.trim(), text=$('rvText').value.trim(), m=$('rvMsg');
+  if(stars<1){ m.textContent='Elige de 1 a 5 estrellas.'; return; }
+  if(name.length<2){ m.textContent='Escribe tu nombre.'; return; }
+  if(text.length<10){ m.textContent='Escribe un comentario un poco más largo.'; return; }
+  $('rvSend').disabled=true; m.textContent='Enviando…';
+  const data={uid:U.uid,name,stars,text,sitio:'caldera',aprobada:false,createdAt:prev&&prev.createdAt?prev.createdAt:serverTimestamp()};
+  try{ await setDoc(doc(db,'resenas',U.uid),data); prev={...data}; m.textContent='¡Gracias! Tu reseña quedó en revisión.'; setTimeout(cerrar,1600); }
+  catch(e){ console.error(e); m.textContent='No se pudo enviar. Intenta de nuevo en un momento.'; $('rvSend').disabled=false; }
+}
+onAuthStateChanged(auth, async u=>{
+  if(!u) return; U=u;
+  try{ const p=await getDoc(doc(db,'users',u.uid)); prof=p.exists()?p.data():null; }catch(e){ return; }
+  if(!prof || !prof.access) return;
+  try{ const r=await getDoc(doc(db,'resenas',u.uid)); prev=r.exists()?r.data():null; }catch(e){ prev=null; }
+  ui();
+});
+</script>
 </body></html>

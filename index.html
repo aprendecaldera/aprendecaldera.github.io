@@ -816,6 +816,37 @@ footer.site a{color:#1d1d1f}
 }
 </style>
 <script src="js/pixel.js"></script>
+<style id="LP-CSS">
+.lpVid{display:flex;gap:16px;align-items:center;margin-top:22px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.14);border-radius:18px;padding:12px;max-width:520px}
+.lpVid video{width:132px;aspect-ratio:9/16;border-radius:12px;background:#0b1a2e;object-fit:cover;flex:none}
+.lpVid b{display:block;font-size:17px;color:#fff}.lpVid span{color:rgba(255,255,255,.72);font-size:14px;line-height:1.45}
+.lpTrust{display:flex;flex-direction:column;gap:6px;margin:10px 0 4px}
+.lpShield{display:flex;gap:8px;align-items:flex-start;background:#ecfdf3;border:1px solid #bbf7d0;color:#14532d;border-radius:12px;padding:9px 12px;font-size:13.5px;line-height:1.35}
+.lpStars{font-size:14px;color:var(--muted);text-decoration:none}.lpStars i{font-style:normal;color:#f59e0b;letter-spacing:1px}
+.lpCount{font-size:14px;font-weight:700;color:var(--text)}
+#lpToast{position:fixed;left:16px;bottom:16px;z-index:40;background:#fff;color:#1d1d1f;border:1px solid #e5e5ea;border-radius:14px;box-shadow:0 12px 32px rgba(0,0,0,.18);padding:10px 34px 10px 12px;display:flex;gap:10px;align-items:center;max-width:300px;font-size:14px;transform:translateY(20px);opacity:0;visibility:hidden;transition:transform .4s ease,opacity .4s ease,visibility .4s}
+#lpToast.on{transform:none;opacity:1;visibility:visible}#lpToast .ic{width:34px;height:34px;border-radius:50%;background:#fff1e6;color:#ea580c;display:grid;place-items:center;font-weight:800;flex:none}
+#lpToast small{display:block;color:#6e6e73;font-size:12px}#lpToast button{position:absolute;top:4px;right:6px;border:0;background:none;font-size:16px;color:#999;cursor:pointer}
+@media(max-width:760px){#lpToast{top:84px;bottom:auto;left:12px;right:12px;max-width:none;transform:translateY(-20px)}}
+#lpCmp table{width:100%;border-collapse:separate;border-spacing:0;margin-top:22px;background:var(--card);border:1px solid var(--line);border-radius:18px;overflow:hidden;font-size:15px}
+#lpCmp th,#lpCmp td{padding:13px 14px;border-bottom:1px solid var(--line);text-align:center}
+#lpCmp th:first-child,#lpCmp td:first-child{text-align:left;color:var(--text);font-weight:600}
+#lpCmp thead th{font-size:14px;background:var(--navy2)}#lpCmp .hl{background:#fff7ed}
+#lpCmp tr:last-child td{border-bottom:0}#lpCmp .y{color:#16a34a;font-weight:800}#lpCmp .n{color:#9ca3af}
+.lpTools{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:22px}
+.lpBox{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:22px}
+.lpBox h3{margin:0 0 4px;font-size:21px}.lpBox p.m{color:var(--muted);margin:0 0 14px;font-size:14px}
+.lpQ{margin-bottom:12px}.lpQ b{display:block;font-size:15px;margin-bottom:8px}
+.lpOpts{display:flex;flex-wrap:wrap;gap:8px}.lpOpts button{border:1px solid var(--line);background:var(--navy2);border-radius:999px;padding:8px 13px;font-size:14px;cursor:pointer;color:var(--text)}
+.lpOpts button.on{background:var(--orange);border-color:var(--orange);color:#fff}
+.lpRes{margin-top:10px;padding:14px;border-radius:14px;background:#fff7ed;border:1px solid #fed7aa;display:none}.lpRes.on{display:block}
+.lpRes b{font-size:17px}.lpRes p{margin:6px 0 10px;font-size:14px;color:var(--text)}
+.lpCalc label{display:flex;justify-content:space-between;font-size:14px;font-weight:700;margin:10px 0 6px}
+.lpCalc input[type=range]{width:100%;accent-color:var(--orange)}
+.lpCalc .big{font-size:30px;font-weight:900;margin:14px 0 2px;color:var(--text)}.lpCalc small{color:var(--muted)}
+.lpCalc .pay{margin-top:12px;padding:12px;border-radius:12px;background:#ecfdf3;border:1px solid #bbf7d0;color:#14532d;font-weight:700;font-size:14px}
+@media(max-width:820px){.lpTools{grid-template-columns:1fr}#lpCmp table{font-size:13px}#lpCmp th,#lpCmp td{padding:10px 8px}}
+</style>
 </head>
 <body>
 
@@ -864,7 +895,7 @@ footer.site a{color:#1d1d1f}
         <p class="pdead launch-only">El precio de lanzamiento termina en <b data-cd="short">—</b></p>
         <a class="btn btn-buy pmain" href="comprar/?curso=caldera">Comprar ahora</a>
         <a class="btn btn-ghost psec" href="https://wa.me/56993992990?text=Hola%2C%20quiero%20comprar%20Aprende%20Caldera%20(%2449.990)%20por%20transferencia" target="_blank" rel="noopener">Pagar por transferencia</a>
-        <p class="pnote">Pago único · Garantía de 30 días</p>
+        <div class="lpTrust"><div class="lpShield">🛡️ <span><b>Garantía de 30 días:</b> si el curso no te sirve, te devolvemos tu dinero.</span></div><a class="lpStars" href="#resenas" id="lpStars" hidden></a><span class="lpCount" id="lpCount" hidden></span></div><p class="pnote">Pago único · acceso permanente</p>
         <div class="pinc"><b>Este curso incluye:</b>
           <span>▶ 7 h de video en 2 cursos</span><span>📄 +50 manuales y PDF de +10 marcas</span><span>🎓 Certificado de finalización</span><span>💬 Comunidad privada de técnicos</span><span>♾ Acceso de por vida, en celular y PC</span></div>
         <p class="phow">Tu curso se <b>activa automáticamente</b> al pagar. Si pagas por transferencia, envíanos el comprobante por <a href="https://wa.me/56993992990?text=Hola%2C%20acabo%20de%20pagar%20Aprende%20Caldera.%20Te%20env%C3%ADo%20el%20comprobante" target="_blank" rel="noopener">WhatsApp</a> y lo activamos.</p>
@@ -908,6 +939,40 @@ footer.site a{color:#1d1d1f}
 
 
 <!-- Lógica de funcionamiento animada -->
+<!-- LP-TOOLS -->
+<section id="lpCmp">
+  <div class="wrap">
+    <span class="eyebrow">Compara</span>
+    <h2>¿Qué cambia <em>con el curso</em>?</h2>
+    <table>
+      <thead><tr><th></th><th>Sin curso</th><th class="hl">Con Aprende Caldera</th></tr></thead>
+      <tbody>
+        <tr><td>Entiendes cómo funciona una caldera mural por dentro</td><td class="n">A medias</td><td class="hl y">✓</td></tr>
+        <tr><td>Diagnosticas por código de error y síntoma</td><td class="n">Adivinando</td><td class="hl y">✓</td></tr>
+        <tr><td>Más de 50 manuales y PDF de +10 marcas</td><td class="n">—</td><td class="hl y">✓</td></tr>
+        <tr><td>Certificado y comunidad de técnicos</td><td class="n">—</td><td class="hl y">✓</td></tr>
+        <tr><td>Repuestos cambiados sin necesidad</td><td class="n">Frecuente</td><td class="hl y">Menos</td></tr>
+      </tbody>
+    </table>
+    <div class="lpTools" style="grid-template-columns:1fr">
+      <div class="lpBox lpCalc" style="max-width:640px;margin:0 auto;width:100%;box-sizing:border-box">
+        <h3>¿En cuánto recuperas el curso?</h3><p class="m">Calcula con los trabajos de calderas que podrías hacer al mes.</p>
+        <label>Trabajos al mes <span id="lpN">3</span></label><input type="range" id="lpRN" min="1" max="20" value="3">
+        <label>Cobro promedio por trabajo <span id="lpV">$60.000</span></label><input type="range" id="lpRV" min="20000" max="150000" step="5000" value="60000">
+        <div class="big" id="lpTot">$180.000</div><small>al mes en mano de obra (referencial)</small>
+        <div class="pay" id="lpPay">El curso se paga con tu primer trabajo.</div>
+      </div>
+    </div>
+  </div>
+</section>
+<script>
+(()=>{const f=n=>'$'+Math.round(n).toLocaleString('es-CL');const P=49990;
+ const N=document.getElementById('lpRN'),V=document.getElementById('lpRV');
+ const up=()=>{const n=+N.value,v=+V.value,k=Math.ceil(P/v);document.getElementById('lpN').textContent=n;document.getElementById('lpV').textContent=f(v);
+  document.getElementById('lpTot').textContent=f(n*v);document.getElementById('lpPay').textContent=k<=1?'El curso se paga con tu primer trabajo.':'El curso se paga con '+k+' trabajos.';};
+ N.oninput=V.oninput=up;up();})();
+</script>
+
 <!-- Catálogo de cursos -->
 <section id="cursos" style="background:var(--navy2)">
   <div class="wrap">
@@ -1129,6 +1194,42 @@ footer.site a{color:#1d1d1f}
     </div>
   </div>
 </section>
+
+<!-- RESENAS-LANDING -->
+<section id="resenas" hidden>
+  <div class="wrap">
+    <span class="eyebrow">Opiniones de alumnos</span>
+    <h2>Lo que dicen <em>los alumnos</em></h2>
+    <p class="lead" id="rvSum"></p>
+    <div class="rvGrid" id="rvGrid"></div>
+  </div>
+</section>
+<style>
+.rvGrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,340px));justify-content:center;gap:16px;margin-top:22px}
+.rvCard{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:20px;display:flex;flex-direction:column;gap:10px}
+.rvCard .st{color:#f59e0b;font-size:18px;letter-spacing:2px}
+.rvCard p{margin:0;color:var(--text);line-height:1.5;font-size:15px}
+.rvCard .who{display:flex;align-items:center;gap:10px;margin-top:auto;font-weight:700;color:var(--text);font-size:14px}
+.rvCard .rvAv{width:34px;height:34px;border-radius:50%;background:#fff1e6;color:var(--orange);display:grid;place-items:center;font-weight:800}
+.rvCard .ok{font-weight:600;color:var(--muted);font-size:12px}
+#rvSum{color:var(--muted)}
+</style>
+<script type="module">
+import { db } from "./js/firebase.js";
+import { collection, query, where, limit, getDocs } from "https://www.gstatic.com/firebasejs/13.4.0/firebase-firestore.js";
+const esc=s=>String(s??'').replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+try{
+  const s=await getDocs(query(collection(db,'resenas'),where('aprobada','==',true),limit(60)));
+  const R=s.docs.map(d=>d.data()).filter(r=>r.sitio==='caldera')
+    .sort((a,b)=>(b.createdAt?.seconds||0)-(a.createdAt?.seconds||0));
+  if(R.length){
+    const prom=R.reduce((a,r)=>a+(+r.stars||0),0)/R.length;
+    document.getElementById('rvSum').textContent=`${prom.toFixed(1).replace('.',',')} de 5 estrellas · ${R.length} ${R.length===1?'reseña':'reseñas'} de alumnos con cuenta en el aula.`;
+    document.getElementById('rvGrid').innerHTML=R.slice(0,12).map(r=>`<div class="rvCard"><div class="st">${'★'.repeat(r.stars)}${'☆'.repeat(5-r.stars)}</div><p>${esc(r.text)}</p><div class="who"><span class="rvAv">${esc((r.name||'?')[0].toUpperCase())}</span><span>${esc(r.name)}<br><span class="ok">Alumno verificado</span></span></div></div>`).join('');
+    document.getElementById('resenas').hidden=false;
+  }
+}catch(e){ console.warn('Reseñas no disponibles', e); }
+</script>
 
 <section id="faq">
   <div class="wrap">
@@ -1406,6 +1507,34 @@ trk("ViewContent",{content_name:"Aprende Caldera",content_ids:["caldera"],conten
 document.addEventListener("click",function(e){var a=e.target.closest("a,button"); if(!a) return;
   if(a.matches("[data-free-go],.hv-cover,.av-cover")) trk("Lead",{content_name:"Clase gratis"});
   else if((a.getAttribute("href")||"").indexOf("wa.me")>-1) trk("Contact");});
+</script>
+
+<!-- LP-SOCIAL -->
+<div id="lpToast" role="status" aria-live="polite"><span class="ic">✓</span><div id="lpTT"></div><button type="button" aria-label="Cerrar" id="lpX">×</button></div>
+<script type="module">
+import { db } from "./js/firebase.js";
+import { doc, getDoc, collection, query, where, limit, getDocs } from "https://www.gstatic.com/firebasejs/13.4.0/firebase-firestore.js";
+const MIN=30;
+const hace=ms=>{const m=Math.round((Date.now()-ms)/60000);if(m<60)return 'hace '+Math.max(1,m)+' min';const h=Math.round(m/60);if(h<24)return 'hace '+h+(h===1?' hora':' horas');const d=Math.round(h/24);return 'hace '+d+(d===1?' día':' días');};
+const PROD={caldera:'Aprende Caldera',pack:'el pack Caldera + Calefón'};
+try{
+  const s=await getDoc(doc(db,'public','caldera'));
+  const d=s.exists()?s.data():{};
+  if((d.alumnos||0)>=MIN){const c=document.getElementById('lpCount');c.textContent='🎓 Ya son '+d.alumnos+' técnicos inscritos';c.hidden=false;}
+  const R=(d.recientes||[]).filter(x=>x&&x.n&&x.t&&Date.now()-x.t<14*864e5);
+  if(R.length){const T=document.getElementById('lpToast'),X=document.getElementById('lpX');let i=0,stop=false;
+    X.onclick=()=>{stop=true;T.classList.remove('on');};
+    const show=()=>{if(stop||i>=Math.min(R.length,4))return;const x=R[i++];
+      document.getElementById('lpTT').innerHTML='<b></b> se inscribió en '+(PROD[x.c]||'Aprende Caldera')+'<small>'+hace(x.t)+'</small>';
+      document.querySelector('#lpTT b').textContent=x.n;T.classList.add('on');setTimeout(()=>T.classList.remove('on'),6000);setTimeout(show,26000);};
+    setTimeout(show,9000);}
+}catch(e){console.warn('Resumen de compras no disponible',e);}
+try{
+  const q=await getDocs(query(collection(db,'resenas'),where('aprobada','==',true),limit(60)));
+  const R=q.docs.map(x=>x.data()).filter(r=>r.sitio==='caldera');
+  if(R.length){const p=R.reduce((a,r)=>a+(+r.stars||0),0)/R.length,e=document.getElementById('lpStars');
+    e.innerHTML='<i>'+'★'.repeat(Math.round(p))+'☆'.repeat(5-Math.round(p))+'</i> '+p.toFixed(1).replace('.',',')+' · '+R.length+(R.length===1?' reseña':' reseñas');e.hidden=false;}
+}catch(e){}
 </script>
 </body>
 </html>
